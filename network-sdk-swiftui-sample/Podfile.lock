@@ -1,0 +1,69 @@
+PODS:
+  - Braintree/Card (4.35.0):
+    - Braintree/Core
+  - Braintree/Core (4.35.0)
+  - Braintree/PaymentFlow (4.35.0):
+    - Braintree/Card
+    - Braintree/Core
+    - Braintree/PayPalOneTouch
+  - Braintree/PayPal (4.35.0):
+    - Braintree/Core
+    - Braintree/PayPalOneTouch
+  - Braintree/PayPalDataCollector (4.35.0):
+    - Braintree/Core
+    - Braintree/PayPalUtils
+  - Braintree/PayPalOneTouch (4.35.0):
+    - Braintree/Core
+    - Braintree/PayPalDataCollector
+    - Braintree/PayPalUtils
+  - Braintree/PayPalUtils (4.35.0)
+  - Braintree/UnionPay (4.35.0):
+    - Braintree/Card
+    - Braintree/Core
+  - BraintreeDropIn (8.1.1):
+    - BraintreeDropIn/DropIn (= 8.1.1)
+  - BraintreeDropIn/DropIn (8.1.1):
+    - Braintree/Card (~> 4.32)
+    - Braintree/Core (~> 4.32)
+    - Braintree/PaymentFlow (~> 4.32)
+    - Braintree/PayPal (~> 4.32)
+    - Braintree/UnionPay (~> 4.32)
+    - BraintreeDropIn/UIKit
+  - BraintreeDropIn/UIKit (8.1.1)
+  - KarhooSDK (1.1.1):
+    - KeychainSwift (= 12.0.0)
+    - ReachabilitySwift (= 5.0.0)
+  - KeychainSwift (12.0.0)
+  - ReachabilitySwift (5.0.0)
+
+DEPENDENCIES:
+  - BraintreeDropIn
+  - "KarhooSDK (from `git@github.com:karhoo/karhoo-ios-sdk.git`, branch `develop`)"
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Braintree
+    - BraintreeDropIn
+    - KeychainSwift
+    - ReachabilitySwift
+
+EXTERNAL SOURCES:
+  KarhooSDK:
+    :branch: develop
+    :git: "git@github.com:karhoo/karhoo-ios-sdk.git"
+
+CHECKOUT OPTIONS:
+  KarhooSDK:
+    :commit: 4aade029c5defbac77f1882c6b137d76886d6d90
+    :git: "git@github.com:karhoo/karhoo-ios-sdk.git"
+
+SPEC CHECKSUMS:
+  Braintree: 7ff6755ba50506e403dc03779ae68c5ccf6b9808
+  BraintreeDropIn: 2cf07a9041df45ff671586042dbaf7b5d2767347
+  KarhooSDK: 19335b8016480ec70a45a2e8735717945177ac8d
+  KeychainSwift: d5e776578587ee5958ce36601df22f168f65138a
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+
+PODFILE CHECKSUM: 87c55e59d97b53c70c7c2db1f37c2af9efaafd7e
+
+COCOAPODS: 1.9.3

@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '11.0'
+ 
+
+# Standard cocoapods specs source
+source 'https://github.com/CocoaPods/Specs.git'
+
+def sdkPods
+  pod 'BraintreeDropIn'
+  # pod 'KarhooSDK', '1.1.1'
+  pod 'KarhooSDK', :git => 'git@github.com:karhoo/karhoo-ios-sdk.git', :branch => 'develop'
+
+end
+
+target 'Network SDK SwiftUI Sample' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  
+  # Pods for Network SDK SwiftUI Sample
+  sdkPods
+end
