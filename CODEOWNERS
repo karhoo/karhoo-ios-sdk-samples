@@ -1,0 +1,4 @@
+* @karhoo/demand-mobile
+Dockerfile @autoapproval
+go.mod @autoapproval
+go.sum @autoapproval
