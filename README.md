@@ -1,7 +1,7 @@
 # iOS Samples for Karhoo SDKs
 
 Samples demonstrating how to use
-[Karhoo SDKs for Android](https://developer.karhoo.com/docs/build-apps-using-sdks).
+[Karhoo SDKs for iOS](https://developer.karhoo.com/docs/build-apps-using-sdks).
 
 This repo contains the following sample:
 
