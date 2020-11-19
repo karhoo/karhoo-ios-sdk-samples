@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     private lazy var quoteListContainer: UIView = {
         let container = UIView()
         container.translatesAutoresizingMaskIntoConstraints = false
+        container.isHidden = true
         return container
     }()
 
@@ -41,7 +42,7 @@ class ViewController: UIViewController {
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Get the cheapest and fastest quote!"
+        label.text = "Karhoo UIKit Components Demo"
         label.font = UIFont(name: "Roboto", size: 25)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -52,7 +53,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .lightGray
 
         bookingStatus.add(observer: self)
         startDemo()
@@ -99,7 +100,7 @@ class ViewController: UIViewController {
 
         [quoteListContainer.heightAnchor.constraint(equalToConstant: 400),
          quoteListContainer.widthAnchor.constraint(equalTo: view.widthAnchor),
-         quoteListContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50)].forEach { constraint in
+         quoteListContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor)].forEach { constraint in
             constraint.isActive = true
          }
 
@@ -122,16 +123,10 @@ class ViewController: UIViewController {
                                                                                                    bookingDetails: bookingStatus.getBookingDetails()!, callback: { result in
                                                                                                     self.handleBookedTripResult(result: result)
                                                                                                    })
-
-        background.isHidden = false
-        present(bookingRequestScreen, animated: true, completion: {
-
-        })
+        present(bookingRequestScreen, animated: true, completion: nil)
     }
 
     private func handleBookedTripResult(result: ScreenResult<TripInfo>) {
-        self.background.isHidden = true
-
         if let trip = result.completedValue() {
             self.dismiss(animated: true, completion: nil)
 
