@@ -12,23 +12,26 @@ import SwiftSpinner
 
 class ViewController: UIViewController {
 
-    private lazy var quoteListContainer: UIView = {
-        let container = UIView()
-        container.translatesAutoresizingMaskIntoConstraints = false
-        container.isHidden = true
-        return container
-    }()
-
+    // address bar component
     private lazy var addressBar: AddressBarView = {
         let addressBar = KarhooUI.components.addressBar(journeyInfo: nil)
         addressBar.translatesAutoresizingMaskIntoConstraints = false
         return addressBar
     }()
 
+    // address bar component
     private lazy var quoteList: QuoteListView = {
         let quoteList = KarhooUI.components.quoteList()
         quoteList.set(quoteListActions: self)
         return quoteList
+    }()
+
+    // quote list is a view controller so it must be contained in a view
+    private lazy var quoteListContainer: UIView = {
+        let container = UIView()
+        container.translatesAutoresizingMaskIntoConstraints = false
+        container.isHidden = true
+        return container
     }()
 
     private lazy var background: UIView = {
@@ -48,8 +51,8 @@ class ViewController: UIViewController {
         return label
     }()
 
+    // Observable object shared accross all components / karhoo screens
     private var bookingStatus = KarhooBookingStatus.shared
-    private var observer: Observer<Quotes>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +81,7 @@ class ViewController: UIViewController {
         }
     }
 
+    // layout component constraints
     func setupView() {
         self.view.addSubview(addressBar)
         self.view.addSubview(titleLabel)
@@ -118,6 +122,7 @@ class ViewController: UIViewController {
         quoteList.didMove(toParent: self)
     }
 
+    // show the booking request component (which is actually a screen)
     func showQuote(quote: Quote) {
         let bookingRequestScreen = KarhooUI().screens().bookingRequest().buildBookingRequestScreen(quote: quote,
                                                                                                    bookingDetails: bookingStatus.getBookingDetails()!, callback: { result in
@@ -130,7 +135,7 @@ class ViewController: UIViewController {
         if let trip = result.completedValue() {
             self.dismiss(animated: true, completion: nil)
 
-            SwiftSpinner.show(duration: 10, title: "Allocating Driver", animated: true, completion: {
+            SwiftSpinner.show(duration: 3, title: "Allocating Driver", animated: true, completion: {
                 let tripScreen = KarhooUI().screens().tripScreen().buildTripScreen(trip: trip, callback: {_ in
                     self.dismiss(animated: true, completion: nil)
                 })
@@ -144,6 +149,7 @@ class ViewController: UIViewController {
     }
 }
 
+// called when the user manipulates the pickup / drop off details in the address bar component
 extension ViewController: BookingDetailsObserver {
 
     func bookingStateChanged(details: BookingDetails?) {
@@ -156,6 +162,7 @@ extension ViewController: BookingDetailsObserver {
     }
 }
 
+// Quote list component output
 extension ViewController: QuoteListActions {
     func quotesAvailabilityDidUpdate(availability: Bool) {
         print("quotesAvailabilityDidUpdate: ", availability)

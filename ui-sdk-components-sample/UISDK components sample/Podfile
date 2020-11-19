@@ -1,14 +1,19 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
+def karhooPods
+  pod 'KarhooUISDK', :git => 'https://github.com/karhoo/karhoo-ios-ui-sdk.git', :branch => 'develop'
+  pod 'KarhooSDK', :git => 'https://github.com/karhoo/karhoo-ios-sdk.git', :branch => 'develop'
+end
+
 target 'UIKit Karhoo Component' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+  karhooPods
 
-  # Pods for UIKit Karhoo Component
+  # sample loading spinner until we make our trip allocation spinner in KarhooBookingViewController public
   pod 'SwiftSpinner'
-  pod 'KarhooUISDK', :git => 'https://github.com/karhoo/karhoo-ios-ui-sdk.git', :branch => 'develop'
-  pod 'KarhooSDK', :git => 'https://github.com/karhoo/karhoo-ios-sdk.git', :branch => 'develop'
+
   target 'UIKit Karhoo ComponentTests' do
     inherit! :search_paths
     # Pods for testing
@@ -20,19 +25,9 @@ target 'UIKit Karhoo Component' do
 
 end
 
-target 'UISDK components sample' do
+target 'SwiftUIComponents' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
-  # Pods for UISDK components sample
-
-  target 'UISDK components sampleTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'UISDK components sampleUITests' do
-    # Pods for testing
-  end
-
+  karhooPods
 end
+
