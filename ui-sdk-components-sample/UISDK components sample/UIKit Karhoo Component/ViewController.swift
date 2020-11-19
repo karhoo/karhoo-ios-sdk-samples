@@ -12,6 +12,12 @@ import SwiftSpinner
 
 class ViewController: UIViewController {
 
+    private lazy var quoteListContainer: UIView = {
+        let container = UIView()
+        container.translatesAutoresizingMaskIntoConstraints = false
+        return container
+    }()
+
     private lazy var addressBar: AddressBarView = {
         let addressBar = KarhooUI.components.addressBar(journeyInfo: nil)
         addressBar.translatesAutoresizingMaskIntoConstraints = false
@@ -20,6 +26,7 @@ class ViewController: UIViewController {
 
     private lazy var quoteList: QuoteListView = {
         let quoteList = KarhooUI.components.quoteList()
+        quoteList.set(quoteListActions: self)
         return quoteList
     }()
 
@@ -42,25 +49,29 @@ class ViewController: UIViewController {
 
     private var bookingStatus = KarhooBookingStatus.shared
     private var observer: Observer<Quotes>?
-    private var cheapestFastestQuote: Quote?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
+
         bookingStatus.add(observer: self)
+        startDemo()
+    }
+
+    /* ensure authentication before showing UI */
+    private func startDemo() {
         if Karhoo.configuration.authenticationMethod().guestSettings != nil {
             self.setupView()
         } else {
             let userService = Karhoo.getUserService()
 
             userService.login(userLogin: UserLogin(username: "jeevan.thandi+sandboxtest@karhoo.com",
-                                                   password: "12345678Aa")).execute(callback: { [weak self]
-                                                    result in
+                                                   password: "12345678Aa")).execute(callback: { [weak self] result in
                                                     switch result {
                                                     case .success(_ ):
                                                         self?.setupView()
                                                     case .failure(let error):
-                                                        print("error! \(error ?? nil)")
+                                                        print("error! \(String(describing: error ?? nil))")
                                                     }
                                                    })
         }
@@ -70,14 +81,28 @@ class ViewController: UIViewController {
         self.view.addSubview(addressBar)
         self.view.addSubview(titleLabel)
         self.view.addSubview(background)
+        self.view.addSubview(quoteListContainer)
 
-        [addressBar.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+
+        [titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+         titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0)].forEach { constraint in
+            constraint.isActive = true
+         }
+
+        [addressBar.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
          addressBar.centerXAnchor.constraint(equalTo: view.centerXAnchor),
          addressBar.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10),
          addressBar.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
          addressBar.heightAnchor.constraint(greaterThanOrEqualToConstant: 100)].forEach { constraint in
             constraint.isActive = true
          }
+
+        [quoteListContainer.heightAnchor.constraint(equalToConstant: 400),
+         quoteListContainer.widthAnchor.constraint(equalTo: view.widthAnchor),
+         quoteListContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50)].forEach { constraint in
+            constraint.isActive = true
+         }
+
 
         [background.topAnchor.constraint(equalTo: view.topAnchor),
          background.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -86,20 +111,22 @@ class ViewController: UIViewController {
             constraint.isActive = true
          }
 
-        [titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
-         titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0)].forEach { constraint in
-            constraint.isActive = true
-         }
+        addChild(quoteList)
+        quoteListContainer.addSubview(quoteList.view)
+        quoteList.view.pinEdges(to: quoteListContainer)
+        quoteList.didMove(toParent: self)
     }
 
-    func showQuote() {
-        let bookingRequestScreen = KarhooUI().screens().bookingRequest().buildBookingRequestScreen(quote: cheapestFastestQuote!,
+    func showQuote(quote: Quote) {
+        let bookingRequestScreen = KarhooUI().screens().bookingRequest().buildBookingRequestScreen(quote: quote,
                                                                                                    bookingDetails: bookingStatus.getBookingDetails()!, callback: { result in
                                                                                                     self.handleBookedTripResult(result: result)
                                                                                                    })
 
         background.isHidden = false
-        present(bookingRequestScreen, animated: true, completion: nil)
+        present(bookingRequestScreen, animated: true, completion: {
+
+        })
     }
 
     private func handleBookedTripResult(result: ScreenResult<TripInfo>) {
@@ -119,51 +146,27 @@ class ViewController: UIViewController {
         } else {
             print("booking error", result.errorValue() ?? "")
         }
-
-    }
-    func pollQuotes(origin: LocationInfo, destination: LocationInfo, date: Date?) {
-        let quoteService = Karhoo.getQuoteService()
-
-        SwiftSpinner.show(duration: 10, title: "Looking for a ride", animated: true, completion: {
-            self.showQuote()
-        })
-
-        let quotesObserver = quoteService.quotes(quoteSearch: QuoteSearch(origin: origin,
-                                                                          destination: destination,
-                                                                          dateScheduled: date)).observable()
-
-        observer = Observer<Quotes> { [weak self] result in
-            switch result {
-            case .success(let quotes):
-                print("Quotes: \(quotes.all)")
-                if quotes.all.isEmpty {
-                    return
-                }
-                var allQuotes = quotes.all
-                allQuotes.sort {
-                    $0.price.highPrice < $1.price.lowPrice
-                }
-
-                self?.cheapestFastestQuote = allQuotes[0]
-
-            case .failure(let error): print("Quote error! \(String(describing: error ?? nil))")
-                // handle error (KarhooError)
-                SwiftSpinner.hide()
-            }
-        }
-
-        quotesObserver.subscribe(observer: observer!)
-
     }
 }
 
 extension ViewController: BookingDetailsObserver {
 
     func bookingStateChanged(details: BookingDetails?) {
-        guard let origin = details?.originLocationDetails, let destination = details?.destinationLocationDetails else {
+        guard let _ = details?.originLocationDetails, let _ = details?.destinationLocationDetails else {
+            quoteListContainer.isHidden = true
             return
         }
-        pollQuotes(origin: origin, destination: destination, date: details?.scheduledDate)
+
+        quoteListContainer.isHidden = false
     }
 }
 
+extension ViewController: QuoteListActions {
+    func quotesAvailabilityDidUpdate(availability: Bool) {
+        print("quotesAvailabilityDidUpdate: ", availability)
+    }
+
+    func didSelectQuote(_ quote: Quote) {
+        showQuote(quote: quote)
+    }
+}

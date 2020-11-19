@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,12 +17,13 @@
 		5CB57E092562CD6E0052EC29 /* UISDK_components_sampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E082562CD6E0052EC29 /* UISDK_components_sampleTests.swift */; };
 		5CB57E142562CD6E0052EC29 /* UISDK_components_sampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E132562CD6E0052EC29 /* UISDK_components_sampleUITests.swift */; };
 		5CB57E772562CE860052EC29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E762562CE860052EC29 /* AppDelegate.swift */; };
-		5CB57E792562CE860052EC29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E782562CE860052EC29 /* SceneDelegate.swift */; };
 		5CB57E7B2562CE860052EC29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E7A2562CE860052EC29 /* ViewController.swift */; };
 		5CB57E802562CE870052EC29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB57E7F2562CE870052EC29 /* Assets.xcassets */; };
 		5CB57E832562CE870052EC29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB57E812562CE870052EC29 /* LaunchScreen.storyboard */; };
 		5CB57E8E2562CE870052EC29 /* UIKit_Karhoo_ComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E8D2562CE870052EC29 /* UIKit_Karhoo_ComponentTests.swift */; };
 		5CB57E992562CE870052EC29 /* UIKit_Karhoo_ComponentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E982562CE870052EC29 /* UIKit_Karhoo_ComponentUITests.swift */; };
+		5CB57F1F2565FD230052EC29 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57F1E2565FD220052EC29 /* Secrets.swift */; };
+		5CB57F202565FD230052EC29 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57F1E2565FD220052EC29 /* Secrets.swift */; };
 		9D9098B9AD9068352DF3BE20 /* Pods_UISDK_components_sampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7CBA1090734955454BDDD0 /* Pods_UISDK_components_sampleTests.framework */; };
 		A8379029EA5BA88B2B659E75 /* Pods_UIKit_Karhoo_ComponentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 443FC9BE8977F842585FB5C6 /* Pods_UIKit_Karhoo_ComponentTests.framework */; };
 		ACA234F05AA33B7A93161A1B /* Pods_UIKit_Karhoo_Component_UIKit_Karhoo_ComponentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA2677591EABF0BC8B5418E /* Pods_UIKit_Karhoo_Component_UIKit_Karhoo_ComponentUITests.framework */; };
@@ -84,7 +85,6 @@
 		5CB57E152562CD6E0052EC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CB57E742562CE860052EC29 /* UIKit Karhoo Component.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit Karhoo Component.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CB57E762562CE860052EC29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5CB57E782562CE860052EC29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5CB57E7A2562CE860052EC29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5CB57E7F2562CE870052EC29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CB57E822562CE870052EC29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -95,6 +95,7 @@
 		5CB57E942562CE870052EC29 /* UIKit Karhoo ComponentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIKit Karhoo ComponentUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CB57E982562CE870052EC29 /* UIKit_Karhoo_ComponentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_Karhoo_ComponentUITests.swift; sourceTree = "<group>"; };
 		5CB57E9A2562CE870052EC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CB57F1E2565FD220052EC29 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		6BB8B7E56D24B0121E89DB10 /* Pods-UISDK components sample-UISDK components sampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UISDK components sample-UISDK components sampleUITests.release.xcconfig"; path = "Target Support Files/Pods-UISDK components sample-UISDK components sampleUITests/Pods-UISDK components sample-UISDK components sampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8BC5ECF88704955A6D419FA0 /* Pods-UISDK components sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UISDK components sample.release.xcconfig"; path = "Target Support Files/Pods-UISDK components sample/Pods-UISDK components sample.release.xcconfig"; sourceTree = "<group>"; };
 		AB3236B58EF1C26AF7E55AA4 /* Pods_UISDK_components_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UISDK_components_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +164,7 @@
 		5CB57DE62562CD6B0052EC29 = {
 			isa = PBXGroup;
 			children = (
+				5CB57F1E2565FD220052EC29 /* Secrets.swift */,
 				5CB57DF12562CD6B0052EC29 /* UISDK components sample */,
 				5CB57E072562CD6E0052EC29 /* UISDK components sampleTests */,
 				5CB57E122562CD6E0052EC29 /* UISDK components sampleUITests */,
@@ -232,7 +234,6 @@
 			isa = PBXGroup;
 			children = (
 				5CB57E762562CE860052EC29 /* AppDelegate.swift */,
-				5CB57E782562CE860052EC29 /* SceneDelegate.swift */,
 				5CB57E7A2562CE860052EC29 /* ViewController.swift */,
 				5CB57E7F2562CE870052EC29 /* Assets.xcassets */,
 				5CB57E812562CE870052EC29 /* LaunchScreen.storyboard */,
@@ -288,7 +289,6 @@
 				10BE01C6E584D08C274A55A6 /* Pods-UISDK components sampleTests.debug.xcconfig */,
 				F5DE1FC4CB0B1A3722594A51 /* Pods-UISDK components sampleTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -690,6 +690,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CB57DF52562CD6B0052EC29 /* ContentView.swift in Sources */,
+				5CB57F1F2565FD230052EC29 /* Secrets.swift in Sources */,
 				5CB57DF32562CD6B0052EC29 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -715,8 +716,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CB57E7B2562CE860052EC29 /* ViewController.swift in Sources */,
+				5CB57F202565FD230052EC29 /* Secrets.swift in Sources */,
 				5CB57E772562CE860052EC29 /* AppDelegate.swift in Sources */,
-				5CB57E792562CE860052EC29 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
