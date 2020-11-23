@@ -1,8 +1,8 @@
 //
-//  ViewControllerLogic.swift
+//  ViewControllerPresenter.swift
 //  UIKit Karhoo Component
 //
-//  Created by Jeevan Thandi on 23/11/2020.
+//  Copyright © 2020 Karhoo. All rights reserved.
 //
 
 import Foundation

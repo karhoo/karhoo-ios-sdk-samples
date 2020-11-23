@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  UIKit Karhoo Component
 //
-//  Created by Jeevan Thandi on 16/11/2020.
+//  Copyright © 2020 Karhoo. All rights reserved.
 //
 
 import UIKit

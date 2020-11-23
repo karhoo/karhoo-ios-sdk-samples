@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  SwiftUIComponents
 //
-//  Created by Jeevan Thandi on 19/11/2020.
+//  Copyright © 2020 Karhoo. All rights reserved.
 //
 
 import SwiftUI

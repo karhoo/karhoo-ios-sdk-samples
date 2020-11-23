@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  DemoComponent
+//  UIKit Karhoo Component
 //
 //  Copyright © 2020 Karhoo. All rights reserved.
 //
@@ -43,15 +43,6 @@ class ViewController: UIViewController, SampleView {
         return container
     }()
 
-    private lazy var background: UIView = {
-        let view = UIView()
-        view.backgroundColor = .black
-        view.alpha = 0.6
-        view.isHidden = true
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Karhoo UIKit Components Demo"
@@ -73,7 +64,6 @@ class ViewController: UIViewController, SampleView {
     func setUpView() {
         self.view.addSubview(addressBar)
         self.view.addSubview(titleLabel)
-        self.view.addSubview(background)
         self.view.addSubview(quoteListContainer)
 
 
@@ -96,13 +86,6 @@ class ViewController: UIViewController, SampleView {
             constraint.isActive = true
          }
 
-        [background.topAnchor.constraint(equalTo: view.topAnchor),
-         background.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-         background.leftAnchor.constraint(equalTo: view.leftAnchor),
-         background.rightAnchor.constraint(equalTo: view.rightAnchor)].forEach { constraint in
-            constraint.isActive = true
-         }
-
         addChild(quoteList)
         quoteListContainer.addSubview(quoteList.view)
         quoteList.view.pinEdges(to: quoteListContainer)
@@ -120,9 +103,7 @@ class ViewController: UIViewController, SampleView {
     func presentView(viewController: UIViewController) {
         self.present(viewController, animated: true, completion: nil)
     }
-
 }
-
 
 // Quote list component output
 extension ViewController: QuoteListActions {
