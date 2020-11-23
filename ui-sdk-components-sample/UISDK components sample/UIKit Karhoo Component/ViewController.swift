@@ -10,7 +10,16 @@ import KarhooUISDK
 import KarhooSDK
 import SwiftSpinner
 
-class ViewController: UIViewController {
+protocol SampleView {
+    func setUpView()
+    func quoteListHidden(_ hidden: Bool)
+    func dismissTopViewController()
+    func presentView(viewController: UIViewController)
+}
+
+class ViewController: UIViewController, SampleView {
+
+    let presenter: ViewControllerPresenter = ViewControllerPresenter()
 
     // address bar component
     private lazy var addressBar: AddressBarView = {
@@ -57,32 +66,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
-
-        bookingStatus.add(observer: self)
-        startDemo()
-    }
-
-    /* ensure authentication before showing UI */
-    private func startDemo() {
-        if Karhoo.configuration.authenticationMethod().guestSettings != nil {
-            self.setupView()
-        } else {
-            let userService = Karhoo.getUserService()
-
-            userService.login(userLogin: UserLogin(username: "jeevan.thandi+sandboxtest@karhoo.com",
-                                                   password: "12345678Aa")).execute(callback: { [weak self] result in
-                                                    switch result {
-                                                    case .success(_ ):
-                                                        self?.setupView()
-                                                    case .failure(let error):
-                                                        print("error! \(String(describing: error ?? nil))")
-                                                    }
-                                                   })
-        }
+        presenter.didLoad(view: self)
     }
 
     // layout component constraints
-    func setupView() {
+    func setUpView() {
         self.view.addSubview(addressBar)
         self.view.addSubview(titleLabel)
         self.view.addSubview(background)
@@ -121,45 +109,20 @@ class ViewController: UIViewController {
         quoteList.didMove(toParent: self)
     }
 
-    // show the booking request component (which is actually a screen)
-    func showQuote(quote: Quote) {
-        let bookingRequestScreen = KarhooUI().screens().bookingRequest().buildBookingRequestScreen(quote: quote,
-                                                                                                   bookingDetails: bookingStatus.getBookingDetails()!, callback: { result in
-                                                                                                    self.handleBookedTripResult(result: result)
-                                                                                                   })
-        present(bookingRequestScreen, animated: true, completion: nil)
+    func quoteListHidden(_ hidden: Bool) {
+        quoteListContainer.isHidden = hidden
     }
 
-    private func handleBookedTripResult(result: ScreenResult<TripInfo>) {
-        if let trip = result.completedValue() {
-            self.dismiss(animated: true, completion: nil)
-
-            SwiftSpinner.show(duration: 3, title: "Allocating Driver", animated: true, completion: {
-                let tripScreen = KarhooUI().screens().tripScreen().buildTripScreen(trip: trip, callback: {_ in
-                    self.dismiss(animated: true, completion: nil)
-                })
-
-                self.present(tripScreen, animated: true, completion: nil)
-            })
-
-        } else {
-            print("booking error", result.errorValue() ?? "")
-        }
+    func dismissTopViewController() {
+        self.dismiss(animated: true, completion: nil)
     }
+
+    func presentView(viewController: UIViewController) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+
 }
 
-// called when the user manipulates the pickup / drop off details in the address bar component
-extension ViewController: BookingDetailsObserver {
-
-    func bookingStateChanged(details: BookingDetails?) {
-        guard let _ = details?.originLocationDetails, let _ = details?.destinationLocationDetails else {
-            quoteListContainer.isHidden = true
-            return
-        }
-
-        quoteListContainer.isHidden = false
-    }
-}
 
 // Quote list component output
 extension ViewController: QuoteListActions {
@@ -168,6 +131,6 @@ extension ViewController: QuoteListActions {
     }
 
     func didSelectQuote(_ quote: Quote) {
-        showQuote(quote: quote)
+        presenter.didSelect(quote: quote)
     }
 }

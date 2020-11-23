@@ -21,6 +21,7 @@
 		5CB57F932566F1A00052EC29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB57F922566F1A00052EC29 /* Preview Assets.xcassets */; };
 		5CB57F9D2566F2380052EC29 /* AddressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57F9C2566F2380052EC29 /* AddressBar.swift */; };
 		5CB57FB82566F71A0052EC29 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57F1E2565FD220052EC29 /* Secrets.swift */; };
+		5CB58092256B365C0052EC29 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB58091256B365C0052EC29 /* ViewControllerPresenter.swift */; };
 		A8379029EA5BA88B2B659E75 /* Pods_UIKit_Karhoo_ComponentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 443FC9BE8977F842585FB5C6 /* Pods_UIKit_Karhoo_ComponentTests.framework */; };
 		ACA234F05AA33B7A93161A1B /* Pods_UIKit_Karhoo_Component_UIKit_Karhoo_ComponentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA2677591EABF0BC8B5418E /* Pods_UIKit_Karhoo_Component_UIKit_Karhoo_ComponentUITests.framework */; };
 		DCE215BAAB43710253A80083 /* Pods_UIKit_Karhoo_Component.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5313C7E03C7991DE6E06B70B /* Pods_UIKit_Karhoo_Component.framework */; };
@@ -72,6 +73,7 @@
 		5CB57F922566F1A00052EC29 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5CB57F942566F1A00052EC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CB57F9C2566F2380052EC29 /* AddressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBar.swift; sourceTree = "<group>"; };
+		5CB58091256B365C0052EC29 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
 		6BB8B7E56D24B0121E89DB10 /* Pods-UISDK components sample-UISDK components sampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UISDK components sample-UISDK components sampleUITests.release.xcconfig"; path = "Target Support Files/Pods-UISDK components sample-UISDK components sampleUITests/Pods-UISDK components sample-UISDK components sampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8137A6399844DBE415957E35 /* Pods-SwiftUIComponents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUIComponents.release.xcconfig"; path = "Target Support Files/Pods-SwiftUIComponents/Pods-SwiftUIComponents.release.xcconfig"; sourceTree = "<group>"; };
 		8BC5ECF88704955A6D419FA0 /* Pods-UISDK components sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UISDK components sample.release.xcconfig"; path = "Target Support Files/Pods-UISDK components sample/Pods-UISDK components sample.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				5CB57E762562CE860052EC29 /* AppDelegate.swift */,
 				5CB57E7A2562CE860052EC29 /* ViewController.swift */,
+				5CB58091256B365C0052EC29 /* ViewControllerPresenter.swift */,
 				5CB57E7F2562CE870052EC29 /* Assets.xcassets */,
 				5CB57E812562CE870052EC29 /* LaunchScreen.storyboard */,
 				5CB57E842562CE870052EC29 /* Info.plist */,
@@ -543,6 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CB57E7B2562CE860052EC29 /* ViewController.swift in Sources */,
+				5CB58092256B365C0052EC29 /* ViewControllerPresenter.swift in Sources */,
 				5CB57F202565FD230052EC29 /* Secrets.swift in Sources */,
 				5CB57E772562CE860052EC29 /* AppDelegate.swift in Sources */,
 			);

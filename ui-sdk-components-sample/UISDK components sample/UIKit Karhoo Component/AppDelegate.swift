@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BTAppSwitch.setReturnURLScheme(AppDelegate.braintree3DsURLScheme)
 
         window = UIWindow()
-        let mainView = ViewController()
-        window?.rootViewController = mainView
+        let viewController = ViewController()
+        window?.rootViewController = viewController
         window?.makeKeyAndVisible()
         return true
     }
