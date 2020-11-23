@@ -108,7 +108,6 @@ class ViewController: UIViewController {
             constraint.isActive = true
          }
 
-
         [background.topAnchor.constraint(equalTo: view.topAnchor),
          background.bottomAnchor.constraint(equalTo: view.bottomAnchor),
          background.leftAnchor.constraint(equalTo: view.leftAnchor),

@@ -20,6 +20,7 @@
 		5CB57F902566F1A00052EC29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB57F8F2566F1A00052EC29 /* Assets.xcassets */; };
 		5CB57F932566F1A00052EC29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB57F922566F1A00052EC29 /* Preview Assets.xcassets */; };
 		5CB57F9D2566F2380052EC29 /* AddressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57F9C2566F2380052EC29 /* AddressBar.swift */; };
+		5CB57FB82566F71A0052EC29 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57F1E2565FD220052EC29 /* Secrets.swift */; };
 		A8379029EA5BA88B2B659E75 /* Pods_UIKit_Karhoo_ComponentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 443FC9BE8977F842585FB5C6 /* Pods_UIKit_Karhoo_ComponentTests.framework */; };
 		ACA234F05AA33B7A93161A1B /* Pods_UIKit_Karhoo_Component_UIKit_Karhoo_ComponentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA2677591EABF0BC8B5418E /* Pods_UIKit_Karhoo_Component_UIKit_Karhoo_ComponentUITests.framework */; };
 		DCE215BAAB43710253A80083 /* Pods_UIKit_Karhoo_Component.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5313C7E03C7991DE6E06B70B /* Pods_UIKit_Karhoo_Component.framework */; };
@@ -568,6 +569,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CB57F9D2566F2380052EC29 /* AddressBar.swift in Sources */,
+				5CB57FB82566F71A0052EC29 /* Secrets.swift in Sources */,
 				5CB57F8E2566F19E0052EC29 /* ContentView.swift in Sources */,
 				5CB57F8C2566F19E0052EC29 /* SwiftUIComponentsApp.swift in Sources */,
 			);
