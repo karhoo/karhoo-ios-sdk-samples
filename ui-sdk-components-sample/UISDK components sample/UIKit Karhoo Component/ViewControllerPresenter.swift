@@ -44,6 +44,7 @@ final class ViewControllerPresenter: SampleViewControllerPresenter {
         }
     }
 
+    // QuoteList component output
     func didSelect(quote: Quote) {
         let bookingRequestScreen = KarhooUI()
             .screens()
@@ -56,6 +57,7 @@ final class ViewControllerPresenter: SampleViewControllerPresenter {
         view?.presentView(viewController: bookingRequestScreen)
     }
 
+    // BookingRequestScreen output
     private func handleBookingResult(_ result: ScreenResult<TripInfo>) {
         if let trip = result.completedValue() {
             view?.dismissTopViewController()

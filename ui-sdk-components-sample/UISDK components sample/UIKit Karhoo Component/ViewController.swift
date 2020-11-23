@@ -21,21 +21,21 @@ class ViewController: UIViewController {
 
     let presenter: ViewControllerPresenter = ViewControllerPresenter()
 
-    // address bar component
+    // addressBar: Allows user to set booking details
     private lazy var addressBar: AddressBarView = {
         let addressBar = KarhooUI.components.addressBar(journeyInfo: nil)
         addressBar.translatesAutoresizingMaskIntoConstraints = false
         return addressBar
     }()
 
-    // address bar component
+    // A scrollable list of quotes based on the set booking details
     private lazy var quoteList: QuoteListView = {
         let quoteList = KarhooUI.components.quoteList()
         quoteList.set(quoteListActions: self)
         return quoteList
     }()
 
-    // quote list is a view controller so it must be contained in a view
+    // QuoteList component is a view controller so it must be contained to be embedded
     private lazy var quoteListContainer: UIView = {
         let container = UIView()
         container.translatesAutoresizingMaskIntoConstraints = false
@@ -51,16 +51,13 @@ class ViewController: UIViewController {
         return label
     }()
 
-    // Observable object shared accross all components / karhoo screens
-    private var bookingStatus = KarhooBookingStatus.shared
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
         presenter.didLoad(view: self)
     }
 
-    // layout component constraints
+    // layout component constraints / Alternatively bind through storyboard
     func setUpView() {
         self.view.addSubview(addressBar)
         self.view.addSubview(titleLabel)
