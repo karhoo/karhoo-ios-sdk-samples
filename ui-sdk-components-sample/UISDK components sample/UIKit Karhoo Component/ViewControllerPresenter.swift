@@ -80,6 +80,7 @@ final class ViewControllerPresenter: SampleViewControllerPresenter {
     }
 }
 
+// any component can listen and publish the details of a booking in progress
 extension ViewControllerPresenter: BookingDetailsObserver {
 
     func bookingStateChanged(details: BookingDetails?) {

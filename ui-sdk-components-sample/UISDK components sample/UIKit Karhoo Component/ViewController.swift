@@ -17,7 +17,7 @@ protocol SampleView {
     func presentView(viewController: UIViewController)
 }
 
-class ViewController: UIViewController, SampleView {
+class ViewController: UIViewController {
 
     let presenter: ViewControllerPresenter = ViewControllerPresenter()
 
@@ -91,7 +91,10 @@ class ViewController: UIViewController, SampleView {
         quoteList.view.pinEdges(to: quoteListContainer)
         quoteList.didMove(toParent: self)
     }
+}
 
+// ViewControllers external interface
+extension ViewController: SampleView {
     func quoteListHidden(_ hidden: Bool) {
         quoteListContainer.isHidden = hidden
     }
