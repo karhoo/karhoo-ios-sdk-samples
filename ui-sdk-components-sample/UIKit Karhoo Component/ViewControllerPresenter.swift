@@ -33,6 +33,9 @@ final class ViewControllerPresenter: SampleViewControllerPresenter {
         } else {
             let userService = Karhoo.getUserService()
 
+            // flush access
+            userService.logout().execute(callback: {_ in})
+
             userService.login(userLogin: Keys.userLogin).execute(callback: { [weak self] result in
                                                     switch result {
                                                     case .success(_ ):
@@ -62,7 +65,7 @@ final class ViewControllerPresenter: SampleViewControllerPresenter {
         if let trip = result.completedValue() {
             view?.dismissTopViewController()
 
-            SwiftSpinner.show(duration: 3,
+            SwiftSpinner.show(duration: 10,
                               title: "Allocating Driver",
                               animated: true,
                               completion: {

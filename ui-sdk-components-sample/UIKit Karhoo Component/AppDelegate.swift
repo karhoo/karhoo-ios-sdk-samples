@@ -13,7 +13,7 @@ import Braintree
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    static let braintree3DsURLScheme = "karhoo.components.sample.payments"
+    static let braintree3DsURLScheme = "karhoo.UIKit-Karhoo-Component.braintree"
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // support braintree
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any]) -> Bool {
-        if url.scheme?.localizedCaseInsensitiveCompare("karhoo.traveller.sandbox.braintree") == .orderedSame {
+        if url.scheme?.localizedCaseInsensitiveCompare(AppDelegate.braintree3DsURLScheme) == .orderedSame {
             return BTAppSwitch.handleOpen(url, options: options)
         }
         return false

@@ -22,10 +22,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>App-Payments-Sandbox</string>
+			<string>karhoo.UIKit-Karhoo-Component.braintree</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>karhoo.traveller.sandbox.braintree</string>
+				<string>karhoo.UIKit-Karhoo-Component.braintree</string>
 			</array>
 		</dict>
 	</array>

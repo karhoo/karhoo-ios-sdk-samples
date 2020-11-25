@@ -6,6 +6,7 @@ Samples demonstrating how to use
 This repo contains the following sample:
 
 1. [network-sdk-swiftui-sample](network-sdk-swiftui-sample): A simple app showing most features of the [Karhoo Network SDK](https://developer.karhoo.com/docs/using-the-network-sdk) for SwiftUI.
+2. [ui-sdk-components-sample](ui-sdk-components-sample): A simple app showing usage examples of Karhoo components found in the KarhooUISDK.
 
 ## Pre-requisites
 
@@ -17,6 +18,7 @@ Make sure you are in the right folder (e.g. network-sdk-swiftui-sample)
 Run `pod install`
 Open xcworkspace file (e.g. Network SDK SwiftUI Sample.xcworkspace)
 
+As well as a component sample project in this directory, a guide to the iOS components can be found ![here](https://github.com/karhoo/karhoo-ios-ui-sdk/blob/develop/components.md)
 ## Support
 
 _Looking to contribute?_
