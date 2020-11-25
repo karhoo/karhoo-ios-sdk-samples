@@ -10,41 +10,19 @@ import KarhooUISDK
 import KarhooSDK
 import SwiftSpinner
 
-protocol SampleViewControllerPresenter {
-    func didLoad(view: SampleView)
+protocol ComponentSamplePresenterP {
+    func didLoad(view: ComponentSampleViewControllerP)
     func didSelect(quote: Quote)
 }
 
-final class ViewControllerPresenter: SampleViewControllerPresenter {
+final class ComponentSamplePresenter: ComponentSamplePresenterP {
 
-    var view: SampleView? = nil
+    var view: ComponentSampleViewControllerP? = nil
     private var bookingStatus = KarhooBookingStatus.shared
 
-    func didLoad(view: SampleView) {
+    func didLoad(view: ComponentSampleViewControllerP) {
         self.view = view
         bookingStatus.add(observer: self)
-        authenticateAndStartDemo()
-    }
-
-    /* ensure authentication before showing UI */
-    private func authenticateAndStartDemo() {
-        if Karhoo.configuration.authenticationMethod().guestSettings != nil {
-            view?.setUpView()
-        } else {
-            let userService = Karhoo.getUserService()
-
-            // flush access
-            userService.logout().execute(callback: {_ in})
-
-            userService.login(userLogin: Keys.userLogin).execute(callback: { [weak self] result in
-                                                    switch result {
-                                                    case .success(_ ):
-                                                        self?.view?.setUpView()
-                                                    case .failure(let error):
-                                                        print("error! \(String(describing: error ?? nil))")
-                                                    }
-                                                   })
-        }
     }
 
     // QuoteList component output
@@ -87,7 +65,7 @@ final class ViewControllerPresenter: SampleViewControllerPresenter {
 
 // any component can listen and publish the details of a booking in progress
 // the address bar component writes to this observer and the quote list listens.
-extension ViewControllerPresenter: BookingDetailsObserver {
+extension ComponentSamplePresenter: BookingDetailsObserver {
 
     func bookingStateChanged(details: BookingDetails?) {
         guard let _ = details?.originLocationDetails, let _ = details?.destinationLocationDetails else {

@@ -20,14 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         KarhooUI.set(configuration: KarhooConfig())
         BTAppSwitch.setReturnURLScheme(AppDelegate.braintree3DsURLScheme)
-
         window = UIWindow()
-        let viewController = ViewController()
+
+        let viewController = LoginViewController()
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
         return true
     }
-
+    
     // support braintree
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any]) -> Bool {
         if url.scheme?.localizedCaseInsensitiveCompare(AppDelegate.braintree3DsURLScheme) == .orderedSame {

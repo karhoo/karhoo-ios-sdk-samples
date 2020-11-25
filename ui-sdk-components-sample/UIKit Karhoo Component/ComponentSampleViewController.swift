@@ -10,16 +10,16 @@ import KarhooUISDK
 import KarhooSDK
 import SwiftSpinner
 
-protocol SampleView {
+protocol ComponentSampleViewControllerP {
     func setUpView()
     func quoteListHidden(_ hidden: Bool)
     func dismissTopViewController()
     func presentView(viewController: UIViewController)
 }
 
-class ViewController: UIViewController {
+class ComponentSampleViewController: UIViewController {
 
-    let presenter: ViewControllerPresenter = ViewControllerPresenter()
+    let presenter: ComponentSamplePresenterP = ComponentSamplePresenter()
 
     // addressBar: Allows user to set booking details
     private lazy var addressBar: AddressBarView = {
@@ -51,10 +51,15 @@ class ViewController: UIViewController {
         return label
     }()
 
+    private lazy var signOutButton: UIButton = {
+        return UIBuilder.button(title: "Sign Out", titleColor: .red)
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
         presenter.didLoad(view: self)
+        setUpView()
     }
 
     // layout component constraints / Alternatively bind through storyboard
@@ -62,9 +67,16 @@ class ViewController: UIViewController {
         self.view.addSubview(addressBar)
         self.view.addSubview(titleLabel)
         self.view.addSubview(quoteListContainer)
+        self.view.addSubview(signOutButton)
 
+        signOutButton.addTarget(self, action: #selector(signOutPressed), for: .touchUpInside)
 
-        [titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+        [signOutButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+         signOutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)].forEach { constraint in
+            constraint.isActive = true
+         }
+
+        [titleLabel.topAnchor.constraint(equalTo: signOutButton.bottomAnchor, constant: 50),
          titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0)].forEach { constraint in
             constraint.isActive = true
          }
@@ -88,10 +100,18 @@ class ViewController: UIViewController {
         quoteList.view.pinEdges(to: quoteListContainer)
         quoteList.didMove(toParent: self)
     }
+
+    @objc private func signOutPressed() {
+        KarhooBookingStatus.shared.reset()
+        let userService = Karhoo.getUserService()
+        userService.logout().execute { [weak self] _ in
+            self?.dismiss(animated: true, completion: nil)
+        }
+    }
 }
 
 // ViewControllers external interface
-extension ViewController: SampleView {
+extension ComponentSampleViewController: ComponentSampleViewControllerP {
     func quoteListHidden(_ hidden: Bool) {
         quoteListContainer.isHidden = hidden
     }
@@ -106,7 +126,7 @@ extension ViewController: SampleView {
 }
 
 // Quote list component output
-extension ViewController: QuoteListActions {
+extension ComponentSampleViewController: QuoteListActions {
     func quotesAvailabilityDidUpdate(availability: Bool) {
         print("quotesAvailabilityDidUpdate: ", availability)
     }
