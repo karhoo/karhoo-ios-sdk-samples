@@ -9,8 +9,7 @@ This repo contains the following sample:
 
 ## Pre-requisites
 
-A valid Karhoo Sandbox account
-All require up-to-date version of the XCode
+To initialise the KarhooSDKs in this sample you will need access credentials; these can be obtained through ![our contact form at the bottom of this page](https://www.karhoo.com/api-sdk-integrations/) Once you have the credentials they can be provided to the SDKs in the sample AppDelegate files as a ![KarhooSDKConfiguration object](https://developer.karhoo.com/docs/using-the-network-sdk#ios-1)
 
 ## Getting Started
 
