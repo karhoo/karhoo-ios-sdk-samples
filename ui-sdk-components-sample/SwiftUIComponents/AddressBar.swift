@@ -18,12 +18,3 @@ struct AddressBar: UIViewRepresentable {
 
     func updateUIView(_ uiView: UIView, context: Context) {}
 }
-
-struct QuoteList: UIViewControllerRepresentable {
-
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
-
-    func makeUIViewController(context: Context) -> some UIViewController {
-        return KarhooUI.components.quoteList()
-    }
-}

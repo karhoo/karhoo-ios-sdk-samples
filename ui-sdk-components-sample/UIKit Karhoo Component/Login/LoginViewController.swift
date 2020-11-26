@@ -65,6 +65,10 @@ final class LoginViewController: UIViewController {
             $0.isActive = true
         }
 
+        [passwordTextField, emailTextField].forEach { field in
+            field.pinLeftRightEdegs(to: view, leading: 20, trailing: -20)
+        }
+        
         signInButton.addTarget(self, action: #selector(signInPressed), for: .touchUpInside)
     }
 
