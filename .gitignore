@@ -32,6 +32,7 @@ playground.xcworkspace
 
 ## secrets
 ui-sdk-components-sample/Secrets.swift
+Secrets.swift
 
 # Swift Package Manager
 #
