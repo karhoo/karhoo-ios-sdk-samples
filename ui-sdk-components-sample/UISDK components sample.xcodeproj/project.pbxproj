@@ -10,19 +10,19 @@
 		06DBEC877B9EDE1475B374A2 /* Pods_SwiftUIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD68AC04618C3DDA3ED4687 /* Pods_SwiftUIComponents.framework */; };
 		5C9DCB4F256ED0FA00A29965 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DCB4E256ED0FA00A29965 /* LoginViewController.swift */; };
 		5C9DCB82256EE09A00A29965 /* UIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DCB81256EE09A00A29965 /* UIBuilder.swift */; };
+		5C9DCBC4256FB76000A29965 /* KarhooConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DCBC3256FB76000A29965 /* KarhooConfig.swift */; };
+		5C9DCBC9256FB7EC00A29965 /* KarhooConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DCBC3256FB76000A29965 /* KarhooConfig.swift */; };
 		5CB57E772562CE860052EC29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E762562CE860052EC29 /* AppDelegate.swift */; };
 		5CB57E7B2562CE860052EC29 /* ComponentSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E7A2562CE860052EC29 /* ComponentSampleViewController.swift */; };
 		5CB57E802562CE870052EC29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB57E7F2562CE870052EC29 /* Assets.xcassets */; };
 		5CB57E832562CE870052EC29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB57E812562CE870052EC29 /* LaunchScreen.storyboard */; };
 		5CB57E8E2562CE870052EC29 /* UIKit_Karhoo_ComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E8D2562CE870052EC29 /* UIKit_Karhoo_ComponentTests.swift */; };
 		5CB57E992562CE870052EC29 /* UIKit_Karhoo_ComponentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E982562CE870052EC29 /* UIKit_Karhoo_ComponentUITests.swift */; };
-		5CB57F202565FD230052EC29 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57F1E2565FD220052EC29 /* Secrets.swift */; };
 		5CB57F8C2566F19E0052EC29 /* SwiftUIComponentsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57F8B2566F19E0052EC29 /* SwiftUIComponentsApp.swift */; };
 		5CB57F8E2566F19E0052EC29 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57F8D2566F19E0052EC29 /* ContentView.swift */; };
 		5CB57F902566F1A00052EC29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB57F8F2566F1A00052EC29 /* Assets.xcassets */; };
 		5CB57F932566F1A00052EC29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB57F922566F1A00052EC29 /* Preview Assets.xcassets */; };
 		5CB57F9D2566F2380052EC29 /* AddressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57F9C2566F2380052EC29 /* AddressBar.swift */; };
-		5CB57FB82566F71A0052EC29 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57F1E2565FD220052EC29 /* Secrets.swift */; };
 		5CB58092256B365C0052EC29 /* ComponentSamplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB58091256B365C0052EC29 /* ComponentSamplePresenter.swift */; };
 		A8379029EA5BA88B2B659E75 /* Pods_UIKit_Karhoo_ComponentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 443FC9BE8977F842585FB5C6 /* Pods_UIKit_Karhoo_ComponentTests.framework */; };
 		ACA234F05AA33B7A93161A1B /* Pods_UIKit_Karhoo_Component_UIKit_Karhoo_ComponentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA2677591EABF0BC8B5418E /* Pods_UIKit_Karhoo_Component_UIKit_Karhoo_ComponentUITests.framework */; };
@@ -57,6 +57,7 @@
 		5313C7E03C7991DE6E06B70B /* Pods_UIKit_Karhoo_Component.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIKit_Karhoo_Component.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9DCB4E256ED0FA00A29965 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5C9DCB81256EE09A00A29965 /* UIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBuilder.swift; sourceTree = "<group>"; };
+		5C9DCBC3256FB76000A29965 /* KarhooConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KarhooConfig.swift; sourceTree = "<group>"; };
 		5CB57E742562CE860052EC29 /* UIKit Karhoo Component.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit Karhoo Component.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CB57E762562CE860052EC29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CB57E7A2562CE860052EC29 /* ComponentSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentSampleViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +70,6 @@
 		5CB57E942562CE870052EC29 /* UIKit Karhoo ComponentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIKit Karhoo ComponentUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CB57E982562CE870052EC29 /* UIKit_Karhoo_ComponentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_Karhoo_ComponentUITests.swift; sourceTree = "<group>"; };
 		5CB57E9A2562CE870052EC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5CB57F1E2565FD220052EC29 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		5CB57F892566F19D0052EC29 /* SwiftUIComponents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIComponents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CB57F8B2566F19E0052EC29 /* SwiftUIComponentsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIComponentsApp.swift; sourceTree = "<group>"; };
 		5CB57F8D2566F19E0052EC29 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -140,7 +140,6 @@
 		5CB57DE62562CD6B0052EC29 = {
 			isa = PBXGroup;
 			children = (
-				5CB57F1E2565FD220052EC29 /* Secrets.swift */,
 				5CB57E752562CE860052EC29 /* UIKit Karhoo Component */,
 				5CB57E8C2562CE870052EC29 /* UIKit Karhoo ComponentTests */,
 				5CB57E972562CE870052EC29 /* UIKit Karhoo ComponentUITests */,
@@ -167,6 +166,7 @@
 			children = (
 				5C9DCB81256EE09A00A29965 /* UIBuilder.swift */,
 				5CB57E762562CE860052EC29 /* AppDelegate.swift */,
+				5C9DCBC3256FB76000A29965 /* KarhooConfig.swift */,
 				5CB57E7A2562CE860052EC29 /* ComponentSampleViewController.swift */,
 				5CB58091256B365C0052EC29 /* ComponentSamplePresenter.swift */,
 				5C9DCB80256EE07F00A29965 /* Login */,
@@ -561,10 +561,10 @@
 			files = (
 				5CB57E7B2562CE860052EC29 /* ComponentSampleViewController.swift in Sources */,
 				5CB58092256B365C0052EC29 /* ComponentSamplePresenter.swift in Sources */,
-				5CB57F202565FD230052EC29 /* Secrets.swift in Sources */,
 				5C9DCB4F256ED0FA00A29965 /* LoginViewController.swift in Sources */,
 				5CB57E772562CE860052EC29 /* AppDelegate.swift in Sources */,
 				5C9DCB82256EE09A00A29965 /* UIBuilder.swift in Sources */,
+				5C9DCBC4256FB76000A29965 /* KarhooConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,9 +589,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CB57F9D2566F2380052EC29 /* AddressBar.swift in Sources */,
-				5CB57FB82566F71A0052EC29 /* Secrets.swift in Sources */,
 				5CB57F8E2566F19E0052EC29 /* ContentView.swift in Sources */,
 				5CB57F8C2566F19E0052EC29 /* SwiftUIComponentsApp.swift in Sources */,
+				5C9DCBC9256FB7EC00A29965 /* KarhooConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

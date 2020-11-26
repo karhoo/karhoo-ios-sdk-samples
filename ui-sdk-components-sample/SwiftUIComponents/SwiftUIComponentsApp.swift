@@ -29,7 +29,7 @@ struct SwiftUIComponentsApp: App {
         } else {
             let userService = Karhoo.getUserService()
 
-            userService.login(userLogin: Keys.userLogin).execute(callback: { result in
+            userService.login(userLogin: UserLogin(username: "", password: "")).execute(callback: { result in
                                                     switch result {
                                                     case .success(_ ):
                                                         break
