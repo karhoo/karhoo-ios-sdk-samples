@@ -3,14 +3,16 @@
 Samples demonstrating how to use
 [Karhoo SDKs for iOS](https://developer.karhoo.com/docs/build-apps-using-sdks).
 
-This repo contains the following sample:
+1. [network-sdk-swiftui-sample](network-sdk-swiftui-sample): An experimental simple app showing most features of the [Karhoo Network SDK](https://developer.karhoo.com/docs/using-the-network-sdk) for SwiftUI.
+2. [ui-sdk-components-sample](ui-sdk-components-sample): A simple app showing usage examples of Karhoo components found in the KarhooUISDK for UIKit and an experimental SwiftUI target.
 
-1. [network-sdk-swiftui-sample](network-sdk-swiftui-sample): A simple app showing most features of the [Karhoo Network SDK](https://developer.karhoo.com/docs/using-the-network-sdk) for SwiftUI.
-2. [ui-sdk-components-sample](ui-sdk-components-sample): A simple app showing usage examples of Karhoo components found in the KarhooUISDK.
+
+> **_NOTE:_**  Karhoo SDKs were designed for UIKit, SwiftUI support and samples are experimental and a work in progress. They are designed to be a starting point guide for further support in 2021/22 as iOS 13 slowly becomes the minimum support version over time. If you have a SwiftUI application and require further support please don't hesitate to raise an issue for support so we may prioritise it.
+
 
 ## Pre-requisites
 
-To initialise the KarhooSDKs in this sample you will need access credentials; these can be obtained through ![our contact form at the bottom of this page](https://www.karhoo.com/api-sdk-integrations/) Once you have the credentials they can be provided to the SDKs in the sample AppDelegate files as a ![KarhooSDKConfiguration object](https://developer.karhoo.com/docs/using-the-network-sdk#ios-1)
+Working directly with the Karhoo APIs requires a valid username and password. Contact ![Karhoo](https://developer.karhoo.com/docs/how-to-get-help) to gain full access to the platform.
 
 ## Getting Started
 
