@@ -40,7 +40,7 @@ class QuotesListModel: ObservableObject {
                                       dateScheduled: nil)
         
         
-        self.quoteSearchObservable = self.quoteService.quotesV2(quoteSearch: quoteSearch).observable()
+        self.quoteSearchObservable = self.quoteService.quotes(quoteSearch: quoteSearch).observable()
         if let qo = quotesObserver {
             self.quoteSearchObservable?.subscribe(observer: qo)
         }

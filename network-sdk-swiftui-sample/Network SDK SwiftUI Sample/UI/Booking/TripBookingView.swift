@@ -12,6 +12,13 @@ struct TripBookingView: View {
     public let bookingStatus: BookingStatus
     public let quoteListStatus: QuoteListStatus
     
+    @ObservedObject var viewModel = TripBookingModel()
+    
+    init(bookingStatus: BookingStatus, quoteListStatus: QuoteListStatus) {
+        self.bookingStatus = bookingStatus
+        self.quoteListStatus = quoteListStatus
+    }
+    
     var body: some View {
         ZStack {
             VStack {
@@ -102,7 +109,7 @@ struct TripBookingView: View {
         .background(Color(red: 0.03, green: 0.60, blue: 0.57))
     }
     private func bookTrip() {
-        
+        viewModel.bookTrip(quoteId: quoteListStatus.selectedQuote?.id ?? "")
     }
 }
 

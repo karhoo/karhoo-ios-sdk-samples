@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23EFDA632577F7A500B952FB /* TripBookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFDA622577F7A500B952FB /* TripBookingModel.swift */; };
 		87F3CF21BB90F463534C7152 /* Pods_Network_SDK_SwiftUI_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A982C2AB9E10C94D9B4F1BB /* Pods_Network_SDK_SwiftUI_Sample.framework */; };
 		AE019B0C24E594F5000DDAF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE019B0B24E594F5000DDAF0 /* AppDelegate.swift */; };
 		AE019B0E24E594F5000DDAF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE019B0D24E594F5000DDAF0 /* SceneDelegate.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		1A982C2AB9E10C94D9B4F1BB /* Pods_Network_SDK_SwiftUI_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Network_SDK_SwiftUI_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23EFDA622577F7A500B952FB /* TripBookingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripBookingModel.swift; sourceTree = "<group>"; };
 		62A8C658933C03DE0713F100 /* Pods-Network SDK SwiftUI Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network SDK SwiftUI Sample.debug.xcconfig"; path = "Target Support Files/Pods-Network SDK SwiftUI Sample/Pods-Network SDK SwiftUI Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		AE019B0824E594F5000DDAF0 /* Network SDK SwiftUI Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Network SDK SwiftUI Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE019B0B24E594F5000DDAF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				AE019B2D24E597A1000DDAF0 /* TripBookingView.swift */,
+				23EFDA622577F7A500B952FB /* TripBookingModel.swift */,
 			);
 			path = Booking;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23EFDA632577F7A500B952FB /* TripBookingModel.swift in Sources */,
 				AE019B0C24E594F5000DDAF0 /* AppDelegate.swift in Sources */,
 				AE019B3924E5FA12000DDAF0 /* TripPlanningContract.swift in Sources */,
 				AE019B3024E597C5000DDAF0 /* TripTrackingView.swift in Sources */,
