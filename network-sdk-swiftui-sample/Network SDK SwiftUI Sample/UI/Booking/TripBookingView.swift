@@ -111,6 +111,10 @@ struct TripBookingView: View {
     private func bookTrip() {
         viewModel.bookTrip(quoteId: quoteListStatus.selectedQuote?.id ?? "")
     }
+    
+    private func addPayment() {
+        viewModel.addPayment()
+    }
 }
 
 struct TripBookingView_Previews: PreviewProvider {

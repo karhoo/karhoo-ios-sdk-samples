@@ -12,6 +12,7 @@ import Combine
 
 class TripBookingModel: ObservableObject {
     private let tripsService: TripService = Karhoo.getTripService()
+    private let paymentsService: PaymentService = Karhoo.getPaymentService()
     
     func bookTrip(quoteId: String) {
         let tripBooking = TripBooking(quoteId: quoteId,
@@ -20,6 +21,10 @@ class TripBookingModel: ObservableObject {
                                       paymentNonce: nil,
                                       comments: nil)
         tripsService.book(tripBooking: tripBooking)
+    }
+    
+    func addPayment() {
+        paymentsService.getPaymentProvider()
     }
 }
 
