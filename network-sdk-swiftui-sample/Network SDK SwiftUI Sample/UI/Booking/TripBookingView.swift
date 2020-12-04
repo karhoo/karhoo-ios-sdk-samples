@@ -82,7 +82,7 @@ struct TripBookingView: View {
                         Text("Payment")
                             .font(.subheadline)
                             .bold()
-                        Text("...")
+                        Text("\(self.viewModel.cardDetail)")
                         Spacer()
                         Button("Change", action: {})
                     }
@@ -109,11 +109,11 @@ struct TripBookingView: View {
         .background(Color(red: 0.03, green: 0.60, blue: 0.57))
     }
     private func bookTrip() {
-        viewModel.bookTrip(quoteId: quoteListStatus.selectedQuote?.id ?? "")
+        viewModel.bookTrip(quote: quoteListStatus)
     }
     
     private func addPayment() {
-        viewModel.addPayment()
+        
     }
 }
 
