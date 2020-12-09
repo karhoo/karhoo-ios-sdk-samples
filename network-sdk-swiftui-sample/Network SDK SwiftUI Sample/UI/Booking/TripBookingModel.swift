@@ -76,8 +76,11 @@ class TripBookingModel: ObservableObject {
         paymentsService.getNonce(nonceRequestPayload: nonce).execute(callback: paymentNonceCallback)
     }
     
-    func threeDSecureNone(braintreeSDKToken: String, paymentsNonce: Nonce, amount: String) {
-        
+    func threeDSecureNone(braintreeSDKToken: String, paymentsNonce: Nonce, amount: NSDecimalNumber) {
+        let request = BTThreeDSecureRequest()
+        request.nonce = paymentsNonce.nonce
+        request.amount = amount
+        request.versionRequested = .version2
     }
 
     private func reportError(error: String) {
