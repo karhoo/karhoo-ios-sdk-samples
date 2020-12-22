@@ -109,7 +109,7 @@ struct TripBookingView: View {
         .background(Color(red: 0.03, green: 0.60, blue: 0.57))
     }
     private func bookTrip() {
-        viewModel.bookTrip(quote: quoteListStatus)
+        viewModel.bookTrip(quoteListStatus: quoteListStatus)
     }
     
     private func addPayment() {

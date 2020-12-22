@@ -7,6 +7,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 def sdkPods
   pod 'BraintreeDropIn'
+  pod 'Braintree/PaymentFlow'
   # pod 'KarhooSDK', '1.2.3'
   pod 'KarhooSDK', :git => 'git@github.com:karhoo/karhoo-ios-sdk.git', :branch => 'develop'
 

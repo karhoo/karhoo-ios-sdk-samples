@@ -15,13 +15,13 @@ import BraintreeDropIn
 class TripBookingModel: ObservableObject {
     private let tripsService: TripService = Karhoo.getTripService()
     private let paymentsService: PaymentService = Karhoo.getPaymentService()
-    public let quoteListStatus: QuoteListStatus = QuoteListStatus()
     private let userService: UserService = Karhoo.getUserService()
     
     @Published var cardDetail: String = ""
     
-    func bookTrip(quote: QuoteListStatus) {
-        let tripBooking = TripBooking(quoteId: quote.selectedQuote?.id ?? "",
+    func bookTrip(quoteListStatus: QuoteListStatus) {
+        initSDKPayment(quoteListStatus: quoteListStatus)
+        let tripBooking = TripBooking(quoteId: quoteListStatus.selectedQuote?.id ?? "",
                                       passengers: Passengers(),
                                       flightNumber: nil,
                                       paymentNonce: nil,
@@ -42,20 +42,34 @@ class TripBookingModel: ObservableObject {
         paymentsService.getPaymentProvider()
     }
 
-    func initSDKPayment() {
-        let initSDKCallback = { (result: Result<PaymentSDKToken>) in
-            switch result {
-            case .success(let token):
-                self.getPaymentsNonce(braintreeSDKToken: token.token)
-            case .failure(let error):
-                self.reportError(error: "No token found")
-            }
-        }
-
-        let SDKToken = PaymentSDKTokenPayload(organisationId: Karhoo.getUserService().getCurrentUser()?.primaryOrganisationID ?? "",
+    func initSDKPayment(quoteListStatus: QuoteListStatus) {
+        let sdkToken = PaymentSDKTokenPayload(organisationId: Karhoo.getUserService().getCurrentUser()?.primaryOrganisationID ?? "",
                                               currency: quoteListStatus.selectedQuote?.price.currencyCode ?? "")
 
-        paymentsService.initialisePaymentSDK(paymentSDKTokenPayload: SDKToken).execute(callback: initSDKCallback)
+        paymentsService.initialisePaymentSDK(paymentSDKTokenPayload: sdkToken).execute { [weak self] result in
+            if let token = result.successValue() {
+                self?.buildBraintreeUI(paymentsToken: token)
+            } else {
+                //TODO Handle error
+            }
+        }
+    }
+    
+    func buildBraintreeUI(paymentsToken: PaymentSDKToken) {
+        
+        let request =  BTDropInRequest()
+        let dropIn = BTDropInController(authorization: paymentsToken.token, request: request)
+            { (controller, result, error) in
+                if (error != nil) {
+                    print("ERROR")
+                } else if (result?.isCancelled == true) {
+                    print("CANCELLED")
+                } else if let result = result {
+                    print("RESULT \(result.paymentMethod!.nonce)")
+                }
+                controller.dismiss(animated: true, completion: nil)
+            }
+        print("PRESENT")
     }
 
     func getPaymentsNonce(braintreeSDKToken: String) {
@@ -73,7 +87,7 @@ class TripBookingModel: ObservableObject {
                                                      firstName: user?.firstName ?? "",
                                                      lastName: user?.lastName ?? "",
                                                      email: user?.email ?? ""),
-                                        organisationId: Karhoo.getUserService().getCurrentUser()?.primaryOrganisationID ?? "")
+                                        organisationId: user?.primaryOrganisationID ?? "")
 
         paymentsService.getNonce(nonceRequestPayload: nonce).execute(callback: paymentNonceCallback)
     }
@@ -90,7 +104,7 @@ class TripBookingModel: ObservableObject {
     }
     
     private func getPassengerDetails() -> PassengerDetails {
-        let user = Karhoo.getUserService().getCurrentUser()
+        let user = userService.getCurrentUser()
         return PassengerDetails(firstName: user?.firstName ?? "",
                                 lastName: user?.lastName ?? "",
                                 email: user?.email ?? "",
