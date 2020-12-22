@@ -7,6 +7,9 @@
 //
 
 import SwiftUI
+import Braintree
+import BraintreeDropIn
+import KarhooSDK
 
 struct TripBookingView: View {
     public let bookingStatus: BookingStatus
@@ -103,6 +106,23 @@ struct TripBookingView: View {
                         .cornerRadius(15.0)
                 }
                 Spacer()
+            }
+            if viewModel.paymentsToken != "" {
+                BTDropInRepresentable(authorization: viewModel.paymentsToken, handler:  { (controller, result, error) in
+                    if (error != nil) {
+                        print("ERROR")
+                    } else if (result?.isCancelled == true) {
+                        print("CANCELLED")
+                    } else if result != nil {
+                        print("SUCCESS")
+                        // Use the BTDropInResult properties to update your UI
+                        // result.paymentOptionType
+                        // result.paymentMethod
+                        // result.paymentIcon
+                        // result.paymentDescription
+                    }
+                    controller.dismiss(animated: true, completion: nil)
+                }).edgesIgnoringSafeArea(.vertical)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

@@ -18,6 +18,7 @@ class TripBookingModel: ObservableObject {
     private let userService: UserService = Karhoo.getUserService()
     
     @Published var cardDetail: String = ""
+    @Published var paymentsToken: String = ""
     
     func bookTrip(quoteListStatus: QuoteListStatus) {
         initSDKPayment(quoteListStatus: quoteListStatus)
@@ -46,30 +47,14 @@ class TripBookingModel: ObservableObject {
         let sdkToken = PaymentSDKTokenPayload(organisationId: Karhoo.getUserService().getCurrentUser()?.primaryOrganisationID ?? "",
                                               currency: quoteListStatus.selectedQuote?.price.currencyCode ?? "")
 
-        paymentsService.initialisePaymentSDK(paymentSDKTokenPayload: sdkToken).execute { [weak self] result in
-            if let token = result.successValue() {
-                self?.buildBraintreeUI(paymentsToken: token)
+        paymentsService.initialisePaymentSDK(paymentSDKTokenPayload: sdkToken).execute { result in
+            if let btToken = result.successValue() {
+                self.paymentsToken = btToken.token
+//                self?.buildBraintreeUI(paymentsToken: token)
             } else {
                 //TODO Handle error
             }
         }
-    }
-    
-    func buildBraintreeUI(paymentsToken: PaymentSDKToken) {
-        
-        let request =  BTDropInRequest()
-        let dropIn = BTDropInController(authorization: paymentsToken.token, request: request)
-            { (controller, result, error) in
-                if (error != nil) {
-                    print("ERROR")
-                } else if (result?.isCancelled == true) {
-                    print("CANCELLED")
-                } else if let result = result {
-                    print("RESULT \(result.paymentMethod!.nonce)")
-                }
-                controller.dismiss(animated: true, completion: nil)
-            }
-        print("PRESENT")
     }
 
     func getPaymentsNonce(braintreeSDKToken: String) {
