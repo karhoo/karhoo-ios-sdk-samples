@@ -29,7 +29,7 @@ class TripBookingModel: ObservableObject {
     }
     
     func addPayment() {
-        let payer = Payer(id: <#T##String#>, firstName: <#T##String#>, lastName: <#T##String#>, email: <#T##String#>)
+        let payer = Payer(id: "1234", firstName: "Joe", lastName: "Bloggs", email: "test.test@test.test")
         let paymentDetails = AddPaymentDetailsPayload(nonce: "", payer: payer, organisationId: "")
 
         getPaymentProvider()
