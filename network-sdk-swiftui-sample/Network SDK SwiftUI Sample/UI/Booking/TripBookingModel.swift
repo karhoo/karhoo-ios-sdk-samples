@@ -16,6 +16,7 @@ class TripBookingModel: ObservableObject {
     private let tripsService: TripService = Karhoo.getTripService()
     private let paymentsService: PaymentService = Karhoo.getPaymentService()
     public let quoteListStatus: QuoteListStatus = QuoteListStatus()
+    private let userService: UserService = Karhoo.getUserService()
     
     @Published var cardDetail: String = ""
     
@@ -29,7 +30,8 @@ class TripBookingModel: ObservableObject {
     }
     
     func addPayment() {
-        let payer = Payer(id: "1234", firstName: "Joe", lastName: "Bloggs", email: "test.test@test.test")
+        guard let user = userService.getCurrentUser() else { return }
+        let payer = Payer(id: user.userId, firstName: user.firstName, lastName: user.lastName, email: user.email)
         let paymentDetails = AddPaymentDetailsPayload(nonce: "", payer: payer, organisationId: "")
 
         getPaymentProvider()
@@ -66,7 +68,7 @@ class TripBookingModel: ObservableObject {
             }
         }
 
-        let user = Karhoo.getUserService().getCurrentUser()
+        let user = userService.getCurrentUser()
         let nonce = NonceRequestPayload(payer: Payer(id: user?.userId ?? "",
                                                      firstName: user?.firstName ?? "",
                                                      lastName: user?.lastName ?? "",

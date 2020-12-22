@@ -73,6 +73,8 @@ struct ConfigurationView: View {
     private func loginSucceed() {
         self.showingAlert = true
         self.message = "Login Succeed"
+        guard let user = loginService.getCurrentUser() else { return }
+        self.message.append(" for \(user.firstName) \(user.lastName)")
     }
     
     private func loginFailed(message: String){
