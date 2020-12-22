@@ -112,11 +112,10 @@ struct TripBookingView: View {
             if viewModel.paymentsToken != "" && self.showDropIn {
                 BTDropInRepresentable(authorization: viewModel.paymentsToken, handler:  { (controller, result, error) in
                     if (error != nil) {
-                        print("ERROR")
+                        //Handle error
                     } else if (result?.isCancelled == true) {
-                        print("CANCELLED")
+                        //Handle cancelled
                     } else if result != nil {
-                        print("SUCCESS")
                         self.showDropIn = false
                         // Use the BTDropInResult properties to update your UI
                         // result.paymentOptionType
@@ -125,6 +124,7 @@ struct TripBookingView: View {
                         // result.paymentDescription
                     }
                     controller.dismiss(animated: true, completion: nil)
+                    addPayment()
                 }).edgesIgnoringSafeArea(.vertical)
             }
         }
@@ -133,11 +133,11 @@ struct TripBookingView: View {
     }
     private func bookTrip() {
         self.showDropIn = true
-        viewModel.bookTrip(quoteListStatus: quoteListStatus)
+        viewModel.initSDKPayment(quoteListStatus: quoteListStatus)
     }
     
     private func addPayment() {
-        
+        viewModel.addPayment()
     }
 }
 
