@@ -25,7 +25,8 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
     
     func bookTrip() {
         let tripBooking = TripBooking(quoteId: selectedQuote?.id ?? "",
-                                      passengers: Passengers(),
+                                      passengers: Passengers(additionalPassengers: 0,
+                                                             passengerDetails: [getPassengerDetails()]),
                                       flightNumber: nil,
                                       paymentNonce: paymentNonce,
                                       comments: nil)
@@ -34,13 +35,22 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
                 self.handleBookTrip(result: result)
             })
     }
+    
+    private func getPassengerDetails() -> PassengerDetails {
+        let user = userService.getCurrentUser()
+        return PassengerDetails(firstName: user?.firstName ?? "",
+                                lastName: user?.lastName ?? "",
+                                email: user?.email ?? "",
+                                phoneNumber: user?.mobileNumber ?? "",
+                                locale: user?.locale ?? "")
+    }
 
     private func handleBookTrip(result: Result<TripInfo>) {
         guard let trip = result.successValue() else {
             if result.errorValue()?.type == .couldNotBookTripPaymentPreAuthFailed {
                 //Handle error
             } else {
-                print("SUCCESS")
+                print("SUCCESS \(result.successValue()?.tripId)")
             }
             return
         }
@@ -129,15 +139,6 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
         print(error)
     }
     
-    private func getPassengerDetails() -> PassengerDetails {
-        let user = userService.getCurrentUser()
-        return PassengerDetails(firstName: user?.firstName ?? "",
-                                lastName: user?.lastName ?? "",
-                                email: user?.email ?? "",
-                                phoneNumber: user?.mobileNumber ?? "",
-                                locale: user?.locale ?? "")
-    }
-    
     private func execute3dSecureCheckOnNonce(_ nonce: Nonce) {
         guard self.paymentsToken != nil else {
             //Handle error
@@ -206,12 +207,10 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
     }
     
     func paymentDriver(_ driver: Any, requestsDismissalOf viewController: UIViewController) {
-        print("3DS PRESENT")
         //present
     }
     
     func paymentDriver(_ driver: Any, requestsPresentationOf viewController: UIViewController) {
-        print("3DS DISMISS")
         //dismiss
     }
 }
