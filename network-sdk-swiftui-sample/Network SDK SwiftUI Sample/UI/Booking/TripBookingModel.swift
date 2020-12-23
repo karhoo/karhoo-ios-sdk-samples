@@ -12,7 +12,7 @@ import Combine
 import Braintree
 import BraintreeDropIn
 
-class TripBookingModel: ObservableObject {
+class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDelegate {
     private let tripService: TripService = Karhoo.getTripService()
     private let paymentsService: PaymentService = Karhoo.getPaymentService()
     private var paymentFlowDriver: BTPaymentFlowDriver?
@@ -120,6 +120,7 @@ class TripBookingModel: ObservableObject {
             guard let nonce = result.successValue() else {
                 return
             }
+            self.paymentNonce = nonce.nonce
             self.execute3dSecureCheckOnNonce(nonce)
         }
     }
@@ -162,25 +163,23 @@ class TripBookingModel: ObservableObject {
             return
         }
         
-//        self.paymentFlowDriver = BTPaymentFlowDriver(apiClient: apiClient)
-//        self.paymentFlowDriver?.viewControllerPresentingDelegate = self
+        self.paymentFlowDriver = BTPaymentFlowDriver(apiClient: apiClient)
+        self.paymentFlowDriver?.viewControllerPresentingDelegate = self
         
-        guard self.paymentsToken != nil else {
+        guard self.paymentsToken != "" else {
             //Handle error
             return
         }
 
-        guard let quote = selectedQuote else {
+        guard self.selectedQuote != nil else {
             return
         }
         
-        let request = BTDropInRequest()
-        request.threeDSecureVerification = true
-        
-        let threeDSecureRequest = BTThreeDSecureRequest()
-        threeDSecureRequest.nonce = paymentNonce
-        threeDSecureRequest.versionRequested = .version2
-        
+        let request = BTThreeDSecureRequest()
+        request.nonce = paymentNonce
+        request.versionRequested = .version2
+        request.threeDSecureRequestDelegate = self
+
         let decimalNumberHandler = NSDecimalNumberHandler(roundingMode: .plain,
                                                           scale: 2,
                                                           raiseOnExactness: false,
@@ -188,38 +187,50 @@ class TripBookingModel: ObservableObject {
                                                           raiseOnUnderflow: false,
                                                           raiseOnDivideByZero: false)
         
-        threeDSecureRequest.amount = amount.rounding(accordingToBehavior: decimalNumberHandler)
+        request.amount = amount.rounding(accordingToBehavior: decimalNumberHandler)
         
-        let dropInRequest = BTDropInRequest()
-        dropInRequest.threeDSecureVerification = true
-        dropInRequest.threeDSecureRequest = threeDSecureRequest
-        
-//        BTDropInRepresentable(authorization: paymentsToken, request: dropInRequest, handler:  { (controller, result, error) in
-        BTDropInRepresentable(authorization: paymentsToken, handler:  { (controller, result, error) in
-            if (error != nil) {
-                //Handle error
-            } else if (result?.isCancelled == true) {
-                //Handle cancelled
-            } else if result != nil {
-                print("SUCCESS")
-                self.bookTrip()
+        self.paymentFlowDriver?.startPaymentFlow(request) { [weak self] (result, error) in
+            if error?._code == BTPaymentFlowDriverErrorType.canceled.rawValue {
+                //Handle cancellation
+                return
             }
-            controller.dismiss(animated: true, completion: nil)
-        })
-        
-//        let dropIn = BTDropInController(authorization: paymentsToken, request: dropInRequest) { (controller, result, error) in
-//            if (error != nil) {
-//                // Handle error
-//                print("ERROR")
-//            } else if (result?.isCancelled == true) {
-//                // Handle user cancelled flow
-//                print("CANCELLED")
-//            } else {
-//                // Use the nonce returned in `result.paymentMethod`
-//                print("SUCCESS")
-//                self.bookTrip()
-//            }
-//            controller.dismiss(animated: true, completion: nil)
-//        }
+
+            guard let result = result as? BTThreeDSecureResult else {
+                //Handle result
+                print("3DS ERROR")
+                return
+            }
+            
+            self?.threeDSecureResponseHandler(result: result)
+        }
+    }
+    
+    func paymentDriver(_ driver: Any, requestsDismissalOf viewController: UIViewController) {
+        print("3DS PRESENT")
+        //present
+    }
+    
+    func paymentDriver(_ driver: Any, requestsPresentationOf viewController: UIViewController) {
+        print("3DS DISMISS")
+        //dismiss
+    }
+}
+
+extension TripBookingModel: BTThreeDSecureRequestDelegate {
+    
+    func onLookupComplete(_ request: BTThreeDSecureRequest,
+                          result: BTThreeDSecureLookup,
+                          next: @escaping () -> Void) {
+        next()
+    }
+
+    private func threeDSecureResponseHandler(result: BTThreeDSecureResult) {
+        if result.tokenizedCard.nonce != "" {
+            self.paymentNonce = result.tokenizedCard.nonce
+            bookTrip()
+        } else {
+            print("3DS AUTH ERROR")
+            //Handle error
+        }
     }
 }
