@@ -117,11 +117,7 @@ struct TripBookingView: View {
                         //Handle cancelled
                     } else if result != nil {
                         self.showDropIn = false
-                        // Use the BTDropInResult properties to update your UI
-                        // result.paymentOptionType
-                        // result.paymentMethod
-                        // result.paymentIcon
-                        // result.paymentDescription
+                        print("SUCCESS \(result!.paymentDescription) \(result!.paymentMethod?.type)")
                     }
                     controller.dismiss(animated: true, completion: nil)
                 }).edgesIgnoringSafeArea(.vertical)
