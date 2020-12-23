@@ -117,6 +117,7 @@ struct TripBookingView: View {
                         //Handle cancelled
                     } else if result != nil {
                         self.showDropIn = false
+                        viewModel.addCard(nonce: result!.paymentMethod!.nonce)
                         print("SUCCESS \(result!.paymentDescription) \(result!.paymentMethod?.type)")
                     }
                     controller.dismiss(animated: true, completion: nil)

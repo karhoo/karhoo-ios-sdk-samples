@@ -15,6 +15,7 @@ import BraintreeDropIn
 class TripBookingModel: ObservableObject {
     private let tripService: TripService = Karhoo.getTripService()
     private let paymentsService: PaymentService = Karhoo.getPaymentService()
+    private var paymentFlowDriver: BTPaymentFlowDriver?
     private let userService: UserService = Karhoo.getUserService()
     private var selectedQuote: Quote?
     
@@ -54,33 +55,38 @@ class TripBookingModel: ObservableObject {
         paymentsService.initialisePaymentSDK(paymentSDKTokenPayload: sdkToken).execute { result in
             if let btToken = result.successValue() {
                 self.paymentsToken = btToken.token
-                self.addCard()
             } else {
                 //TODO Handle error
             }
         }
     }
     
-    func addCard() {
-        let request = BTDropInRequest()
-
-        guard let flowItem = BTDropInController(authorization: paymentsToken,
-                                                request: request,
-                                                handler: {( _, result: BTDropInResult?, error: Error?) in
-            if error != nil {
-                //Handle error
-            } else if result?.isCancelled == true {
-                //Handle cancelled
-            } else {
-//                let paymentMethod = PaymentMethod(nonce: result!.paymentMethod!.nonce,
-//                                                  nonceType: result!.paymentMethod!.type,
-//                                                  icon: result!.paymentIcon,
-//                                                  paymentDescription: result!.paymentDescription)
-                print("ADD CARD SUCCESS")
-            }
-        }) else {
+    func addCard(nonce: String) {
+        guard let currentUser = userService.getCurrentUser() else {
             return
         }
+
+        let payer = Payer(id: currentUser.userId,
+                          firstName: currentUser.firstName,
+                          lastName: currentUser.lastName,
+                          email: currentUser.email)
+
+        guard let payerOrg = currentUser.organisations.first else {
+            return
+        }
+
+        let addPaymentPayload = AddPaymentDetailsPayload(nonce: nonce,
+                                                         payer: payer,
+                                                         organisationId: payerOrg.id)
+
+        paymentsService.addPaymentDetails(addPaymentDetailsPayload: addPaymentPayload)
+            .execute(callback: { result in
+                guard let nonce = result.successValue() else {
+                    //Handle error
+                    return
+                }
+                print("SUCCESS ADD CARD \(nonce)")
+            })
     }
     
     func getPaymentProvider() {
@@ -152,9 +158,12 @@ class TripBookingModel: ObservableObject {
     }
     
     private func start3DSecureCheck(amount: NSDecimalNumber) {
-//        guard let apiClient = BTAPIClient(authorization: authToken.token) else {
-//            return
-//        }
+        guard let apiClient = BTAPIClient(authorization: paymentsToken) else {
+            return
+        }
+        
+//        self.paymentFlowDriver = BTPaymentFlowDriver(apiClient: apiClient)
+//        self.paymentFlowDriver?.viewControllerPresentingDelegate = self
         
         guard self.paymentsToken != nil else {
             //Handle error
@@ -185,19 +194,32 @@ class TripBookingModel: ObservableObject {
         dropInRequest.threeDSecureVerification = true
         dropInRequest.threeDSecureRequest = threeDSecureRequest
         
-        let dropIn = BTDropInController(authorization: paymentsToken, request: dropInRequest) { (controller, result, error) in
+//        BTDropInRepresentable(authorization: paymentsToken, request: dropInRequest, handler:  { (controller, result, error) in
+        BTDropInRepresentable(authorization: paymentsToken, handler:  { (controller, result, error) in
             if (error != nil) {
-                // Handle error
-                print("ERROR")
+                //Handle error
             } else if (result?.isCancelled == true) {
-                // Handle user cancelled flow
-                print("CANCELLED")
-            } else {
-                // Use the nonce returned in `result.paymentMethod`
+                //Handle cancelled
+            } else if result != nil {
                 print("SUCCESS")
                 self.bookTrip()
             }
             controller.dismiss(animated: true, completion: nil)
-        }
+        })
+        
+//        let dropIn = BTDropInController(authorization: paymentsToken, request: dropInRequest) { (controller, result, error) in
+//            if (error != nil) {
+//                // Handle error
+//                print("ERROR")
+//            } else if (result?.isCancelled == true) {
+//                // Handle user cancelled flow
+//                print("CANCELLED")
+//            } else {
+//                // Use the nonce returned in `result.paymentMethod`
+//                print("SUCCESS")
+//                self.bookTrip()
+//            }
+//            controller.dismiss(animated: true, completion: nil)
+//        }
     }
 }
