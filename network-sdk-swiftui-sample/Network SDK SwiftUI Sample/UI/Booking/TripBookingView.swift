@@ -89,7 +89,7 @@ struct TripBookingView: View {
                             .bold()
                         Text("\(self.viewModel.cardDetail)")
                         Spacer()
-                        Button("Change", action: {})
+                        Button("Change", action: changeCard)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     
@@ -124,20 +124,20 @@ struct TripBookingView: View {
                         // result.paymentDescription
                     }
                     controller.dismiss(animated: true, completion: nil)
-                    addPayment()
                 }).edgesIgnoringSafeArea(.vertical)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(red: 0.03, green: 0.60, blue: 0.57))
     }
-    private func bookTrip() {
+    
+    private func changeCard() {
         self.showDropIn = true
-        viewModel.initSDKPayment(quoteListStatus: quoteListStatus)
+        viewModel.startAddCardFlow(quoteListStatus: quoteListStatus)
     }
     
-    private func addPayment() {
-        viewModel.addPayment()
+    private func bookTrip() {
+        viewModel.initSDKPayment(quoteListStatus: quoteListStatus)
     }
 }
 
