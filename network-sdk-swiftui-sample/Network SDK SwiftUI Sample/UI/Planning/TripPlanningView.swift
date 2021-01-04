@@ -12,6 +12,8 @@ import KarhooSDK
 struct TripPlanningView: View {
     public let bookingStatus: BookingStatus
     
+    @Binding var tabSelection: Int
+    
     @State private var pickUp = ""
     @State private var dropOff = ""
     @State private var sessionToken: String = UUID().uuidString
@@ -19,10 +21,14 @@ struct TripPlanningView: View {
     @State private var showingAlert = false
     @State private var message = ""
     @State private var places: [Place] = []
+    @State private var locationsChosen = false
     
-    init(bookingStatus: BookingStatus) {
-        self.bookingStatus = bookingStatus
-    }
+    @EnvironmentObject var quoteListStatus: QuoteListStatus
+    
+//    init(bookingStatus: BookingStatus, tabSelection: TabSelection) {
+//        self.tabSelection = tabSelection
+//        self.bookingStatus = bookingStatus
+//    }
     
     var body: some View {
         ZStack {
@@ -86,7 +92,6 @@ struct TripPlanningView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(red: 0.04, green: 0.52, blue: 0.89))
         }
-        
     }
     
     private func pickupPressed(){
@@ -137,7 +142,9 @@ struct TripPlanningView: View {
         } else {
             bookingStatus.destination = locationInfo
         }
-        
+        if(!pickUp.isEmpty && !dropOff.isEmpty) {
+            self.tabSelection = 2
+        }
     }
     
     private func showError(message: String) {
@@ -147,8 +154,8 @@ struct TripPlanningView: View {
     
 }
 
-struct TripPlanningView_Previews: PreviewProvider {
-    static var previews: some View {
-        TripPlanningView(bookingStatus: BookingStatus())
-    }
-}
+//struct TripPlanningView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TripPlanningView(bookingStatus: BookingStatus())
+//    }
+//}

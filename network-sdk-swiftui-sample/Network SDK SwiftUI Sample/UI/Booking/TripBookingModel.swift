@@ -98,10 +98,6 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
                 print("SUCCESS ADD CARD \(nonce)")
             })
     }
-    
-    func getPaymentProvider() {
-        paymentsService.getPaymentProvider()
-    }
 
     func initSDKPayment(quoteListStatus: QuoteListStatus) {
         self.selectedQuote = quoteListStatus.selectedQuote
@@ -140,7 +136,7 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
     }
     
     private func execute3dSecureCheckOnNonce(_ nonce: Nonce) {
-        guard self.paymentsToken != nil else {
+        guard self.paymentsToken != "" else {
             //Handle error
             return
         }
