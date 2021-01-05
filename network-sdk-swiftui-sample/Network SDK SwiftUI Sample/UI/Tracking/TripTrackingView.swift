@@ -7,11 +7,14 @@
 //
 
 import SwiftUI
+import KarhooSDK
 
 struct TripTrackingView: View {
     @Binding var tabSelection: Int
     
     public let tripStatus: TripStatus
+    public let tripService: TripService = Karhoo.getTripService()
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         ZStack {
@@ -29,7 +32,27 @@ struct TripTrackingView: View {
                             .bold()
                         Text("\(self.tripStatus.tripInfo.tripId)")
                     }
-                    
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    HStack {
+                        Text("Driver")
+                            .font(.subheadline)
+                            .bold()
+                        Text("\(self.tripStatus.tripInfo.vehicle.driver.firstName) \(self.tripStatus.tripInfo.vehicle.driver.lastName)")
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    HStack {
+                        Text("License number")
+                            .font(.subheadline)
+                            .bold()
+                        Text("\(self.tripStatus.tripInfo.vehicle.vehicleLicensePlate)")
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    HStack {
+                        Text("Status")
+                            .font(.subheadline)
+                            .bold()
+                        Text("\(self.tripStatus.tripInfo.state.rawValue)")
+                    }
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
                 .frame(maxWidth: .infinity)
@@ -61,8 +84,32 @@ struct TripTrackingView: View {
                 .padding(10)
             }
         }
+        .onAppear(perform: {
+            trackTrip()
+        })
+        .onDisappear(perform: {
+            self.timer.upstream.connect().cancel()
+        })
+        .onReceive(timer, perform: { _ in
+            trackTrip()
+        })
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(red: 0.16, green: 0.50, blue: 0.72))
+    }
+    
+    private func trackTrip() {
+        tripService.trackTrip(identifier: self.tripStatus.tripInfo.tripId)
+            .execute(callback: { (result: Result<TripInfo>) in
+                self.handleTrackTrip(result: result)
+            })
+    }
+    
+    private func handleTrackTrip(result: Result<TripInfo>) {
+        guard let trip = result.successValue() else {
+            //Handle error
+            return
+        }
+        tripStatus.tripInfo = trip
     }
 }
 
