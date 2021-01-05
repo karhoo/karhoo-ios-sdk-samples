@@ -10,15 +10,17 @@ import SwiftUI
 import KarhooSDK
 
 struct TripQuotesView: View {
+    @Binding var tabSelection: Int
+    
     public let bookingStatus: BookingStatus
     public let quoteListStatus: QuoteListStatus
     
     @ObservedObject var viewModel = QuotesListModel()
     
-    init(bookingStatus: BookingStatus, quoteListStatus: QuoteListStatus) {
-        self.bookingStatus = bookingStatus
-        self.quoteListStatus = quoteListStatus
-    }
+//    init(bookingStatus: BookingStatus, quoteListStatus: QuoteListStatus) {
+//        self.bookingStatus = bookingStatus
+//        self.quoteListStatus = quoteListStatus
+//    }
     
     var body: some View {
         ZStack {
@@ -55,6 +57,7 @@ struct TripQuotesView: View {
                 List(viewModel.quotes, id: \.id) { quote in
                     Text(quote.fleet.name)
                         .onTapGesture {
+                            self.tabSelection = 3
                             self.quoteListStatus.selectedQuote = quote
                     }
                 }
@@ -74,8 +77,8 @@ struct TripQuotesView: View {
     }
 }
 
-struct TripQuotesView_Previews: PreviewProvider {
-    static var previews: some View {
-        TripQuotesView(bookingStatus: BookingStatus(), quoteListStatus: QuoteListStatus())
-    }
-}
+//struct TripQuotesView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TripQuotesView(bookingStatus: BookingStatus(), quoteListStatus: QuoteListStatus())
+//    }
+//}

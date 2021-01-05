@@ -12,6 +12,8 @@ import BraintreeDropIn
 import KarhooSDK
 
 struct TripBookingView: View {
+    @Binding var tabSelection: Int
+    
     public let bookingStatus: BookingStatus
     public let quoteListStatus: QuoteListStatus
     
@@ -19,10 +21,10 @@ struct TripBookingView: View {
     
     @State var showDropIn = false
     
-    init(bookingStatus: BookingStatus, quoteListStatus: QuoteListStatus) {
-        self.bookingStatus = bookingStatus
-        self.quoteListStatus = quoteListStatus
-    }
+//    init(bookingStatus: BookingStatus, quoteListStatus: QuoteListStatus) {
+//        self.bookingStatus = bookingStatus
+//        self.quoteListStatus = quoteListStatus
+//    }
     
     var body: some View {
         ZStack {
@@ -138,8 +140,8 @@ struct TripBookingView: View {
     }
 }
 
-struct TripBookingView_Previews: PreviewProvider {
-    static var previews: some View {
-        TripBookingView(bookingStatus: BookingStatus(), quoteListStatus: QuoteListStatus())
-    }
-}
+//struct TripBookingView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TripBookingView(bookingStatus: BookingStatus(), quoteListStatus: QuoteListStatus())
+//    }
+//}

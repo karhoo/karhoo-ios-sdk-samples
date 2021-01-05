@@ -31,14 +31,14 @@ struct TabbedView : View {
             }
                 .tag(1)
             
-            TripQuotesView(bookingStatus: bookingStatus, quoteListStatus: quoteListStatus )
+            TripQuotesView(tabSelection: $selectedTab, bookingStatus: bookingStatus, quoteListStatus: quoteListStatus)
                 .tabItem {
                     Image(systemName: "list.bullet")
                         .font(.system(size: 22))
             }
                 .tag(2)
             
-            TripBookingView(bookingStatus: bookingStatus, quoteListStatus: quoteListStatus)
+            TripBookingView(tabSelection: $selectedTab, bookingStatus: bookingStatus, quoteListStatus: quoteListStatus)
                 .tabItem {
                     Image(systemName: "cart.fill")
                         .font(.system(size: 22))
