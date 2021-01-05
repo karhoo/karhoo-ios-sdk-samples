@@ -89,6 +89,12 @@ struct TripBookingView: View {
                         Text("\(self.cardDetail)")
                         Spacer()
                         Button("Change", action: changeCard)
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(width: 100, height: 50)
+                            .background(Color(red: 0.01, green: 0.39, blue: 0.37))
+                            .cornerRadius(15.0)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     
