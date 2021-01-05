@@ -22,6 +22,7 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
     @Published var cardDetail: String = ""
     @Published var paymentNonce: String = ""
     @Published var paymentsToken: String = ""
+    @Published var tripId: String = ""
     
     func bookTrip() {
         let tripBooking = TripBooking(quoteId: selectedQuote?.id ?? "",
@@ -54,7 +55,8 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
             }
             return
         }
-        print("Trip id: \(trip.tripId)")
+        tripId = trip.tripId
+        return
     }
     
     func startAddCardFlow(quoteListStatus: QuoteListStatus) {

@@ -84,6 +84,17 @@ struct TripPlanningView: View {
                         .padding()
                         .cornerRadius(15.0)
                 }
+                VStack {
+                    Button(action: getQuotes) {
+                        Text("Get Quotes")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(height: 40)
+                            .background(Color(red: 0.01, green: 0.29, blue: 0.51))
+                            .cornerRadius(15.0)
+                    }
+                }
                 Spacer()
             }
             .alert(isPresented: $showingAlert) {
@@ -142,8 +153,13 @@ struct TripPlanningView: View {
         } else {
             bookingStatus.destination = locationInfo
         }
+    }
+    
+    private func getQuotes() {
         if(!pickUp.isEmpty && !dropOff.isEmpty) {
             self.tabSelection = 2
+        } else {
+            self.showError(message: "Choose an origin and destination")
         }
     }
     
@@ -154,8 +170,10 @@ struct TripPlanningView: View {
     
 }
 
-//struct TripPlanningView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TripPlanningView(bookingStatus: BookingStatus())
-//    }
-//}
+struct TripPlanningView_Previews: PreviewProvider {
+    @State static var tabSelection: Int = 1
+    
+    static var previews: some View {
+        TripPlanningView(bookingStatus: BookingStatus(), tabSelection: $tabSelection)
+    }
+}

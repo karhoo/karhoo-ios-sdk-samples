@@ -21,11 +21,6 @@ struct TripBookingView: View {
     
     @State var showDropIn = false
     
-//    init(bookingStatus: BookingStatus, quoteListStatus: QuoteListStatus) {
-//        self.bookingStatus = bookingStatus
-//        self.quoteListStatus = quoteListStatus
-//    }
-    
     var body: some View {
         ZStack {
             VStack {
@@ -140,8 +135,10 @@ struct TripBookingView: View {
     }
 }
 
-//struct TripBookingView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TripBookingView(bookingStatus: BookingStatus(), quoteListStatus: QuoteListStatus())
-//    }
-//}
+struct TripBookingView_Previews: PreviewProvider {
+    @State static var tabSelection: Int = 3
+    
+    static var previews: some View {
+        TripBookingView(tabSelection: $tabSelection, bookingStatus: BookingStatus(), quoteListStatus: QuoteListStatus())
+    }
+}

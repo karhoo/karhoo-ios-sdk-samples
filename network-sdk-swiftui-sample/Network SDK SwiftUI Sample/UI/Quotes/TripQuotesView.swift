@@ -17,11 +17,6 @@ struct TripQuotesView: View {
     
     @ObservedObject var viewModel = QuotesListModel()
     
-//    init(bookingStatus: BookingStatus, quoteListStatus: QuoteListStatus) {
-//        self.bookingStatus = bookingStatus
-//        self.quoteListStatus = quoteListStatus
-//    }
-    
     var body: some View {
         ZStack {
             VStack {
@@ -77,8 +72,10 @@ struct TripQuotesView: View {
     }
 }
 
-//struct TripQuotesView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TripQuotesView(bookingStatus: BookingStatus(), quoteListStatus: QuoteListStatus())
-//    }
-//}
+struct TripQuotesView_Previews: PreviewProvider {
+    @State static var tabSelection: Int = 2
+    
+    static var previews: some View {
+        TripQuotesView(tabSelection: $tabSelection, bookingStatus: BookingStatus(), quoteListStatus: QuoteListStatus())
+    }
+}

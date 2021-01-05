@@ -74,10 +74,6 @@ struct ConfigurationView: View {
     }
     
     private func loginSucceed() {
-//        self.showingAlert = true
-//        self.message = "Login Succeed"
-//        guard let user = loginService.getCurrentUser() else { return }
-//        self.message.append(" for \(user.firstName) \(user.lastName)")
         self.tabSelection = 1
     }
     
@@ -87,8 +83,10 @@ struct ConfigurationView: View {
     }
 }
 
-//struct ConfigurationView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ConfigurationView(selectedTab: 0)
-//    }
-//}
+struct ConfigurationView_Previews: PreviewProvider {
+    @State static var tabSelection: Int = 0
+    
+    static var previews: some View {
+        ConfigurationView(tabSelection: $tabSelection)
+    }
+}

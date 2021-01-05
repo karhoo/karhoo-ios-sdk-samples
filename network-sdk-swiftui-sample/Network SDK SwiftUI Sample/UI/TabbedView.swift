@@ -45,7 +45,7 @@ struct TabbedView : View {
             }
                 .tag(3)
             
-            TripTrackingView()
+            TripTrackingView(tabSelection: $selectedTab)
                 .tabItem {
                     Image(systemName: "location.north.line.fill")
                         .font(.system(size: 22))
