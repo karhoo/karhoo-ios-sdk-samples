@@ -22,7 +22,7 @@ struct TripTrackingView: View {
                 Text("Trip Tracking")
                     .font(.title)
                     .padding()
-                VStack {
+                VStack(alignment: .leading, spacing: 10) {
                     Text("Trip")
                         .font(.headline)
                         .frame(maxWidth: .infinity, alignment: .center)
