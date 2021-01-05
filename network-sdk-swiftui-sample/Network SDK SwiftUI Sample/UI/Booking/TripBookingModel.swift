@@ -19,7 +19,6 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
     private let userService: UserService = Karhoo.getUserService()
     private var selectedQuote: Quote?
     
-    @Published var cardDetail: String = ""
     @Published var paymentNonce: String = ""
     @Published var paymentsToken: String = ""
     @Published var trip: TripInfo = TripInfo()

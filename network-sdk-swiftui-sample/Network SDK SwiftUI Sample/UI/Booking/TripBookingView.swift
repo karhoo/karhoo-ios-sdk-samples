@@ -21,6 +21,7 @@ struct TripBookingView: View {
     @ObservedObject var viewModel = TripBookingModel()
     
     @State var showDropIn = false
+    @State var cardDetail: String = "card ending \(Karhoo.getUserService().getCurrentUser()?.nonce?.lastFour ?? "")"
     
     var body: some View {
         ZStack {
@@ -85,7 +86,7 @@ struct TripBookingView: View {
                         Text("Payment")
                             .font(.subheadline)
                             .bold()
-                        Text("\(self.viewModel.cardDetail)")
+                        Text("card \(self.cardDetail)")
                         Spacer()
                         Button("Change", action: changeCard)
                     }
@@ -115,6 +116,7 @@ struct TripBookingView: View {
                         //Handle cancelled
                     } else if result != nil {
                         self.showDropIn = false
+                        self.cardDetail = result!.paymentDescription
                         viewModel.addCard(nonce: result!.paymentMethod!.nonce)
                         print("SUCCESS \(result!.paymentDescription) \(result!.paymentMethod?.type)")
                     }
