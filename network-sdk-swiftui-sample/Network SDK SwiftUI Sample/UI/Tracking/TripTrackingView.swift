@@ -16,7 +16,7 @@ struct TripTrackingView: View {
     var body: some View {
         ZStack {
             VStack {
-                Text("TripTrackingView")
+                Text("Trip Tracking")
                     .font(.title)
                     .padding()
                 VStack {
@@ -34,7 +34,7 @@ struct TripTrackingView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .padding()
-                .background(Color(red: 0.82, green: 1.00, blue: 0.99))
+                .background(Color(red: 0.78, green: 0.90, blue: 1.00))
                 .padding(10)
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Address")
@@ -57,12 +57,12 @@ struct TripTrackingView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .padding()
-                .background(Color(red: 0.82, green: 1.00, blue: 0.99))
+                .background(Color(red: 0.78, green: 0.90, blue: 1.00))
                 .padding(10)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(red: 0.03, green: 0.60, blue: 0.57))
+        .background(Color(red: 0.16, green: 0.50, blue: 0.72))
     }
 }
 
