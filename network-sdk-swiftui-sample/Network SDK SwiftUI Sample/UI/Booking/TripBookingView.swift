@@ -121,6 +121,11 @@ struct TripBookingView: View {
                 }).edgesIgnoringSafeArea(.vertical)
             }
         }
+        .onReceive(viewModel.$tripId, perform: { tripId in
+            if(!tripId.isEmpty) {
+                self.tabSelection = 4
+            }
+        })
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(red: 0.03, green: 0.60, blue: 0.57))
     }

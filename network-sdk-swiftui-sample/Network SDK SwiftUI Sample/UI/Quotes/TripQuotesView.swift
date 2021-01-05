@@ -48,15 +48,17 @@ struct TripQuotesView: View {
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background(Color(red: 0.82, green: 0.94, blue: 1.00))
-                .padding(10)
                 List(viewModel.quotes, id: \.id) { quote in
                     Text(quote.fleet.name)
+                        .padding(.leading, 5)
+                        .padding(.trailing, 5)
                         .onTapGesture {
                             self.tabSelection = 3
                             self.quoteListStatus.selectedQuote = quote
                     }
                 }
                 .listStyle(GroupedListStyle())
+                .padding(10)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
