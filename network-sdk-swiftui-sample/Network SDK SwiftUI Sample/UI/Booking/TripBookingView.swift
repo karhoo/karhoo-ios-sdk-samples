@@ -86,7 +86,7 @@ struct TripBookingView: View {
                         Text("Payment")
                             .font(.subheadline)
                             .bold()
-                        Text("card \(self.cardDetail)")
+                        Text("\(self.cardDetail)")
                         Spacer()
                         Button("Change", action: changeCard)
                     }
