@@ -14,6 +14,7 @@ struct TripQuotesView: View {
     
     public let bookingStatus: BookingStatus
     public let quoteListStatus: QuoteListStatus
+    let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
     
     @ObservedObject var viewModel = QuotesListModel()
     
@@ -61,6 +62,15 @@ struct TripQuotesView: View {
                 .padding(10)
             }
         }
+        .onAppear(perform: {
+            retrieveQuotes()
+        })
+        .onDisappear(perform: {
+            self.timer.upstream.connect().cancel()
+        })
+        .onReceive(timer, perform: { _ in
+            retrieveQuotes()
+        })
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(red: 0.39, green: 0.67, blue: 0.78))
     }
