@@ -17,6 +17,7 @@ struct ConfigurationView: View {
     @State private var showingAlert = false
     @State private var message = ""
     @State private var loginSuccess = false
+    
     @EnvironmentObject var bookingStatus: BookingStatus
     
     let loginService: UserService = Karhoo.getUserService()

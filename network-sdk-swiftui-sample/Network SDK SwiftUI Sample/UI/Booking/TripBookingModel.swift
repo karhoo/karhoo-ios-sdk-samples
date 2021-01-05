@@ -22,7 +22,7 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
     @Published var cardDetail: String = ""
     @Published var paymentNonce: String = ""
     @Published var paymentsToken: String = ""
-    @Published var tripId: String = ""
+    @Published var trip: TripInfo = TripInfo()
     
     func bookTrip() {
         let tripBooking = TripBooking(quoteId: selectedQuote?.id ?? "",
@@ -50,12 +50,15 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
         guard let trip = result.successValue() else {
             if result.errorValue()?.type == .couldNotBookTripPaymentPreAuthFailed {
                 //Handle error
+                reportError(error: result.errorValue()?.code ?? "")
+            } else if result.errorValue() != nil {
+                reportError(error: result.errorValue()?.code ?? "")
             } else {
                 print("SUCCESS \(result.successValue()?.tripId)")
             }
             return
         }
-        tripId = trip.tripId
+        self.trip = trip
         return
     }
     

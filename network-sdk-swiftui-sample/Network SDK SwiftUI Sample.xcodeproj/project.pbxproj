@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		146FB76C25925558009F504D /* BTDropInRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FB76B25925558009F504D /* BTDropInRepresentable.swift */; };
+		14BEC40325A49D7F00E29A2C /* TripStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BEC40225A49D7F00E29A2C /* TripStatus.swift */; };
 		23EFDA632577F7A500B952FB /* TripBookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFDA622577F7A500B952FB /* TripBookingModel.swift */; };
 		87F3CF21BB90F463534C7152 /* Pods_Network_SDK_SwiftUI_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A982C2AB9E10C94D9B4F1BB /* Pods_Network_SDK_SwiftUI_Sample.framework */; };
 		AE019B0C24E594F5000DDAF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE019B0B24E594F5000DDAF0 /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		146FB76B25925558009F504D /* BTDropInRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTDropInRepresentable.swift; sourceTree = "<group>"; };
+		14BEC40225A49D7F00E29A2C /* TripStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripStatus.swift; sourceTree = "<group>"; };
 		1A982C2AB9E10C94D9B4F1BB /* Pods_Network_SDK_SwiftUI_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Network_SDK_SwiftUI_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23EFDA622577F7A500B952FB /* TripBookingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripBookingModel.swift; sourceTree = "<group>"; };
 		62A8C658933C03DE0713F100 /* Pods-Network SDK SwiftUI Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network SDK SwiftUI Sample.debug.xcconfig"; path = "Target Support Files/Pods-Network SDK SwiftUI Sample/Pods-Network SDK SwiftUI Sample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				AE019B2D24E597A1000DDAF0 /* TripBookingView.swift */,
 				23EFDA622577F7A500B952FB /* TripBookingModel.swift */,
 				146FB76B25925558009F504D /* BTDropInRepresentable.swift */,
+				14BEC40225A49D7F00E29A2C /* TripStatus.swift */,
 			);
 			path = Booking;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				AE019B3324E5E42D000DDAF0 /* KarhooSandboxConfiguration.swift in Sources */,
 				AED055B124E9D1EF007AF368 /* QuotesListModel.swift in Sources */,
 				AE019B0E24E594F5000DDAF0 /* SceneDelegate.swift in Sources */,
+				14BEC40325A49D7F00E29A2C /* TripStatus.swift in Sources */,
 				AE019B2C24E5977A000DDAF0 /* TripQuotesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

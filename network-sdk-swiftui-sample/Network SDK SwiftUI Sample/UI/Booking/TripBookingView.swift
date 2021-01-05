@@ -16,6 +16,7 @@ struct TripBookingView: View {
     
     public let bookingStatus: BookingStatus
     public let quoteListStatus: QuoteListStatus
+    public let tripStatus: TripStatus
     
     @ObservedObject var viewModel = TripBookingModel()
     
@@ -121,8 +122,9 @@ struct TripBookingView: View {
                 }).edgesIgnoringSafeArea(.vertical)
             }
         }
-        .onReceive(viewModel.$tripId, perform: { tripId in
-            if(!tripId.isEmpty) {
+        .onReceive(viewModel.$trip, perform: { trip in
+            if(!trip.tripId.isEmpty) {
+                self.tripStatus.tripInfo = trip
                 self.tabSelection = 4
             }
         })
@@ -144,6 +146,6 @@ struct TripBookingView_Previews: PreviewProvider {
     @State static var tabSelection: Int = 3
     
     static var previews: some View {
-        TripBookingView(tabSelection: $tabSelection, bookingStatus: BookingStatus(), quoteListStatus: QuoteListStatus())
+        TripBookingView(tabSelection: $tabSelection, bookingStatus: BookingStatus(), quoteListStatus: QuoteListStatus(), tripStatus: TripStatus())
     }
 }

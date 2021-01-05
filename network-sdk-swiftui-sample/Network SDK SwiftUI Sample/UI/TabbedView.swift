@@ -14,6 +14,7 @@ struct TabbedView : View {
     
     @EnvironmentObject var bookingStatus: BookingStatus
     @EnvironmentObject var quoteListStatus: QuoteListStatus
+    @EnvironmentObject var tripStatus: TripStatus
     
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -38,14 +39,14 @@ struct TabbedView : View {
             }
                 .tag(2)
             
-            TripBookingView(tabSelection: $selectedTab, bookingStatus: bookingStatus, quoteListStatus: quoteListStatus)
+            TripBookingView(tabSelection: $selectedTab, bookingStatus: bookingStatus, quoteListStatus: quoteListStatus, tripStatus: tripStatus)
                 .tabItem {
                     Image(systemName: "cart.fill")
                         .font(.system(size: 22))
             }
                 .tag(3)
             
-            TripTrackingView(tabSelection: $selectedTab)
+            TripTrackingView(tabSelection: $selectedTab, bookingStatus: bookingStatus, quoteListStatus: quoteListStatus, tripStatus: tripStatus)
                 .tabItem {
                     Image(systemName: "location.north.line.fill")
                         .font(.system(size: 22))
