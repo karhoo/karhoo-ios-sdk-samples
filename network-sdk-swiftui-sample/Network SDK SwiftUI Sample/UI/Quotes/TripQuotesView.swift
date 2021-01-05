@@ -55,7 +55,7 @@ struct TripQuotesView: View {
                         .onTapGesture {
                             self.tabSelection = 3
                             self.quoteListStatus.selectedQuote = quote
-                    }
+                        }
                 }
                 .listStyle(GroupedListStyle())
                 .padding(10)

@@ -25,11 +25,6 @@ struct TripPlanningView: View {
     
     @EnvironmentObject var quoteListStatus: QuoteListStatus
     
-//    init(bookingStatus: BookingStatus, tabSelection: TabSelection) {
-//        self.tabSelection = tabSelection
-//        self.bookingStatus = bookingStatus
-//    }
-    
     var body: some View {
         ZStack {
             VStack {

@@ -12,7 +12,9 @@ struct TripTrackingView: View {
     @Binding var tabSelection: Int
     
     var body: some View {
-        Text("TripTrackingView")
+        ZStack {
+            Text("TripTrackingView")
+        }
     }
 }
 

@@ -45,7 +45,7 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
                                 phoneNumber: user?.mobileNumber ?? "",
                                 locale: user?.locale ?? "")
     }
-
+    
     private func handleBookTrip(result: Result<TripInfo>) {
         guard let trip = result.successValue() else {
             if result.errorValue()?.type == .couldNotBookTripPaymentPreAuthFailed {
@@ -63,7 +63,7 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
         self.selectedQuote = quoteListStatus.selectedQuote
         let sdkToken = PaymentSDKTokenPayload(organisationId: Karhoo.getUserService().getCurrentUser()?.primaryOrganisationID ?? "",
                                               currency: quoteListStatus.selectedQuote?.price.currencyCode ?? "")
-
+        
         paymentsService.initialisePaymentSDK(paymentSDKTokenPayload: sdkToken).execute { result in
             if let btToken = result.successValue() {
                 self.paymentsToken = btToken.token
@@ -77,20 +77,20 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
         guard let currentUser = userService.getCurrentUser() else {
             return
         }
-
+        
         let payer = Payer(id: currentUser.userId,
                           firstName: currentUser.firstName,
                           lastName: currentUser.lastName,
                           email: currentUser.email)
-
+        
         guard let payerOrg = currentUser.organisations.first else {
             return
         }
-
+        
         let addPaymentPayload = AddPaymentDetailsPayload(nonce: nonce,
                                                          payer: payer,
                                                          organisationId: payerOrg.id)
-
+        
         paymentsService.addPaymentDetails(addPaymentDetailsPayload: addPaymentPayload)
             .execute(callback: { result in
                 guard let nonce = result.successValue() else {
@@ -100,12 +100,12 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
                 print("SUCCESS ADD CARD \(nonce)")
             })
     }
-
+    
     func initSDKPayment(quoteListStatus: QuoteListStatus) {
         self.selectedQuote = quoteListStatus.selectedQuote
         let sdkToken = PaymentSDKTokenPayload(organisationId: Karhoo.getUserService().getCurrentUser()?.primaryOrganisationID ?? "",
                                               currency: quoteListStatus.selectedQuote?.price.currencyCode ?? "")
-
+        
         paymentsService.initialisePaymentSDK(paymentSDKTokenPayload: sdkToken).execute { result in
             if let btToken = result.successValue() {
                 self.paymentsToken = btToken.token
@@ -115,7 +115,7 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
             }
         }
     }
-
+    
     func getPaymentNonce() {
         let user = userService.getCurrentUser()
         let nonceRequest = NonceRequestPayload(payer: Payer(id: user?.userId ?? "",
@@ -132,7 +132,7 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
             self.execute3dSecureCheckOnNonce(nonce)
         }
     }
-
+    
     private func reportError(error: String) {
         print(error)
     }
@@ -142,7 +142,7 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
             //Handle error
             return
         }
-
+        
         guard let quote = selectedQuote else {
             return
         }
@@ -169,7 +169,7 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
             //Handle error
             return
         }
-
+        
         guard self.selectedQuote != nil else {
             return
         }
@@ -178,7 +178,7 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
         request.nonce = paymentNonce
         request.versionRequested = .version2
         request.threeDSecureRequestDelegate = self
-
+        
         let decimalNumberHandler = NSDecimalNumberHandler(roundingMode: .plain,
                                                           scale: 2,
                                                           raiseOnExactness: false,
@@ -193,7 +193,7 @@ class TripBookingModel: NSObject, ObservableObject, BTViewControllerPresentingDe
                 //Handle cancellation
                 return
             }
-
+            
             guard let result = result as? BTThreeDSecureResult else {
                 //Handle result
                 print("3DS ERROR")
@@ -220,7 +220,7 @@ extension TripBookingModel: BTThreeDSecureRequestDelegate {
                           next: @escaping () -> Void) {
         next()
     }
-
+    
     private func threeDSecureResponseHandler(result: BTThreeDSecureResult) {
         if result.tokenizedCard.nonce != "" {
             self.paymentNonce = result.tokenizedCard.nonce
