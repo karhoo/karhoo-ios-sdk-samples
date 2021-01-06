@@ -29,8 +29,7 @@ struct TripPlanningView: View {
         ZStack {
             VStack {
                 Text("Trip Planning")
-                    .font(.title)
-                    .padding()
+                    .textStyle(TitleStyle())
                 VStack {
                     HStack{
                         TextField("Pick up", text: self.$pickUp)
@@ -38,13 +37,10 @@ struct TripPlanningView: View {
                             .cornerRadius(20.0)
                         Button(action: pickupPressed ) {
                             Text("Submit")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .padding()
-                                .frame(height: 40)
-                                .background(Color(red: 0.01, green: 0.29, blue: 0.51))
-                                .cornerRadius(15.0)
                         }
+                        .buttonStyle(ActionButtonStyle())
+                        .background(Color(red: 0.01, green: 0.29, blue: 0.51))
+                        .cornerRadius(15.0)
                     }
                     HStack {
                         TextField("Drop off", text: self.$dropOff)
@@ -52,13 +48,10 @@ struct TripPlanningView: View {
                             .cornerRadius(20.0)
                         Button(action: dropOffPressed ) {
                             Text("Submit")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .padding()
-                                .frame(height: 40)
-                                .background(Color(red: 0.01, green: 0.29, blue: 0.51))
-                                .cornerRadius(15.0)
                         }
+                        .buttonStyle(ActionButtonStyle())
+                        .background(Color(red: 0.01, green: 0.29, blue: 0.51))
+                        .cornerRadius(15.0)
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -80,22 +73,15 @@ struct TripPlanningView: View {
                         .cornerRadius(15.0)
                 }
                 VStack {
-                    Button(action: getQuotes) {
-                        Text("Get Quotes")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(height: 40)
-                            .background(Color(red: 0.01, green: 0.29, blue: 0.51))
-                            .cornerRadius(15.0)
-                    }
+                    Button("Get Quotes", action: getQuotes)
+                        .buttonStyle(ActionButtonStyle())
+                        .background(Color(red: 0.01, green: 0.29, blue: 0.51))
+                        .cornerRadius(15.0)
                 }
                 Spacer()
             }
-            .alert(isPresented: $showingAlert) {
-                Alert(title: Text("Sample App"), message: Text(self.message), dismissButton: .default(Text("Got it!")))
-            }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(10)
             .background(Color(red: 0.04, green: 0.52, blue: 0.89))
         }
     }
@@ -162,7 +148,6 @@ struct TripPlanningView: View {
         self.showingAlert = true
         self.message = message
     }
-    
 }
 
 struct TripPlanningView_Previews: PreviewProvider {

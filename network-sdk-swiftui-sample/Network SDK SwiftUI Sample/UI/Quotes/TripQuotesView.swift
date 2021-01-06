@@ -22,28 +22,19 @@ struct TripQuotesView: View {
         ZStack {
             VStack {
                 Text("Quotes")
-                    .font(.title)
-                    .padding()
+                    .textStyle(TitleStyle())
                 VStack {
                     HStack {
                         Button(action: retrieveQuotes ) {
                             Text("Retrieve Quotes")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .padding()
-                                .frame(width: 200, height: 50)
-                                .background(Color(red: 0.04, green: 0.24, blue: 0.38))
-                                .cornerRadius(15.0)
                         }
-                        Button(action: stopRequest ) {
-                            Text("Stop")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .padding()
-                                .frame(width: 100, height: 50)
-                                .background(Color(red: 0.04, green: 0.24, blue: 0.38))
-                                .cornerRadius(15.0)
-                        }
+                        .buttonStyle(ActionButtonStyle())
+                        .background(Color(red: 0.04, green: 0.24, blue: 0.38))
+                        .cornerRadius(15.0)
+                        Button("Stop", action: stopRequest)
+                            .buttonStyle(ActionButtonStyle())
+                            .background(Color(red: 0.04, green: 0.24, blue: 0.38))
+                            .cornerRadius(15.0)
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -71,6 +62,7 @@ struct TripQuotesView: View {
         .onReceive(timer, perform: { _ in
             retrieveQuotes()
         })
+        .padding(10)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(red: 0.39, green: 0.67, blue: 0.78))
     }

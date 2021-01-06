@@ -26,7 +26,7 @@ struct ConfigurationView: View {
         ZStack {
             VStack {
                 Text("Login")
-                    .font(.title)
+                    .textStyle(TitleStyle())
                     .padding()
                 TextField("Username", text: self.$username)
                     .padding()
@@ -34,24 +34,17 @@ struct ConfigurationView: View {
                 TextField("Password", text: self.$password)
                     .padding()
                     .cornerRadius(20.0)
-                Button(action: attemptLoginWith ) {
-                    Text("Sign In")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(width: 300, height: 50)
-                        .background(Color(red: 0.28, green: 0.20, blue: 0.83))
-                        .cornerRadius(15.0)
-                }
-            }
-            .alert(isPresented: $showingAlert) {
-                Alert(title: Text("Sample App"), message: Text(self.message), dismissButton: .default(Text("Got it!")))
+                Button("Sign In", action: attemptLoginWith)
+                    .buttonStyle(ActionButtonStyle())
+                    .frame(width: 300, height: 50)
+                    .background(Color(red: 0.28, green: 0.20, blue: 0.83))
+                    .cornerRadius(15.0)
             }
             .frame(maxWidth: .infinity)
             .padding()
             .background(Color(red: 0.90, green: 0.90, blue: 1.00))
-            .padding(10)
         }
+        .padding(10)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(red: 0.55, green: 0.49, blue: 1.00))
     }
@@ -69,8 +62,8 @@ struct ConfigurationView: View {
         switch result {
         case .success:
             loginSucceed()
-        case let .failure(error):
-            loginFailed(message: error?.localizedDescription ?? "Error unauthorized")
+        case .failure:
+            loginFailed(message: result.errorValue()?.localizedDescription ?? "Error unauthorized")
         }
     }
     

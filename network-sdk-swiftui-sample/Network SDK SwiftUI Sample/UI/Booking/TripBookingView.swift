@@ -27,23 +27,22 @@ struct TripBookingView: View {
         ZStack {
             VStack {
                 Text("Trip Booking")
-                    .font(.title)
-                    .padding()
+                    .textStyle(TitleStyle())
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Address")
-                        .font(.headline)
-                        .frame(maxWidth: .infinity, alignment: .center)
+                        .bold()
+                        .textStyle(HeadlineStyle())
                     HStack {
                         Text("Pick up")
-                            .font(.subheadline)
                             .bold()
+                            .textStyle(SubHeadlineStyle())
                         Text(self.bookingStatus.pickup?.address.displayAddress ?? "")
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     HStack {
                         Text("Drop off")
-                            .font(.subheadline)
                             .bold()
+                            .textStyle(SubHeadlineStyle())
                         Text(self.bookingStatus.destination?.address.displayAddress ?? "")
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -54,12 +53,11 @@ struct TripBookingView: View {
                 .padding(10)
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Fleet")
-                        .font(.headline)
-                        .frame(maxWidth: .infinity, alignment: .center)
+                        .textStyle(HeadlineStyle())
                     HStack {
                         Text("Fleet name")
-                            .font(.subheadline)
                             .bold()
+                            .textStyle(SubHeadlineStyle())
                         Text(self.quoteListStatus.selectedQuote?.fleet.name ?? "")
                         Spacer()
                         Text("\(self.quoteListStatus.selectedQuote?.price.currencyCode ?? "") \(self.quoteListStatus.selectedQuote?.price.highPrice ?? 0)" )
@@ -80,18 +78,15 @@ struct TripBookingView: View {
                 .padding(10)
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Payment Details")
-                        .font(.headline)
-                        .frame(maxWidth: .infinity, alignment: .center)
+                        .textStyle(HeadlineStyle())
                     HStack {
                         Text("Payment")
-                            .font(.subheadline)
                             .bold()
+                            .textStyle(SubHeadlineStyle())
                         Text("\(self.cardDetail)")
                         Spacer()
                         Button("Change", action: changeCard)
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding()
+                            .buttonStyle(ActionButtonStyle())
                             .frame(width: 100, height: 50)
                             .background(Color(red: 0.01, green: 0.39, blue: 0.37))
                             .cornerRadius(15.0)
@@ -103,15 +98,11 @@ struct TripBookingView: View {
                 .padding()
                 .background(Color(red: 0.82, green: 1.00, blue: 0.99))
                 .padding(10)
-                Button(action: bookTrip) {
-                    Text("Book")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(width: 200, height: 50)
-                        .background(Color(red: 0.01, green: 0.39, blue: 0.37))
-                        .cornerRadius(15.0)
-                }
+                Button("Book", action: bookTrip)
+                    .buttonStyle(ActionButtonStyle())
+                    .frame(width: 200, height: 50)
+                    .background(Color(red: 0.01, green: 0.39, blue: 0.37))
+                    .cornerRadius(15.0)
                 Spacer()
             }
             if viewModel.paymentsToken != "" && self.showDropIn {
@@ -136,6 +127,7 @@ struct TripBookingView: View {
                 self.tabSelection = 4
             }
         })
+        .padding(10)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(red: 0.03, green: 0.60, blue: 0.57))
     }

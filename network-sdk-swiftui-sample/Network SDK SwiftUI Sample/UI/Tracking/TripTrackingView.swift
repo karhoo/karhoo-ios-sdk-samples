@@ -20,37 +20,36 @@ struct TripTrackingView: View {
         ZStack {
             VStack {
                 Text("Trip Tracking")
-                    .font(.title)
-                    .padding()
+                    .textStyle(TitleStyle())
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Trip")
-                        .font(.headline)
+                        .textStyle(HeadlineStyle())
                         .frame(maxWidth: .infinity, alignment: .center)
                     HStack {
                         Text("Trip id")
-                            .font(.subheadline)
                             .bold()
+                            .textStyle(SubHeadlineStyle())
                         Text("\(self.tripStatus.tripInfo.tripId)")
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     HStack {
                         Text("Driver")
-                            .font(.subheadline)
                             .bold()
+                            .textStyle(SubHeadlineStyle())
                         Text("\(self.tripStatus.tripInfo.vehicle.driver.firstName) \(self.tripStatus.tripInfo.vehicle.driver.lastName)")
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     HStack {
                         Text("License number")
-                            .font(.subheadline)
                             .bold()
+                            .textStyle(SubHeadlineStyle())
                         Text("\(self.tripStatus.tripInfo.vehicle.vehicleLicensePlate)")
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     HStack {
                         Text("Status")
-                            .font(.subheadline)
                             .bold()
+                            .textStyle(SubHeadlineStyle())
                         Text("\(self.tripStatus.tripInfo.state.rawValue)")
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -65,15 +64,15 @@ struct TripTrackingView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                     HStack {
                         Text("Pick up")
-                            .font(.subheadline)
                             .bold()
+                            .textStyle(SubHeadlineStyle())
                         Text(self.tripStatus.tripInfo.origin.displayAddress)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     HStack {
                         Text("Drop off")
-                            .font(.subheadline)
                             .bold()
+                            .textStyle(SubHeadlineStyle())
                         Text(self.tripStatus.tripInfo.destination?.displayAddress ?? "")
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
