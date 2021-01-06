@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		146FB76C25925558009F504D /* BTDropInRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FB76B25925558009F504D /* BTDropInRepresentable.swift */; };
+		14BEC40325A49D7F00E29A2C /* TripStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BEC40225A49D7F00E29A2C /* TripStatus.swift */; };
+		23EFDA632577F7A500B952FB /* TripBookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFDA622577F7A500B952FB /* TripBookingModel.swift */; };
 		87F3CF21BB90F463534C7152 /* Pods_Network_SDK_SwiftUI_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A982C2AB9E10C94D9B4F1BB /* Pods_Network_SDK_SwiftUI_Sample.framework */; };
 		AE019B0C24E594F5000DDAF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE019B0B24E594F5000DDAF0 /* AppDelegate.swift */; };
 		AE019B0E24E594F5000DDAF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE019B0D24E594F5000DDAF0 /* SceneDelegate.swift */; };
 		AE019B1224E594F9000DDAF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE019B1124E594F9000DDAF0 /* Assets.xcassets */; };
 		AE019B1524E594F9000DDAF0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE019B1424E594F9000DDAF0 /* Preview Assets.xcassets */; };
 		AE019B1824E594F9000DDAF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE019B1624E594F9000DDAF0 /* LaunchScreen.storyboard */; };
-		AE019B2124E59610000DDAF0 /* TabedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE019B2024E59610000DDAF0 /* TabedView.swift */; };
+		AE019B2124E59610000DDAF0 /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE019B2024E59610000DDAF0 /* TabbedView.swift */; };
 		AE019B2824E5972B000DDAF0 /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE019B2724E5972B000DDAF0 /* ConfigurationView.swift */; };
 		AE019B2A24E59758000DDAF0 /* TripPlanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE019B2924E59758000DDAF0 /* TripPlanningView.swift */; };
 		AE019B2C24E5977A000DDAF0 /* TripQuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE019B2B24E5977A000DDAF0 /* TripQuotesView.swift */; };
@@ -27,7 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		146FB76B25925558009F504D /* BTDropInRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTDropInRepresentable.swift; sourceTree = "<group>"; };
+		14BEC40225A49D7F00E29A2C /* TripStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripStatus.swift; sourceTree = "<group>"; };
 		1A982C2AB9E10C94D9B4F1BB /* Pods_Network_SDK_SwiftUI_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Network_SDK_SwiftUI_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23EFDA622577F7A500B952FB /* TripBookingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripBookingModel.swift; sourceTree = "<group>"; };
 		62A8C658933C03DE0713F100 /* Pods-Network SDK SwiftUI Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network SDK SwiftUI Sample.debug.xcconfig"; path = "Target Support Files/Pods-Network SDK SwiftUI Sample/Pods-Network SDK SwiftUI Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		AE019B0824E594F5000DDAF0 /* Network SDK SwiftUI Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Network SDK SwiftUI Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE019B0B24E594F5000DDAF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,7 +42,7 @@
 		AE019B1424E594F9000DDAF0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AE019B1724E594F9000DDAF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE019B1924E594F9000DDAF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE019B2024E59610000DDAF0 /* TabedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabedView.swift; sourceTree = "<group>"; };
+		AE019B2024E59610000DDAF0 /* TabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedView.swift; sourceTree = "<group>"; };
 		AE019B2724E5972B000DDAF0 /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
 		AE019B2924E59758000DDAF0 /* TripPlanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlanningView.swift; sourceTree = "<group>"; };
 		AE019B2B24E5977A000DDAF0 /* TripQuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripQuotesView.swift; sourceTree = "<group>"; };
@@ -128,7 +134,7 @@
 				AE019B2424E596E7000DDAF0 /* Quotes */,
 				AE019B2524E596F5000DDAF0 /* Booking */,
 				AE019B2624E596FD000DDAF0 /* Tracking */,
-				AE019B2024E59610000DDAF0 /* TabedView.swift */,
+				AE019B2024E59610000DDAF0 /* TabbedView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -165,6 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				AE019B2D24E597A1000DDAF0 /* TripBookingView.swift */,
+				23EFDA622577F7A500B952FB /* TripBookingModel.swift */,
+				146FB76B25925558009F504D /* BTDropInRepresentable.swift */,
+				14BEC40225A49D7F00E29A2C /* TripStatus.swift */,
 			);
 			path = Booking;
 			sourceTree = "<group>";
@@ -300,18 +309,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23EFDA632577F7A500B952FB /* TripBookingModel.swift in Sources */,
 				AE019B0C24E594F5000DDAF0 /* AppDelegate.swift in Sources */,
+				146FB76C25925558009F504D /* BTDropInRepresentable.swift in Sources */,
 				AE019B3924E5FA12000DDAF0 /* TripPlanningContract.swift in Sources */,
 				AE019B3024E597C5000DDAF0 /* TripTrackingView.swift in Sources */,
 				AE019B3724E5F18F000DDAF0 /* BookingStatus.swift in Sources */,
 				AE019B2824E5972B000DDAF0 /* ConfigurationView.swift in Sources */,
 				AE019B2A24E59758000DDAF0 /* TripPlanningView.swift in Sources */,
 				AE019B2E24E597A1000DDAF0 /* TripBookingView.swift in Sources */,
-				AE019B2124E59610000DDAF0 /* TabedView.swift in Sources */,
+				AE019B2124E59610000DDAF0 /* TabbedView.swift in Sources */,
 				AED055AF24E8A407007AF368 /* QuoteListStatus.swift in Sources */,
 				AE019B3324E5E42D000DDAF0 /* KarhooSandboxConfiguration.swift in Sources */,
 				AED055B124E9D1EF007AF368 /* QuotesListModel.swift in Sources */,
 				AE019B0E24E594F5000DDAF0 /* SceneDelegate.swift in Sources */,
+				14BEC40325A49D7F00E29A2C /* TripStatus.swift in Sources */,
 				AE019B2C24E5977A000DDAF0 /* TripQuotesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

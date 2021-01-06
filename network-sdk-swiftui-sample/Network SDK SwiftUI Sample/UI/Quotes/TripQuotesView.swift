@@ -10,15 +10,13 @@ import SwiftUI
 import KarhooSDK
 
 struct TripQuotesView: View {
+    @Binding var tabSelection: Int
+    
     public let bookingStatus: BookingStatus
     public let quoteListStatus: QuoteListStatus
+    let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
     
     @ObservedObject var viewModel = QuotesListModel()
-    
-    init(bookingStatus: BookingStatus, quoteListStatus: QuoteListStatus) {
-        self.bookingStatus = bookingStatus
-        self.quoteListStatus = quoteListStatus
-    }
     
     var body: some View {
         ZStack {
@@ -51,16 +49,28 @@ struct TripQuotesView: View {
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background(Color(red: 0.82, green: 0.94, blue: 1.00))
-                .padding(10)
                 List(viewModel.quotes, id: \.id) { quote in
                     Text(quote.fleet.name)
+                        .padding(.leading, 5)
+                        .padding(.trailing, 5)
                         .onTapGesture {
+                            self.tabSelection = 3
                             self.quoteListStatus.selectedQuote = quote
-                    }
+                        }
                 }
                 .listStyle(GroupedListStyle())
+                .padding(10)
             }
         }
+        .onAppear(perform: {
+            retrieveQuotes()
+        })
+        .onDisappear(perform: {
+            self.timer.upstream.connect().cancel()
+        })
+        .onReceive(timer, perform: { _ in
+            retrieveQuotes()
+        })
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(red: 0.39, green: 0.67, blue: 0.78))
     }
@@ -75,7 +85,9 @@ struct TripQuotesView: View {
 }
 
 struct TripQuotesView_Previews: PreviewProvider {
+    @State static var tabSelection: Int = 2
+    
     static var previews: some View {
-        TripQuotesView(bookingStatus: BookingStatus(), quoteListStatus: QuoteListStatus())
+        TripQuotesView(tabSelection: $tabSelection, bookingStatus: BookingStatus(), quoteListStatus: QuoteListStatus())
     }
 }

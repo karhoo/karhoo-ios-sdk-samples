@@ -12,6 +12,8 @@ import KarhooSDK
 struct TripPlanningView: View {
     public let bookingStatus: BookingStatus
     
+    @Binding var tabSelection: Int
+    
     @State private var pickUp = ""
     @State private var dropOff = ""
     @State private var sessionToken: String = UUID().uuidString
@@ -19,10 +21,9 @@ struct TripPlanningView: View {
     @State private var showingAlert = false
     @State private var message = ""
     @State private var places: [Place] = []
+    @State private var locationsChosen = false
     
-    init(bookingStatus: BookingStatus) {
-        self.bookingStatus = bookingStatus
-    }
+    @EnvironmentObject var quoteListStatus: QuoteListStatus
     
     var body: some View {
         ZStack {
@@ -64,18 +65,31 @@ struct TripPlanningView: View {
                 .padding()
                 .background(Color(red: 0.84, green: 0.90, blue: 1.00))
                 .padding(10)
-                Text("\(self.bookingStatus.pickup?.address.displayAddress ?? "")")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .lineLimit(2)
-                    .padding()
-                    .cornerRadius(15.0)
-                Text("\(self.bookingStatus.destination?.address.displayAddress ?? "")")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .lineLimit(2)
-                    .padding()
-                    .cornerRadius(15.0)
+                VStack(alignment: .leading) {
+                    Text("\(self.bookingStatus.pickup?.address.displayAddress ?? "")")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .lineLimit(2)
+                        .padding()
+                        .cornerRadius(15.0)
+                    Text("\(self.bookingStatus.destination?.address.displayAddress ?? "")")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .lineLimit(2)
+                        .padding()
+                        .cornerRadius(15.0)
+                }
+                VStack {
+                    Button(action: getQuotes) {
+                        Text("Get Quotes")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(height: 40)
+                            .background(Color(red: 0.01, green: 0.29, blue: 0.51))
+                            .cornerRadius(15.0)
+                    }
+                }
                 Spacer()
             }
             .alert(isPresented: $showingAlert) {
@@ -84,7 +98,6 @@ struct TripPlanningView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(red: 0.04, green: 0.52, blue: 0.89))
         }
-        
     }
     
     private func pickupPressed(){
@@ -135,7 +148,14 @@ struct TripPlanningView: View {
         } else {
             bookingStatus.destination = locationInfo
         }
-        
+    }
+    
+    private func getQuotes() {
+        if(!pickUp.isEmpty && !dropOff.isEmpty) {
+            self.tabSelection = 2
+        } else {
+            self.showError(message: "Choose an origin and destination")
+        }
     }
     
     private func showError(message: String) {
@@ -146,7 +166,9 @@ struct TripPlanningView: View {
 }
 
 struct TripPlanningView_Previews: PreviewProvider {
+    @State static var tabSelection: Int = 1
+    
     static var previews: some View {
-        TripPlanningView(bookingStatus: BookingStatus())
+        TripPlanningView(bookingStatus: BookingStatus(), tabSelection: $tabSelection)
     }
 }

@@ -10,10 +10,15 @@ import SwiftUI
 import KarhooSDK
 
 struct ConfigurationView: View {
+    @Binding var tabSelection: Int
+    
     @State private var username = ""
     @State private var password = ""
     @State private var showingAlert = false
     @State private var message = ""
+    @State private var loginSuccess = false
+    
+    @EnvironmentObject var bookingStatus: BookingStatus
     
     let loginService: UserService = Karhoo.getUserService()
     
@@ -51,7 +56,6 @@ struct ConfigurationView: View {
         .background(Color(red: 0.55, green: 0.49, blue: 1.00))
     }
     
-    
     private func attemptLoginWith() {
         
         let userLogin = UserLogin(username: self.username, password: self.password)
@@ -71,8 +75,7 @@ struct ConfigurationView: View {
     }
     
     private func loginSucceed() {
-        self.showingAlert = true
-        self.message = "Login Succeed"
+        self.tabSelection = 1
     }
     
     private func loginFailed(message: String){
@@ -82,7 +85,9 @@ struct ConfigurationView: View {
 }
 
 struct ConfigurationView_Previews: PreviewProvider {
+    @State static var tabSelection: Int = 0
+    
     static var previews: some View {
-        ConfigurationView()
+        ConfigurationView(tabSelection: $tabSelection)
     }
 }
