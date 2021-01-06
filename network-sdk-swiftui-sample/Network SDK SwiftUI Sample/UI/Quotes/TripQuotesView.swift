@@ -25,21 +25,20 @@ struct TripQuotesView: View {
                     .textStyle(TitleStyle())
                 VStack {
                     HStack {
-                        Button(action: retrieveQuotes ) {
-                            Text("Retrieve Quotes")
-                        }
-                        .buttonStyle(ActionButtonStyle())
-                        .background(Color(red: 0.04, green: 0.24, blue: 0.38))
-                        .cornerRadius(15.0)
+                        Button("Retrieve Quotes", action: retrieveQuotes)
+                            .buttonStyle(ActionButtonStyle())
+                            .background(Color(red: 0.04, green: 0.24, blue: 0.38))
+                            .cornerRadius(StyleConstants.cornerRadius)
                         Button("Stop", action: stopRequest)
                             .buttonStyle(ActionButtonStyle())
                             .background(Color(red: 0.04, green: 0.24, blue: 0.38))
-                            .cornerRadius(15.0)
+                            .cornerRadius(StyleConstants.cornerRadius)
                     }
                 }
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background(Color(red: 0.82, green: 0.94, blue: 1.00))
+                .cornerRadius(StyleConstants.cornerRadius)
                 List(viewModel.quotes, id: \.id) { quote in
                     Text(quote.fleet.name)
                         .padding(.leading, 5)
@@ -50,7 +49,7 @@ struct TripQuotesView: View {
                         }
                 }
                 .listStyle(GroupedListStyle())
-                .padding(10)
+                .padding()
             }
         }
         .onAppear(perform: {

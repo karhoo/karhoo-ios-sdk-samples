@@ -50,7 +50,8 @@ struct TripBookingView: View {
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background(Color(red: 0.82, green: 1.00, blue: 0.99))
-                .padding(10)
+                .cornerRadius(StyleConstants.cornerRadius)
+                .padding(.bottom, 10)
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Fleet")
                         .textStyle(HeadlineStyle())
@@ -75,7 +76,8 @@ struct TripBookingView: View {
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background(Color(red: 0.82, green: 1.00, blue: 0.99))
-                .padding(10)
+                .cornerRadius(StyleConstants.cornerRadius)
+                .padding(.bottom, 10)
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Payment Details")
                         .textStyle(HeadlineStyle())
@@ -89,7 +91,7 @@ struct TripBookingView: View {
                             .buttonStyle(ActionButtonStyle())
                             .frame(width: 100, height: 50)
                             .background(Color(red: 0.01, green: 0.39, blue: 0.37))
-                            .cornerRadius(15.0)
+                            .cornerRadius(StyleConstants.cornerRadius)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     
@@ -97,12 +99,13 @@ struct TripBookingView: View {
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background(Color(red: 0.82, green: 1.00, blue: 0.99))
-                .padding(10)
+                .cornerRadius(StyleConstants.cornerRadius)
+                .padding(.bottom, 10)
                 Button("Book", action: bookTrip)
                     .buttonStyle(ActionButtonStyle())
                     .frame(width: 200, height: 50)
                     .background(Color(red: 0.01, green: 0.39, blue: 0.37))
-                    .cornerRadius(15.0)
+                    .cornerRadius(StyleConstants.cornerRadius)
                 Spacer()
             }
             if viewModel.paymentsToken != "" && self.showDropIn {

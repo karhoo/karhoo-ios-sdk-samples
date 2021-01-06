@@ -23,30 +23,30 @@ struct ConfigurationView: View {
     let loginService: UserService = Karhoo.getUserService()
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             VStack {
                 Text("Login")
                     .textStyle(TitleStyle())
-                    .padding()
-                TextField("Username", text: self.$username)
-                    .padding()
-                    .cornerRadius(20.0)
-                TextField("Password", text: self.$password)
-                    .padding()
-                    .cornerRadius(20.0)
-                Button("Sign In", action: attemptLoginWith)
-                    .buttonStyle(ActionButtonStyle())
-                    .frame(width: 300, height: 50)
-                    .background(Color(red: 0.28, green: 0.20, blue: 0.83))
-                    .cornerRadius(15.0)
+                VStack {
+                    TextField("Username", text: self.$username)
+                        .padding()
+                    TextField("Password", text: self.$password)
+                        .padding()
+                    Button("Sign In", action: attemptLoginWith)
+                        .buttonStyle(ActionButtonStyle())
+                        .frame(width: 300, height: 50)
+                        .background(Color(red: 0.28, green: 0.20, blue: 0.83))
+                        .cornerRadius(StyleConstants.cornerRadius)
+                }
+                .padding()
+                .background(Color(red: 0.90, green: 0.90, blue: 1.00))
+                .cornerRadius(StyleConstants.cornerRadius)
+                Spacer()
             }
-            .frame(maxWidth: .infinity)
-            .padding()
-            .background(Color(red: 0.90, green: 0.90, blue: 1.00))
+            .padding(10)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color(red: 0.55, green: 0.49, blue: 1.00))
         }
-        .padding(10)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(red: 0.55, green: 0.49, blue: 1.00))
     }
     
     private func attemptLoginWith() {

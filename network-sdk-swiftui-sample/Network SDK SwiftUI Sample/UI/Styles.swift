@@ -41,13 +41,18 @@ struct ActionButtonStyle: ButtonStyle {
     }
 }
 
-struct ContentStyle: ViewModifier {
+struct InputStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.body)
-            .lineSpacing(4)
-            .foregroundColor(.secondary)
+            .font(.headline)
+            .foregroundColor(.white)
+            .lineLimit(2)
+            .padding()
     }
+}
+
+struct StyleConstants {
+    static let cornerRadius: CGFloat = 10.0
 }
 
 extension Text {

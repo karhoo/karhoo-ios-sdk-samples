@@ -17,7 +17,7 @@ struct TripTrackingView: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             VStack {
                 Text("Trip Tracking")
                     .textStyle(TitleStyle())
@@ -57,7 +57,8 @@ struct TripTrackingView: View {
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background(Color(red: 0.78, green: 0.90, blue: 1.00))
-                .padding(10)
+                .cornerRadius(StyleConstants.cornerRadius)
+                .padding(.bottom, 10)
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Address")
                         .font(.headline)
@@ -80,7 +81,8 @@ struct TripTrackingView: View {
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background(Color(red: 0.78, green: 0.90, blue: 1.00))
-                .padding(10)
+                .cornerRadius(StyleConstants.cornerRadius)
+                Spacer()
             }
         }
         .onAppear(perform: {
@@ -92,6 +94,7 @@ struct TripTrackingView: View {
         .onReceive(timer, perform: { _ in
             trackTrip()
         })
+        .padding(10)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(red: 0.16, green: 0.50, blue: 0.72))
     }

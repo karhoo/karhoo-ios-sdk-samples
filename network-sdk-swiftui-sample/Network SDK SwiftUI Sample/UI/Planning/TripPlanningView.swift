@@ -33,50 +33,37 @@ struct TripPlanningView: View {
                 VStack {
                     HStack{
                         TextField("Pick up", text: self.$pickUp)
-                            .padding(10)
-                            .cornerRadius(20.0)
-                        Button(action: pickupPressed ) {
-                            Text("Submit")
-                        }
-                        .buttonStyle(ActionButtonStyle())
-                        .background(Color(red: 0.01, green: 0.29, blue: 0.51))
-                        .cornerRadius(15.0)
+                            .padding()
+                        Button("Submit", action: pickupPressed)
+                            .buttonStyle(ActionButtonStyle())
+                            .background(Color(red: 0.01, green: 0.29, blue: 0.51))
+                            .cornerRadius(StyleConstants.cornerRadius)
                     }
                     HStack {
                         TextField("Drop off", text: self.$dropOff)
-                            .padding(10)
-                            .cornerRadius(20.0)
-                        Button(action: dropOffPressed ) {
-                            Text("Submit")
-                        }
-                        .buttonStyle(ActionButtonStyle())
-                        .background(Color(red: 0.01, green: 0.29, blue: 0.51))
-                        .cornerRadius(15.0)
+                            .padding()
+                        Button("Submit", action: dropOffPressed)
+                            .buttonStyle(ActionButtonStyle())
+                            .background(Color(red: 0.01, green: 0.29, blue: 0.51))
+                            .cornerRadius(StyleConstants.cornerRadius)
                     }
                 }
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background(Color(red: 0.84, green: 0.90, blue: 1.00))
-                .padding(10)
+                .cornerRadius(StyleConstants.cornerRadius)
                 VStack(alignment: .leading) {
                     Text("\(self.bookingStatus.pickup?.address.displayAddress ?? "")")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .lineLimit(2)
-                        .padding()
-                        .cornerRadius(15.0)
+                        .textStyle(InputStyle())
                     Text("\(self.bookingStatus.destination?.address.displayAddress ?? "")")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .lineLimit(2)
-                        .padding()
-                        .cornerRadius(15.0)
+                        .textStyle(InputStyle())
                 }
                 VStack {
                     Button("Get Quotes", action: getQuotes)
                         .buttonStyle(ActionButtonStyle())
+                        .frame(width: 300, height: 50)
                         .background(Color(red: 0.01, green: 0.29, blue: 0.51))
-                        .cornerRadius(15.0)
+                        .cornerRadius(StyleConstants.cornerRadius)
                 }
                 Spacer()
             }
