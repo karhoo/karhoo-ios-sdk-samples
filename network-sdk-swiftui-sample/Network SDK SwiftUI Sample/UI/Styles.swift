@@ -13,6 +13,7 @@ struct TitleStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.title)
+            .padding(10)
             .foregroundColor(.primary)
     }
 }

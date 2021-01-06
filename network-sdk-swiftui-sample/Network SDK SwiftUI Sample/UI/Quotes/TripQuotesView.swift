@@ -49,7 +49,7 @@ struct TripQuotesView: View {
                         }
                 }
                 .listStyle(GroupedListStyle())
-                .padding()
+                .cornerRadius(StyleConstants.cornerRadius)
             }
         }
         .onAppear(perform: {
