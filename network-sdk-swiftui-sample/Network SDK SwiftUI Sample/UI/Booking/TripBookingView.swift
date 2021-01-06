@@ -112,13 +112,14 @@ struct TripBookingView: View {
                 BTDropInRepresentable(authorization: viewModel.paymentsToken, handler:  { (controller, result, error) in
                     if (error != nil) {
                         //Handle error
+                        print("Payment error")
                     } else if (result?.isCancelled == true) {
-                        //Handle cancelled
+                        print("Payment error")
                     } else if result != nil {
                         self.showDropIn = false
                         self.cardDetail = result!.paymentDescription
                         viewModel.addCard(nonce: result!.paymentMethod!.nonce)
-                        print("SUCCESS \(result!.paymentDescription) \(result!.paymentMethod?.type)")
+                        print("SUCCESS \(result!.paymentDescription) \(result!.paymentMethod?.type ?? "no payment type")")
                     }
                     controller.dismiss(animated: true, completion: nil)
                 }).edgesIgnoringSafeArea(.vertical)

@@ -38,6 +38,9 @@ struct ConfigurationView: View {
                         .background(Color(red: 0.28, green: 0.20, blue: 0.83))
                         .cornerRadius(StyleConstants.cornerRadius)
                 }
+                .alert(isPresented: $showingAlert) {
+                    Alert(title: Text("Sample App"), message: Text(self.message), dismissButton: .default(Text("Got it!")))
+                }
                 .padding()
                 .background(Color(red: 0.90, green: 0.90, blue: 1.00))
                 .cornerRadius(StyleConstants.cornerRadius)
