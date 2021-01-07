@@ -23,37 +23,33 @@ struct ConfigurationView: View {
     let loginService: UserService = Karhoo.getUserService()
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             VStack {
                 Text("Login")
-                    .font(.title)
-                    .padding()
-                TextField("Username", text: self.$username)
-                    .padding()
-                    .cornerRadius(20.0)
-                TextField("Password", text: self.$password)
-                    .padding()
-                    .cornerRadius(20.0)
-                Button(action: attemptLoginWith ) {
-                    Text("Sign In")
-                        .font(.headline)
-                        .foregroundColor(.white)
+                    .textStyle(TitleStyle())
+                VStack {
+                    TextField("Username", text: self.$username)
                         .padding()
+                    TextField("Password", text: self.$password)
+                        .padding()
+                    Button("Sign In", action: attemptLoginWith)
+                        .buttonStyle(ActionButtonStyle())
                         .frame(width: 300, height: 50)
                         .background(Color(red: 0.28, green: 0.20, blue: 0.83))
-                        .cornerRadius(15.0)
+                        .cornerRadius(StyleConstants.cornerRadius)
                 }
+                .alert(isPresented: $showingAlert) {
+                    Alert(title: Text("Sample App"), message: Text(self.message), dismissButton: .default(Text("Got it!")))
+                }
+                .padding()
+                .background(Color(red: 0.90, green: 0.90, blue: 1.00))
+                .cornerRadius(StyleConstants.cornerRadius)
+                Spacer()
             }
-            .alert(isPresented: $showingAlert) {
-                Alert(title: Text("Sample App"), message: Text(self.message), dismissButton: .default(Text("Got it!")))
-            }
-            .frame(maxWidth: .infinity)
-            .padding()
-            .background(Color(red: 0.90, green: 0.90, blue: 1.00))
             .padding(10)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color(red: 0.55, green: 0.49, blue: 1.00))
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(red: 0.55, green: 0.49, blue: 1.00))
     }
     
     private func attemptLoginWith() {
@@ -69,8 +65,8 @@ struct ConfigurationView: View {
         switch result {
         case .success:
             loginSucceed()
-        case let .failure(error):
-            loginFailed(message: error?.localizedDescription ?? "Error unauthorized")
+        case .failure:
+            loginFailed(message: result.errorValue()?.localizedDescription ?? "Error unauthorized")
         }
     }
     

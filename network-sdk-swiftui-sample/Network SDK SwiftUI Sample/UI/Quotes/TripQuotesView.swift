@@ -22,33 +22,23 @@ struct TripQuotesView: View {
         ZStack {
             VStack {
                 Text("Quotes")
-                    .font(.title)
-                    .padding()
+                    .textStyle(TitleStyle())
                 VStack {
                     HStack {
-                        Button(action: retrieveQuotes ) {
-                            Text("Retrieve Quotes")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .padding()
-                                .frame(width: 200, height: 50)
-                                .background(Color(red: 0.04, green: 0.24, blue: 0.38))
-                                .cornerRadius(15.0)
-                        }
-                        Button(action: stopRequest ) {
-                            Text("Stop")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .padding()
-                                .frame(width: 100, height: 50)
-                                .background(Color(red: 0.04, green: 0.24, blue: 0.38))
-                                .cornerRadius(15.0)
-                        }
+                        Button("Retrieve Quotes", action: retrieveQuotes)
+                            .buttonStyle(ActionButtonStyle())
+                            .background(Color(red: 0.04, green: 0.24, blue: 0.38))
+                            .cornerRadius(StyleConstants.cornerRadius)
+                        Button("Stop", action: stopRequest)
+                            .buttonStyle(ActionButtonStyle())
+                            .background(Color(red: 0.04, green: 0.24, blue: 0.38))
+                            .cornerRadius(StyleConstants.cornerRadius)
                     }
                 }
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background(Color(red: 0.82, green: 0.94, blue: 1.00))
+                .cornerRadius(StyleConstants.cornerRadius)
                 List(viewModel.quotes, id: \.id) { quote in
                     Text(quote.fleet.name)
                         .padding(.leading, 5)
@@ -59,7 +49,7 @@ struct TripQuotesView: View {
                         }
                 }
                 .listStyle(GroupedListStyle())
-                .padding(10)
+                .cornerRadius(StyleConstants.cornerRadius)
             }
         }
         .onAppear(perform: {
@@ -71,6 +61,7 @@ struct TripQuotesView: View {
         .onReceive(timer, perform: { _ in
             retrieveQuotes()
         })
+        .padding(10)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(red: 0.39, green: 0.67, blue: 0.78))
     }

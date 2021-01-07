@@ -29,73 +29,46 @@ struct TripPlanningView: View {
         ZStack {
             VStack {
                 Text("Trip Planning")
-                    .font(.title)
-                    .padding()
+                    .textStyle(TitleStyle())
                 VStack {
                     HStack{
                         TextField("Pick up", text: self.$pickUp)
-                            .padding(10)
-                            .cornerRadius(20.0)
-                        Button(action: pickupPressed ) {
-                            Text("Submit")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .padding()
-                                .frame(height: 40)
-                                .background(Color(red: 0.01, green: 0.29, blue: 0.51))
-                                .cornerRadius(15.0)
-                        }
+                            .padding()
+                        Button("Submit", action: pickupPressed)
+                            .buttonStyle(ActionButtonStyle())
+                            .background(Color(red: 0.01, green: 0.29, blue: 0.51))
+                            .cornerRadius(StyleConstants.cornerRadius)
                     }
                     HStack {
                         TextField("Drop off", text: self.$dropOff)
-                            .padding(10)
-                            .cornerRadius(20.0)
-                        Button(action: dropOffPressed ) {
-                            Text("Submit")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .padding()
-                                .frame(height: 40)
-                                .background(Color(red: 0.01, green: 0.29, blue: 0.51))
-                                .cornerRadius(15.0)
-                        }
+                            .padding()
+                        Button("Submit", action: dropOffPressed)
+                            .buttonStyle(ActionButtonStyle())
+                            .background(Color(red: 0.01, green: 0.29, blue: 0.51))
+                            .cornerRadius(StyleConstants.cornerRadius)
                     }
                 }
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background(Color(red: 0.84, green: 0.90, blue: 1.00))
-                .padding(10)
+                .cornerRadius(StyleConstants.cornerRadius)
                 VStack(alignment: .leading) {
                     Text("\(self.bookingStatus.pickup?.address.displayAddress ?? "")")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .lineLimit(2)
-                        .padding()
-                        .cornerRadius(15.0)
+                        .textStyle(InputStyle())
                     Text("\(self.bookingStatus.destination?.address.displayAddress ?? "")")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .lineLimit(2)
-                        .padding()
-                        .cornerRadius(15.0)
+                        .textStyle(InputStyle())
                 }
                 VStack {
-                    Button(action: getQuotes) {
-                        Text("Get Quotes")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(height: 40)
-                            .background(Color(red: 0.01, green: 0.29, blue: 0.51))
-                            .cornerRadius(15.0)
-                    }
+                    Button("Get Quotes", action: getQuotes)
+                        .buttonStyle(ActionButtonStyle())
+                        .frame(width: 300, height: 50)
+                        .background(Color(red: 0.01, green: 0.29, blue: 0.51))
+                        .cornerRadius(StyleConstants.cornerRadius)
                 }
                 Spacer()
             }
-            .alert(isPresented: $showingAlert) {
-                Alert(title: Text("Sample App"), message: Text(self.message), dismissButton: .default(Text("Got it!")))
-            }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(10)
             .background(Color(red: 0.04, green: 0.52, blue: 0.89))
         }
     }
@@ -162,7 +135,6 @@ struct TripPlanningView: View {
         self.showingAlert = true
         self.message = message
     }
-    
 }
 
 struct TripPlanningView_Previews: PreviewProvider {

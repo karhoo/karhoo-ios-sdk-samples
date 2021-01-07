@@ -17,40 +17,39 @@ struct TripTrackingView: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             VStack {
                 Text("Trip Tracking")
-                    .font(.title)
-                    .padding()
+                    .textStyle(TitleStyle())
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Trip")
-                        .font(.headline)
+                        .textStyle(HeadlineStyle())
                         .frame(maxWidth: .infinity, alignment: .center)
                     HStack {
                         Text("Trip id")
-                            .font(.subheadline)
                             .bold()
+                            .textStyle(SubHeadlineStyle())
                         Text("\(self.tripStatus.tripInfo.tripId)")
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     HStack {
                         Text("Driver")
-                            .font(.subheadline)
                             .bold()
+                            .textStyle(SubHeadlineStyle())
                         Text("\(self.tripStatus.tripInfo.vehicle.driver.firstName) \(self.tripStatus.tripInfo.vehicle.driver.lastName)")
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     HStack {
                         Text("License number")
-                            .font(.subheadline)
                             .bold()
+                            .textStyle(SubHeadlineStyle())
                         Text("\(self.tripStatus.tripInfo.vehicle.vehicleLicensePlate)")
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     HStack {
                         Text("Status")
-                            .font(.subheadline)
                             .bold()
+                            .textStyle(SubHeadlineStyle())
                         Text("\(self.tripStatus.tripInfo.state.rawValue)")
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -58,22 +57,23 @@ struct TripTrackingView: View {
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background(Color(red: 0.78, green: 0.90, blue: 1.00))
-                .padding(10)
+                .cornerRadius(StyleConstants.cornerRadius)
+                .padding(.bottom, 10)
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Address")
                         .font(.headline)
                         .frame(maxWidth: .infinity, alignment: .center)
                     HStack {
                         Text("Pick up")
-                            .font(.subheadline)
                             .bold()
+                            .textStyle(SubHeadlineStyle())
                         Text(self.tripStatus.tripInfo.origin.displayAddress)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     HStack {
                         Text("Drop off")
-                            .font(.subheadline)
                             .bold()
+                            .textStyle(SubHeadlineStyle())
                         Text(self.tripStatus.tripInfo.destination?.displayAddress ?? "")
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -81,7 +81,8 @@ struct TripTrackingView: View {
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background(Color(red: 0.78, green: 0.90, blue: 1.00))
-                .padding(10)
+                .cornerRadius(StyleConstants.cornerRadius)
+                Spacer()
             }
         }
         .onAppear(perform: {
@@ -93,6 +94,7 @@ struct TripTrackingView: View {
         .onReceive(timer, perform: { _ in
             trackTrip()
         })
+        .padding(10)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(red: 0.16, green: 0.50, blue: 0.72))
     }
