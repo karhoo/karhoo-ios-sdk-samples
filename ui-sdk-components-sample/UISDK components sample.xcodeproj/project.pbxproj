@@ -14,7 +14,6 @@
 		5C9DCBC9256FB7EC00A29965 /* KarhooConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DCBC3256FB76000A29965 /* KarhooConfig.swift */; };
 		5CB57E772562CE860052EC29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E762562CE860052EC29 /* AppDelegate.swift */; };
 		5CB57E7B2562CE860052EC29 /* ComponentSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E7A2562CE860052EC29 /* ComponentSampleViewController.swift */; };
-		5CB57E802562CE870052EC29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB57E7F2562CE870052EC29 /* Assets.xcassets */; };
 		5CB57E832562CE870052EC29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB57E812562CE870052EC29 /* LaunchScreen.storyboard */; };
 		5CB57E8E2562CE870052EC29 /* UIKit_Karhoo_ComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E8D2562CE870052EC29 /* UIKit_Karhoo_ComponentTests.swift */; };
 		5CB57E992562CE870052EC29 /* UIKit_Karhoo_ComponentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E982562CE870052EC29 /* UIKit_Karhoo_ComponentUITests.swift */; };
@@ -24,6 +23,50 @@
 		5CB57F932566F1A00052EC29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB57F922566F1A00052EC29 /* Preview Assets.xcassets */; };
 		5CB57F9D2566F2380052EC29 /* AddressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57F9C2566F2380052EC29 /* AddressBar.swift */; };
 		5CB58092256B365C0052EC29 /* ComponentSamplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB58091256B365C0052EC29 /* ComponentSamplePresenter.swift */; };
+		A1A02DA5261461F000B01E1F /* CustomKarhooColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A02DA4261461F000B01E1F /* CustomKarhooColors.swift */; };
+		A1A02DAE2614A12E00B01E1F /* ComponentSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E7A2562CE860052EC29 /* ComponentSampleViewController.swift */; };
+		A1A02DAF2614A12E00B01E1F /* ComponentSamplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB58091256B365C0052EC29 /* ComponentSamplePresenter.swift */; };
+		A1A02DB02614A12E00B01E1F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DCB4E256ED0FA00A29965 /* LoginViewController.swift */; };
+		A1A02DB12614A12E00B01E1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E762562CE860052EC29 /* AppDelegate.swift */; };
+		A1A02DB22614A12E00B01E1F /* UIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DCB81256EE09A00A29965 /* UIBuilder.swift */; };
+		A1A02DB42614A12E00B01E1F /* KarhooConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DCBC3256FB76000A29965 /* KarhooConfig.swift */; };
+		A1A02DB62614A12E00B01E1F /* Pods_UIKit_Karhoo_Component.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5313C7E03C7991DE6E06B70B /* Pods_UIKit_Karhoo_Component.framework */; };
+		A1A02DB82614A12E00B01E1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB57E812562CE870052EC29 /* LaunchScreen.storyboard */; };
+		A1A02DDB2614A17B00B01E1F /* CustomKarhooColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A02D8E2614615100B01E1F /* CustomKarhooColors.swift */; };
+		A1A02DEB2614A26200B01E1F /* ComponentSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E7A2562CE860052EC29 /* ComponentSampleViewController.swift */; };
+		A1A02DEC2614A26200B01E1F /* ComponentSamplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB58091256B365C0052EC29 /* ComponentSamplePresenter.swift */; };
+		A1A02DED2614A26200B01E1F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DCB4E256ED0FA00A29965 /* LoginViewController.swift */; };
+		A1A02DEE2614A26200B01E1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E762562CE860052EC29 /* AppDelegate.swift */; };
+		A1A02DF02614A26200B01E1F /* UIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DCB81256EE09A00A29965 /* UIBuilder.swift */; };
+		A1A02DF12614A26200B01E1F /* KarhooConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DCBC3256FB76000A29965 /* KarhooConfig.swift */; };
+		A1A02DF32614A26200B01E1F /* Pods_UIKit_Karhoo_Component.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5313C7E03C7991DE6E06B70B /* Pods_UIKit_Karhoo_Component.framework */; };
+		A1A02DF52614A26200B01E1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB57E812562CE870052EC29 /* LaunchScreen.storyboard */; };
+		A1A02E0D2614A28A00B01E1F /* CustomKarhooColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A02E0C2614A28600B01E1F /* CustomKarhooColors.swift */; };
+		A1A02E1C2614A29000B01E1F /* CustomKarhooColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A02DD32614A16900B01E1F /* CustomKarhooColors.swift */; };
+		A1A02E2C2614A40F00B01E1F /* CustomFontProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A02E2B2614A40F00B01E1F /* CustomFontProvider.swift */; };
+		A1A02E352614A70D00B01E1F /* CustomFontProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A02E342614A70D00B01E1F /* CustomFontProvider.swift */; };
+		A1A02E402614A76200B01E1F /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1A02E3D2614A76100B01E1F /* Roboto-LightItalic.ttf */; };
+		A1A02E412614A76200B01E1F /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1A02E3E2614A76200B01E1F /* Roboto-Bold.ttf */; };
+		A1A02E522614A88900B01E1F /* CustomFontProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A02E512614A88900B01E1F /* CustomFontProvider.swift */; };
+		A1A02E612614A92A00B01E1F /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1A02E3F2614A76200B01E1F /* Roboto-Regular.ttf */; };
+		A1A02E702614A92F00B01E1F /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1A02E3F2614A76200B01E1F /* Roboto-Regular.ttf */; };
+		A1A02E792614A9D100B01E1F /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1A02E782614A9D000B01E1F /* Montserrat-Bold.ttf */; };
+		A1A02E9C2614AB0700B01E1F /* CustomFontProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A02E9B2614AB0700B01E1F /* CustomFontProvider.swift */; };
+		A1A02ECE2614AB7C00B01E1F /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1A02E9A2614AAFE00B01E1F /* Oswald-Bold.ttf */; };
+		A1A02ECF2614AB7C00B01E1F /* Ubuntu-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1A02EA52614AB1E00B01E1F /* Ubuntu-Italic.ttf */; };
+		A1A02ED02614AB7C00B01E1F /* Ubuntu-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1A02EC52614AB5000B01E1F /* Ubuntu-Light.ttf */; };
+		A1A02EEE2614ABE700B01E1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB57E7F2562CE870052EC29 /* Assets.xcassets */; };
+		A1A02EF62614ABE700B01E1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB57E7F2562CE870052EC29 /* Assets.xcassets */; };
+		A1A02EFF2614ABF300B01E1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1A02EFE2614ABEE00B01E1F /* Assets.xcassets */; };
+		A1A02F152614ABF900B01E1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB57E7F2562CE870052EC29 /* Assets.xcassets */; };
+		A1F17F80261351AB00F6984A /* ComponentSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E7A2562CE860052EC29 /* ComponentSampleViewController.swift */; };
+		A1F17F81261351AB00F6984A /* ComponentSamplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB58091256B365C0052EC29 /* ComponentSamplePresenter.swift */; };
+		A1F17F82261351AB00F6984A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DCB4E256ED0FA00A29965 /* LoginViewController.swift */; };
+		A1F17F83261351AB00F6984A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB57E762562CE860052EC29 /* AppDelegate.swift */; };
+		A1F17F84261351AB00F6984A /* UIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DCB81256EE09A00A29965 /* UIBuilder.swift */; };
+		A1F17F85261351AB00F6984A /* KarhooConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9DCBC3256FB76000A29965 /* KarhooConfig.swift */; };
+		A1F17F87261351AB00F6984A /* Pods_UIKit_Karhoo_Component.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5313C7E03C7991DE6E06B70B /* Pods_UIKit_Karhoo_Component.framework */; };
+		A1F17F89261351AB00F6984A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB57E812562CE870052EC29 /* LaunchScreen.storyboard */; };
 		A8379029EA5BA88B2B659E75 /* Pods_UIKit_Karhoo_ComponentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 443FC9BE8977F842585FB5C6 /* Pods_UIKit_Karhoo_ComponentTests.framework */; };
 		ACA234F05AA33B7A93161A1B /* Pods_UIKit_Karhoo_Component_UIKit_Karhoo_ComponentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA2677591EABF0BC8B5418E /* Pods_UIKit_Karhoo_Component_UIKit_Karhoo_ComponentUITests.framework */; };
 		DCE215BAAB43710253A80083 /* Pods_UIKit_Karhoo_Component.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5313C7E03C7991DE6E06B70B /* Pods_UIKit_Karhoo_Component.framework */; };
@@ -81,6 +124,28 @@
 		6BB8B7E56D24B0121E89DB10 /* Pods-UISDK components sample-UISDK components sampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UISDK components sample-UISDK components sampleUITests.release.xcconfig"; path = "Target Support Files/Pods-UISDK components sample-UISDK components sampleUITests/Pods-UISDK components sample-UISDK components sampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8137A6399844DBE415957E35 /* Pods-SwiftUIComponents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUIComponents.release.xcconfig"; path = "Target Support Files/Pods-SwiftUIComponents/Pods-SwiftUIComponents.release.xcconfig"; sourceTree = "<group>"; };
 		8BC5ECF88704955A6D419FA0 /* Pods-UISDK components sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UISDK components sample.release.xcconfig"; path = "Target Support Files/Pods-UISDK components sample/Pods-UISDK components sample.release.xcconfig"; sourceTree = "<group>"; };
+		A1A02D8E2614615100B01E1F /* CustomKarhooColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKarhooColors.swift; sourceTree = "<group>"; };
+		A1A02DA4261461F000B01E1F /* CustomKarhooColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKarhooColors.swift; sourceTree = "<group>"; };
+		A1A02DBE2614A12E00B01E1F /* UIKit Karhoo Component Theme 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit Karhoo Component Theme 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1A02DBF2614A12E00B01E1F /* UIKit Karhoo Component Theme 2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "UIKit Karhoo Component Theme 2-Info.plist"; path = "/Users/corneliuchitanu/Work/Dev/Dolfn/ClientProjects/Soft-to-you/karhoo-ios-sdk-samples/ui-sdk-components-sample/UIKit Karhoo Component Theme 2-Info.plist"; sourceTree = "<absolute>"; };
+		A1A02DD32614A16900B01E1F /* CustomKarhooColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKarhooColors.swift; sourceTree = "<group>"; };
+		A1A02DFB2614A26200B01E1F /* UIKit Karhoo Component Theme 3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit Karhoo Component Theme 3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1A02DFC2614A26200B01E1F /* UIKit Karhoo Component Theme 3-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "UIKit Karhoo Component Theme 3-Info.plist"; path = "/Users/corneliuchitanu/Work/Dev/Dolfn/ClientProjects/Soft-to-you/karhoo-ios-sdk-samples/ui-sdk-components-sample/UIKit Karhoo Component Theme 3-Info.plist"; sourceTree = "<absolute>"; };
+		A1A02E0C2614A28600B01E1F /* CustomKarhooColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKarhooColors.swift; sourceTree = "<group>"; };
+		A1A02E2B2614A40F00B01E1F /* CustomFontProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontProvider.swift; sourceTree = "<group>"; };
+		A1A02E342614A70D00B01E1F /* CustomFontProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontProvider.swift; sourceTree = "<group>"; };
+		A1A02E3D2614A76100B01E1F /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		A1A02E3E2614A76200B01E1F /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		A1A02E3F2614A76200B01E1F /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		A1A02E512614A88900B01E1F /* CustomFontProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontProvider.swift; sourceTree = "<group>"; };
+		A1A02E782614A9D000B01E1F /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		A1A02E9A2614AAFE00B01E1F /* Oswald-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Bold.ttf"; sourceTree = "<group>"; };
+		A1A02E9B2614AB0700B01E1F /* CustomFontProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontProvider.swift; sourceTree = "<group>"; };
+		A1A02EA52614AB1E00B01E1F /* Ubuntu-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Italic.ttf"; sourceTree = "<group>"; };
+		A1A02EC52614AB5000B01E1F /* Ubuntu-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Light.ttf"; sourceTree = "<group>"; };
+		A1A02EFE2614ABEE00B01E1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1F17F8F261351AB00F6984A /* UIKit Karhoo Component Theme 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit Karhoo Component Theme 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1F17F90261351AB00F6984A /* UIKit Karhoo Component Theme1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "UIKit Karhoo Component Theme1-Info.plist"; path = "/Users/corneliuchitanu/Work/Dev/Dolfn/ClientProjects/Soft-to-you/karhoo-ios-sdk-samples/ui-sdk-components-sample/UIKit Karhoo Component Theme1-Info.plist"; sourceTree = "<absolute>"; };
 		AB3236B58EF1C26AF7E55AA4 /* Pods_UISDK_components_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UISDK_components_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1533D95E4CD5B4F665B9A5F /* Pods-UISDK components sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UISDK components sample.debug.xcconfig"; path = "Target Support Files/Pods-UISDK components sample/Pods-UISDK components sample.debug.xcconfig"; sourceTree = "<group>"; };
 		C4BDF43F5CC2F560DCCB4041 /* Pods-SwiftUIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUIComponents.debug.xcconfig"; path = "Target Support Files/Pods-SwiftUIComponents/Pods-SwiftUIComponents.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +191,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A1A02DB52614A12E00B01E1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1A02DB62614A12E00B01E1F /* Pods_UIKit_Karhoo_Component.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1A02DF22614A26200B01E1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1A02DF32614A26200B01E1F /* Pods_UIKit_Karhoo_Component.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1F17F86261351AB00F6984A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1F17F87261351AB00F6984A /* Pods_UIKit_Karhoo_Component.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -141,6 +230,9 @@
 			isa = PBXGroup;
 			children = (
 				5CB57E752562CE860052EC29 /* UIKit Karhoo Component */,
+				A1A02D81261460EE00B01E1F /* UIKit Karhoo Component Theme1 */,
+				A1A02DD22614A14C00B01E1F /* UIKit Karhoo Component Theme2 */,
+				A1A02E0B2614A27100B01E1F /* UIKit Karhoo Component Theme3 */,
 				5CB57E8C2562CE870052EC29 /* UIKit Karhoo ComponentTests */,
 				5CB57E972562CE870052EC29 /* UIKit Karhoo ComponentUITests */,
 				5CB57F8A2566F19E0052EC29 /* SwiftUIComponents */,
@@ -157,6 +249,9 @@
 				5CB57E892562CE870052EC29 /* UIKit Karhoo ComponentTests.xctest */,
 				5CB57E942562CE870052EC29 /* UIKit Karhoo ComponentUITests.xctest */,
 				5CB57F892566F19D0052EC29 /* SwiftUIComponents.app */,
+				A1F17F8F261351AB00F6984A /* UIKit Karhoo Component Theme 1.app */,
+				A1A02DBE2614A12E00B01E1F /* UIKit Karhoo Component Theme 2.app */,
+				A1A02DFB2614A26200B01E1F /* UIKit Karhoo Component Theme 3.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,6 +268,8 @@
 				5CB57E7F2562CE870052EC29 /* Assets.xcassets */,
 				5CB57E812562CE870052EC29 /* LaunchScreen.storyboard */,
 				5CB57E842562CE870052EC29 /* Info.plist */,
+				A1A02DA4261461F000B01E1F /* CustomKarhooColors.swift */,
+				A1A02E2B2614A40F00B01E1F /* CustomFontProvider.swift */,
 			);
 			path = "UIKit Karhoo Component";
 			sourceTree = "<group>";
@@ -249,6 +346,44 @@
 				8137A6399844DBE415957E35 /* Pods-SwiftUIComponents.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A1A02D81261460EE00B01E1F /* UIKit Karhoo Component Theme1 */ = {
+			isa = PBXGroup;
+			children = (
+				A1A02EFE2614ABEE00B01E1F /* Assets.xcassets */,
+				A1F17F90261351AB00F6984A /* UIKit Karhoo Component Theme1-Info.plist */,
+				A1A02D8E2614615100B01E1F /* CustomKarhooColors.swift */,
+				A1A02E342614A70D00B01E1F /* CustomFontProvider.swift */,
+				A1A02E782614A9D000B01E1F /* Montserrat-Bold.ttf */,
+				A1A02E3F2614A76200B01E1F /* Roboto-Regular.ttf */,
+				A1A02E3D2614A76100B01E1F /* Roboto-LightItalic.ttf */,
+			);
+			path = "UIKit Karhoo Component Theme1";
+			sourceTree = "<group>";
+		};
+		A1A02DD22614A14C00B01E1F /* UIKit Karhoo Component Theme2 */ = {
+			isa = PBXGroup;
+			children = (
+				A1A02DBF2614A12E00B01E1F /* UIKit Karhoo Component Theme 2-Info.plist */,
+				A1A02DD32614A16900B01E1F /* CustomKarhooColors.swift */,
+				A1A02E512614A88900B01E1F /* CustomFontProvider.swift */,
+				A1A02E3E2614A76200B01E1F /* Roboto-Bold.ttf */,
+			);
+			path = "UIKit Karhoo Component Theme2";
+			sourceTree = "<group>";
+		};
+		A1A02E0B2614A27100B01E1F /* UIKit Karhoo Component Theme3 */ = {
+			isa = PBXGroup;
+			children = (
+				A1A02DFC2614A26200B01E1F /* UIKit Karhoo Component Theme 3-Info.plist */,
+				A1A02E0C2614A28600B01E1F /* CustomKarhooColors.swift */,
+				A1A02E9B2614AB0700B01E1F /* CustomFontProvider.swift */,
+				A1A02E9A2614AAFE00B01E1F /* Oswald-Bold.ttf */,
+				A1A02EA52614AB1E00B01E1F /* Ubuntu-Italic.ttf */,
+				A1A02EC52614AB5000B01E1F /* Ubuntu-Light.ttf */,
+			);
+			path = "UIKit Karhoo Component Theme3";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +466,63 @@
 			productReference = 5CB57F892566F19D0052EC29 /* SwiftUIComponents.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A1A02DAB2614A12E00B01E1F /* UIKit Karhoo Component Theme 2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1A02DBB2614A12E00B01E1F /* Build configuration list for PBXNativeTarget "UIKit Karhoo Component Theme 2" */;
+			buildPhases = (
+				A1A02DAC2614A12E00B01E1F /* [CP] Check Pods Manifest.lock */,
+				A1A02DAD2614A12E00B01E1F /* Sources */,
+				A1A02DB52614A12E00B01E1F /* Frameworks */,
+				A1A02DB72614A12E00B01E1F /* Resources */,
+				A1A02DBA2614A12E00B01E1F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UIKit Karhoo Component Theme 2";
+			productName = "UIKit Karhoo Component";
+			productReference = A1A02DBE2614A12E00B01E1F /* UIKit Karhoo Component Theme 2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A1A02DE82614A26200B01E1F /* UIKit Karhoo Component Theme 3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1A02DF82614A26200B01E1F /* Build configuration list for PBXNativeTarget "UIKit Karhoo Component Theme 3" */;
+			buildPhases = (
+				A1A02DE92614A26200B01E1F /* [CP] Check Pods Manifest.lock */,
+				A1A02DEA2614A26200B01E1F /* Sources */,
+				A1A02DF22614A26200B01E1F /* Frameworks */,
+				A1A02DF42614A26200B01E1F /* Resources */,
+				A1A02DF72614A26200B01E1F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UIKit Karhoo Component Theme 3";
+			productName = "UIKit Karhoo Component";
+			productReference = A1A02DFB2614A26200B01E1F /* UIKit Karhoo Component Theme 3.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A1F17F7D261351AB00F6984A /* UIKit Karhoo Component Theme 1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1F17F8C261351AB00F6984A /* Build configuration list for PBXNativeTarget "UIKit Karhoo Component Theme 1" */;
+			buildPhases = (
+				A1F17F7E261351AB00F6984A /* [CP] Check Pods Manifest.lock */,
+				A1F17F7F261351AB00F6984A /* Sources */,
+				A1F17F86261351AB00F6984A /* Frameworks */,
+				A1F17F88261351AB00F6984A /* Resources */,
+				A1F17F8B261351AB00F6984A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UIKit Karhoo Component Theme 1";
+			productName = "UIKit Karhoo Component";
+			productReference = A1F17F8F261351AB00F6984A /* UIKit Karhoo Component Theme 1.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -370,6 +562,9 @@
 			projectRoot = "";
 			targets = (
 				5CB57E732562CE860052EC29 /* UIKit Karhoo Component */,
+				A1F17F7D261351AB00F6984A /* UIKit Karhoo Component Theme 1 */,
+				A1A02DAB2614A12E00B01E1F /* UIKit Karhoo Component Theme 2 */,
+				A1A02DE82614A26200B01E1F /* UIKit Karhoo Component Theme 3 */,
 				5CB57E882562CE870052EC29 /* UIKit Karhoo ComponentTests */,
 				5CB57E932562CE870052EC29 /* UIKit Karhoo ComponentUITests */,
 				5CB57F882566F19D0052EC29 /* SwiftUIComponents */,
@@ -382,8 +577,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1A02F152614ABF900B01E1F /* Assets.xcassets in Resources */,
 				5CB57E832562CE870052EC29 /* LaunchScreen.storyboard in Resources */,
-				5CB57E802562CE870052EC29 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +602,41 @@
 			files = (
 				5CB57F932566F1A00052EC29 /* Preview Assets.xcassets in Resources */,
 				5CB57F902566F1A00052EC29 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1A02DB72614A12E00B01E1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1A02E612614A92A00B01E1F /* Roboto-Regular.ttf in Resources */,
+				A1A02EEE2614ABE700B01E1F /* Assets.xcassets in Resources */,
+				A1A02DB82614A12E00B01E1F /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1A02DF42614A26200B01E1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1A02DF52614A26200B01E1F /* LaunchScreen.storyboard in Resources */,
+				A1A02ED02614AB7C00B01E1F /* Ubuntu-Light.ttf in Resources */,
+				A1A02ECE2614AB7C00B01E1F /* Oswald-Bold.ttf in Resources */,
+				A1A02ECF2614AB7C00B01E1F /* Ubuntu-Italic.ttf in Resources */,
+				A1A02EF62614ABE700B01E1F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1F17F88261351AB00F6984A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1F17F89261351AB00F6984A /* LaunchScreen.storyboard in Resources */,
+				A1A02E792614A9D100B01E1F /* Montserrat-Bold.ttf in Resources */,
+				A1A02E702614A92F00B01E1F /* Roboto-Regular.ttf in Resources */,
+				A1A02E412614A76200B01E1F /* Roboto-Bold.ttf in Resources */,
+				A1A02EFF2614ABF300B01E1F /* Assets.xcassets in Resources */,
+				A1A02E402614A76200B01E1F /* Roboto-LightItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +738,123 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UIKit Karhoo Component/Pods-UIKit Karhoo Component-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A1A02DAC2614A12E00B01E1F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UIKit Karhoo Component-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1A02DBA2614A12E00B01E1F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UIKit Karhoo Component/Pods-UIKit Karhoo Component-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UIKit Karhoo Component/Pods-UIKit Karhoo Component-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UIKit Karhoo Component/Pods-UIKit Karhoo Component-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1A02DE92614A26200B01E1F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UIKit Karhoo Component-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1A02DF72614A26200B01E1F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UIKit Karhoo Component/Pods-UIKit Karhoo Component-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UIKit Karhoo Component/Pods-UIKit Karhoo Component-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UIKit Karhoo Component/Pods-UIKit Karhoo Component-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1F17F7E261351AB00F6984A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UIKit Karhoo Component-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1F17F8B261351AB00F6984A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UIKit Karhoo Component/Pods-UIKit Karhoo Component-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UIKit Karhoo Component/Pods-UIKit Karhoo Component-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UIKit Karhoo Component/Pods-UIKit Karhoo Component-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BB900A84987C0DDE9924328F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -559,12 +906,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1A02E2C2614A40F00B01E1F /* CustomFontProvider.swift in Sources */,
 				5CB57E7B2562CE860052EC29 /* ComponentSampleViewController.swift in Sources */,
 				5CB58092256B365C0052EC29 /* ComponentSamplePresenter.swift in Sources */,
 				5C9DCB4F256ED0FA00A29965 /* LoginViewController.swift in Sources */,
 				5CB57E772562CE860052EC29 /* AppDelegate.swift in Sources */,
 				5C9DCB82256EE09A00A29965 /* UIBuilder.swift in Sources */,
 				5C9DCBC4256FB76000A29965 /* KarhooConfig.swift in Sources */,
+				A1A02DA5261461F000B01E1F /* CustomKarhooColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +941,51 @@
 				5CB57F8E2566F19E0052EC29 /* ContentView.swift in Sources */,
 				5CB57F8C2566F19E0052EC29 /* SwiftUIComponentsApp.swift in Sources */,
 				5C9DCBC9256FB7EC00A29965 /* KarhooConfig.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1A02DAD2614A12E00B01E1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1A02E522614A88900B01E1F /* CustomFontProvider.swift in Sources */,
+				A1A02DAE2614A12E00B01E1F /* ComponentSampleViewController.swift in Sources */,
+				A1A02DAF2614A12E00B01E1F /* ComponentSamplePresenter.swift in Sources */,
+				A1A02DB02614A12E00B01E1F /* LoginViewController.swift in Sources */,
+				A1A02DB12614A12E00B01E1F /* AppDelegate.swift in Sources */,
+				A1A02DB22614A12E00B01E1F /* UIBuilder.swift in Sources */,
+				A1A02DB42614A12E00B01E1F /* KarhooConfig.swift in Sources */,
+				A1A02E1C2614A29000B01E1F /* CustomKarhooColors.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1A02DEA2614A26200B01E1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1A02E9C2614AB0700B01E1F /* CustomFontProvider.swift in Sources */,
+				A1A02DEB2614A26200B01E1F /* ComponentSampleViewController.swift in Sources */,
+				A1A02DEC2614A26200B01E1F /* ComponentSamplePresenter.swift in Sources */,
+				A1A02DED2614A26200B01E1F /* LoginViewController.swift in Sources */,
+				A1A02DEE2614A26200B01E1F /* AppDelegate.swift in Sources */,
+				A1A02E0D2614A28A00B01E1F /* CustomKarhooColors.swift in Sources */,
+				A1A02DF02614A26200B01E1F /* UIBuilder.swift in Sources */,
+				A1A02DF12614A26200B01E1F /* KarhooConfig.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1F17F7F261351AB00F6984A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1A02E352614A70D00B01E1F /* CustomFontProvider.swift in Sources */,
+				A1F17F80261351AB00F6984A /* ComponentSampleViewController.swift in Sources */,
+				A1F17F81261351AB00F6984A /* ComponentSamplePresenter.swift in Sources */,
+				A1F17F82261351AB00F6984A /* LoginViewController.swift in Sources */,
+				A1F17F83261351AB00F6984A /* AppDelegate.swift in Sources */,
+				A1F17F84261351AB00F6984A /* UIBuilder.swift in Sources */,
+				A1F17F85261351AB00F6984A /* KarhooConfig.swift in Sources */,
+				A1A02DDB2614A17B00B01E1F /* CustomKarhooColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,6 +1321,141 @@
 			};
 			name = Release;
 		};
+		A1A02DBC2614A12E00B01E1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AA5D11D35641A21AB5FEA0D /* Pods-UIKit Karhoo Component.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U7U4Q7YGDH;
+				INFOPLIST_FILE = "UIKit Karhoo Component Theme 2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "karhoo.UIKit-Karhoo-Component";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1A02DBD2614A12E00B01E1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF6CE3048AAC49F4490448CE /* Pods-UIKit Karhoo Component.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U7U4Q7YGDH;
+				INFOPLIST_FILE = "UIKit Karhoo Component Theme 2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "karhoo.UIKit-Karhoo-Component";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1A02DF92614A26200B01E1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AA5D11D35641A21AB5FEA0D /* Pods-UIKit Karhoo Component.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U7U4Q7YGDH;
+				INFOPLIST_FILE = "UIKit Karhoo Component Theme 3-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "karhoo.UIKit-Karhoo-Component";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1A02DFA2614A26200B01E1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF6CE3048AAC49F4490448CE /* Pods-UIKit Karhoo Component.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U7U4Q7YGDH;
+				INFOPLIST_FILE = "UIKit Karhoo Component Theme 3-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "karhoo.UIKit-Karhoo-Component";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1F17F8D261351AB00F6984A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AA5D11D35641A21AB5FEA0D /* Pods-UIKit Karhoo Component.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U7U4Q7YGDH;
+				INFOPLIST_FILE = "UIKit Karhoo Component Theme1-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "karhoo.UIKit-Karhoo-Component";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1F17F8E261351AB00F6984A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF6CE3048AAC49F4490448CE /* Pods-UIKit Karhoo Component.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U7U4Q7YGDH;
+				INFOPLIST_FILE = "UIKit Karhoo Component Theme1-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "karhoo.UIKit-Karhoo-Component";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -971,6 +1500,33 @@
 			buildConfigurations = (
 				5CB57F962566F1A00052EC29 /* Debug */,
 				5CB57F972566F1A00052EC29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1A02DBB2614A12E00B01E1F /* Build configuration list for PBXNativeTarget "UIKit Karhoo Component Theme 2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1A02DBC2614A12E00B01E1F /* Debug */,
+				A1A02DBD2614A12E00B01E1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1A02DF82614A26200B01E1F /* Build configuration list for PBXNativeTarget "UIKit Karhoo Component Theme 3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1A02DF92614A26200B01E1F /* Debug */,
+				A1A02DFA2614A26200B01E1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1F17F8C261351AB00F6984A /* Build configuration list for PBXNativeTarget "UIKit Karhoo Component Theme 1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1F17F8D261351AB00F6984A /* Debug */,
+				A1F17F8E261351AB00F6984A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
