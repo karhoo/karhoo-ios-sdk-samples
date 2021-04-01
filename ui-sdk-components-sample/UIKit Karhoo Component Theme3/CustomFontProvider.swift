@@ -1,0 +1,15 @@
+//
+//  CustomFontProvider.swift
+//  UIKit Karhoo Component
+//
+//  Created by Corneliu on 31.03.2021.
+//
+
+import Foundation
+import KarhooUISDK
+
+struct CustomFontProvider {
+    static func getKarhooUIFont() -> FontFamily {
+        return FontFamily(boldFont: "Oswald-Bold", regularFont: "Ubuntu-Italic", lightFont: "Ubuntu-Light")
+    }
+}
