@@ -6,13 +6,18 @@ def karhooPods
   pod 'KarhooSDK', :git => 'https://github.com/karhoo/karhoo-ios-sdk.git', :branch => 'develop'
 end
 
-target 'UIKit Karhoo Component' do
-  # Comment the next line if you don't want to use dynamic frameworks
+def uikitComponentsPods
   use_frameworks!
   karhooPods
-
   # sample loading spinner until we make our trip allocation spinner in KarhooBookingViewController public
   pod 'SwiftSpinner'
+end
+
+target 'UIKit Karhoo Component' do
+
+  uikitComponentsPods
+
+  # Comment the next line if you don't want to use dynamic frameworks
 
   target 'UIKit Karhoo ComponentTests' do
     inherit! :search_paths
@@ -23,6 +28,18 @@ target 'UIKit Karhoo Component' do
     # Pods for testing
   end
 
+end
+
+target 'UIKit Karhoo Component Theme 1' do
+  uikitComponentsPods
+end
+
+target 'UIKit Karhoo Component Theme 2' do
+  uikitComponentsPods
+end
+
+target 'UIKit Karhoo Component Theme 3' do
+  uikitComponentsPods
 end
 
 target 'SwiftUIComponents' do
