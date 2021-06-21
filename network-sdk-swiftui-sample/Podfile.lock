@@ -30,40 +30,32 @@ PODS:
     - Braintree/UnionPay (~> 4.32)
     - BraintreeDropIn/UIKit
   - BraintreeDropIn/UIKit (8.1.2)
-  - KarhooSDK (1.2.3):
+  - KarhooSDK (1.5.0):
     - KeychainSwift (= 12.0.0)
     - ReachabilitySwift (= 5.0.0)
   - KeychainSwift (12.0.0)
   - ReachabilitySwift (5.0.0)
 
 DEPENDENCIES:
+  - Braintree/PaymentFlow
   - BraintreeDropIn
-  - "KarhooSDK (from `git@github.com:karhoo/karhoo-ios-sdk.git`, branch `develop`)"
+  - KarhooSDK (= 1.5.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Braintree
     - BraintreeDropIn
+    - KarhooSDK
     - KeychainSwift
     - ReachabilitySwift
-
-EXTERNAL SOURCES:
-  KarhooSDK:
-    :branch: develop
-    :git: "git@github.com:karhoo/karhoo-ios-sdk.git"
-
-CHECKOUT OPTIONS:
-  KarhooSDK:
-    :commit: df405ad86923556ee9024a8f0d9e1541dbf621d5
-    :git: "git@github.com:karhoo/karhoo-ios-sdk.git"
 
 SPEC CHECKSUMS:
   Braintree: f7e0e9a5030e22b8ad77e617f27ac9327d7bc004
   BraintreeDropIn: 50b79151c55f2ffbfbbf9157c2d07d8e85479588
-  KarhooSDK: 735f879e946908c5fd34f51f032060d150c89ada
+  KarhooSDK: da935abbbd4e6742ec7dabb97364fbb2ffc5ffaf
   KeychainSwift: d5e776578587ee5958ce36601df22f168f65138a
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
 
-PODFILE CHECKSUM: f85c0f58c3103747dd2f2a34c3e645ce09cb369f
+PODFILE CHECKSUM: f889c9d4a0049e5841bb85f3ca452f8ef48f9d60
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1
