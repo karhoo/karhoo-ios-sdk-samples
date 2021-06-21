@@ -32,6 +32,7 @@ final class ComponentSamplePresenter: ComponentSamplePresenterP {
             .bookingRequest()
             .buildBookingRequestScreen(quote: quote,
                                        bookingDetails: bookingStatus.getBookingDetails()!,
+                                       bookingMetadata: nil,
                                        callback: { [weak self] result in
                                         self?.handleBookingResult(result)
                                        })
