@@ -43,7 +43,7 @@ PODS:
     - BraintreeDropIn/UIKit
   - BraintreeDropIn/UIKit (8.1.4)
   - FloatingPanel (2.0.1)
-  - KarhooSDK (1.5.1-rc1):
+  - KarhooSDK (1.5.1):
     - KeychainSwift (= 12.0.0)
     - ReachabilitySwift (= 5.0.0)
   - KarhooUISDK (1.6.0):
@@ -61,10 +61,10 @@ PODS:
   - PhoneNumberKit/UIKit (3.3.1):
     - PhoneNumberKit/PhoneNumberKitCore
   - ReachabilitySwift (5.0.0)
-  - SwiftSpinner (2.1.0)
+  - SwiftSpinner (2.2.0)
 
 DEPENDENCIES:
-  - "KarhooSDK (from `git@github.com:karhoo/karhoo-ios-sdk.git`, tag `1.5.1-rc1`)"
+  - KarhooSDK (= 1.5.1)
   - "KarhooUISDK (from `git@github.com:karhoo/karhoo-ios-ui-sdk.git`, tag `1.6.0`)"
   - SwiftSpinner
 
@@ -75,23 +75,18 @@ SPEC REPOS:
     - Braintree
     - BraintreeDropIn
     - FloatingPanel
+    - KarhooSDK
     - KeychainSwift
     - PhoneNumberKit
     - ReachabilitySwift
     - SwiftSpinner
 
 EXTERNAL SOURCES:
-  KarhooSDK:
-    :git: "git@github.com:karhoo/karhoo-ios-sdk.git"
-    :tag: 1.5.1-rc1
   KarhooUISDK:
     :git: "git@github.com:karhoo/karhoo-ios-ui-sdk.git"
     :tag: 1.6.0
 
 CHECKOUT OPTIONS:
-  KarhooSDK:
-    :git: "git@github.com:karhoo/karhoo-ios-sdk.git"
-    :tag: 1.5.1-rc1
   KarhooUISDK:
     :git: "git@github.com:karhoo/karhoo-ios-ui-sdk.git"
     :tag: 1.6.0
@@ -102,13 +97,13 @@ SPEC CHECKSUMS:
   Braintree: 94a20907b70aeffb29c40380eec583d783a347b6
   BraintreeDropIn: 073ef11637285efc5572b412079a34942c849ef9
   FloatingPanel: 579a5ac0154f923a9d7302c4f13dbc0268511c92
-  KarhooSDK: 4efe71efb6fb06f7e803bf7cc4763bd3fa76aed4
+  KarhooSDK: a8e955e3d7de48d7499ffd954278dc8d230224d2
   KarhooUISDK: 7da2263e0acb082e2da2013b5ca521cf74ded8f1
   KeychainSwift: d5e776578587ee5958ce36601df22f168f65138a
   PhoneNumberKit: ff153d5e299f6da566cb73c6aa71e354933b2932
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
-  SwiftSpinner: 0f15c006307f8d8bbac075638927ec1361b565d7
+  SwiftSpinner: f9b59477fe107427f2b5b835497d6636fa167ede
 
-PODFILE CHECKSUM: 150bb52ff375f5812d4baebf44e4754acf4924fd
+PODFILE CHECKSUM: 21c6724aa6c753cf6a1410174f3c702eb531d70d
 
 COCOAPODS: 1.10.1

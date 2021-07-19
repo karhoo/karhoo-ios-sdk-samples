@@ -1,36 +1,36 @@
 PODS:
-  - Braintree/Card (4.36.1):
+  - Braintree/Card (4.37.1):
     - Braintree/Core
-  - Braintree/Core (4.36.1)
-  - Braintree/PaymentFlow (4.36.1):
+  - Braintree/Core (4.37.1)
+  - Braintree/PaymentFlow (4.37.1):
     - Braintree/Card
     - Braintree/Core
     - Braintree/PayPalOneTouch
-  - Braintree/PayPal (4.36.1):
+  - Braintree/PayPal (4.37.1):
     - Braintree/Core
     - Braintree/PayPalOneTouch
-  - Braintree/PayPalDataCollector (4.36.1):
+  - Braintree/PayPalDataCollector (4.37.1):
     - Braintree/Core
     - Braintree/PayPalUtils
-  - Braintree/PayPalOneTouch (4.36.1):
+  - Braintree/PayPalOneTouch (4.37.1):
     - Braintree/Core
     - Braintree/PayPalDataCollector
     - Braintree/PayPalUtils
-  - Braintree/PayPalUtils (4.36.1)
-  - Braintree/UnionPay (4.36.1):
+  - Braintree/PayPalUtils (4.37.1)
+  - Braintree/UnionPay (4.37.1):
     - Braintree/Card
     - Braintree/Core
-  - BraintreeDropIn (8.1.2):
-    - BraintreeDropIn/DropIn (= 8.1.2)
-  - BraintreeDropIn/DropIn (8.1.2):
+  - BraintreeDropIn (8.1.4):
+    - BraintreeDropIn/DropIn (= 8.1.4)
+  - BraintreeDropIn/DropIn (8.1.4):
     - Braintree/Card (~> 4.32)
     - Braintree/Core (~> 4.32)
     - Braintree/PaymentFlow (~> 4.32)
     - Braintree/PayPal (~> 4.32)
     - Braintree/UnionPay (~> 4.32)
     - BraintreeDropIn/UIKit
-  - BraintreeDropIn/UIKit (8.1.2)
-  - KarhooSDK (1.5.1-rc1):
+  - BraintreeDropIn/UIKit (8.1.4)
+  - KarhooSDK (1.5.1):
     - KeychainSwift (= 12.0.0)
     - ReachabilitySwift (= 5.0.0)
   - KeychainSwift (12.0.0)
@@ -39,32 +39,23 @@ PODS:
 DEPENDENCIES:
   - Braintree/PaymentFlow
   - BraintreeDropIn
-  - "KarhooSDK (from `git@github.com:karhoo/karhoo-ios-sdk.git`, tag `1.5.1-rc1`)"
+  - KarhooSDK (= 1.5.1)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Braintree
     - BraintreeDropIn
+    - KarhooSDK
     - KeychainSwift
     - ReachabilitySwift
 
-EXTERNAL SOURCES:
-  KarhooSDK:
-    :git: "git@github.com:karhoo/karhoo-ios-sdk.git"
-    :tag: 1.5.1-rc1
-
-CHECKOUT OPTIONS:
-  KarhooSDK:
-    :git: "git@github.com:karhoo/karhoo-ios-sdk.git"
-    :tag: 1.5.1-rc1
-
 SPEC CHECKSUMS:
-  Braintree: f7e0e9a5030e22b8ad77e617f27ac9327d7bc004
-  BraintreeDropIn: 50b79151c55f2ffbfbbf9157c2d07d8e85479588
-  KarhooSDK: 4efe71efb6fb06f7e803bf7cc4763bd3fa76aed4
+  Braintree: 94a20907b70aeffb29c40380eec583d783a347b6
+  BraintreeDropIn: 073ef11637285efc5572b412079a34942c849ef9
+  KarhooSDK: a8e955e3d7de48d7499ffd954278dc8d230224d2
   KeychainSwift: d5e776578587ee5958ce36601df22f168f65138a
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
 
-PODFILE CHECKSUM: 3729e09bfa06c5de5cbde4fc721ba4e7547c0267
+PODFILE CHECKSUM: 045b1860346a52447d15c48b5bbd211a46e39231
 
 COCOAPODS: 1.10.1
