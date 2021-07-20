@@ -2,7 +2,7 @@
 # platform :ios, '9.0'
 
 def karhooPods
-  pod 'KarhooUISDK', :git => 'git@github.com:karhoo/karhoo-ios-ui-sdk.git', :tag => '1.6.1-rc3'
+  pod 'KarhooUISDK', :git => 'git@github.com:karhoo/karhoo-ios-ui-sdk.git', :tag => '1.6.1'
   #pod 'KarhooSDK', :git => 'git@github.com:karhoo/karhoo-ios-sdk.git', :tag => '1.5.1-rc1'
   pod 'KarhooSDK', '1.5.1'
 end
