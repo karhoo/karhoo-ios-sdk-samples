@@ -134,34 +134,34 @@ class ViewController: UIViewController {
     }
     
     func showKarhooWithData() {
-    let originLat = CLLocationDegrees(Double(51.500869))
-            let originLon = CLLocationDegrees(Double(-0.124979))
-            let destLat = CLLocationDegrees(Double(51.502159))
-            let destLon = CLLocationDegrees(Double(-0.142040))
-            
-            let journeyInfo: JourneyInfo = JourneyInfo(origin: CLLocation(latitude: originLat,
-                                                             longitude: originLon),
-                                                       destination: CLLocation(latitude: destLat,
-                                                                               longitude: destLon))
-            
-            let passangerDetails: PassengerDetails = PassengerDetails(firstName: "",
-                                lastName: "",
-                                email: "",
-                                phoneNumber: "",
-                                locale: "en")
-            booking = KarhooUI().screens().booking().buildBookingScreen(journeyInfo: journeyInfo,
-                                             passengerDetails: passangerDetails,
-                                             callback: { [weak self] result in
-                                              switch result {
-                                              case .completed(let bookingScreenResult):
-                                                switch bookingScreenResult {
-                                                case .tripAllocated(let trip): print("did book trip: ", trip)
-                                                default: break
-                                                }
-                                              default: break
-                                              }
-                                             }) as? BookingScreen
-            self.present(booking!, animated: true, completion: nil)
+        let originLat = CLLocationDegrees(Double(51.500869))
+        let originLon = CLLocationDegrees(Double(-0.124979))
+        let destLat = CLLocationDegrees(Double(51.502159))
+        let destLon = CLLocationDegrees(Double(-0.142040))
+        
+        let journeyInfo: JourneyInfo = JourneyInfo(origin: CLLocation(latitude: originLat,
+                                                         longitude: originLon),
+                                                   destination: CLLocation(latitude: destLat,
+                                                                           longitude: destLon))
+        
+        let passangerDetails: PassengerDetails = PassengerDetails(firstName: "",
+                            lastName: "",
+                            email: "",
+                            phoneNumber: "",
+                            locale: "en")
+        booking = KarhooUI().screens().booking().buildBookingScreen(journeyInfo: journeyInfo,
+                                         passengerDetails: passangerDetails,
+                                         callback: { [weak self] result in
+                                          switch result {
+                                          case .completed(let bookingScreenResult):
+                                            switch bookingScreenResult {
+                                            case .tripAllocated(let trip): print("did book trip: ", trip)
+                                            default: break
+                                            }
+                                          default: break
+                                          }
+                                         }) as? BookingScreen
+        self.present(booking!, animated: true, completion: nil)
     }
     
     private func logout() {
@@ -171,6 +171,4 @@ class ViewController: UIViewController {
 
         Karhoo.getUserService().logout().execute(callback: { _ in})
     }
-
 }
-
