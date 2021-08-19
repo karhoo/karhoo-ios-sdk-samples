@@ -65,7 +65,7 @@ PODS:
 
 DEPENDENCIES:
   - KarhooSDK (= 1.5.2)
-  - KarhooUISDK (from `https://github.com/karhoo/karhoo-ios-ui-sdk.git`, tag `1.6.2-rc1`)
+  - KarhooUISDK (from `https://github.com/karhoo/karhoo-ios-ui-sdk.git`, tag `1.6.2`)
   - SwiftSpinner
 
 SPEC REPOS:
@@ -84,12 +84,12 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   KarhooUISDK:
     :git: https://github.com/karhoo/karhoo-ios-ui-sdk.git
-    :tag: 1.6.2-rc1
+    :tag: 1.6.2
 
 CHECKOUT OPTIONS:
   KarhooUISDK:
     :git: https://github.com/karhoo/karhoo-ios-ui-sdk.git
-    :tag: 1.6.2-rc1
+    :tag: 1.6.2
 
 SPEC CHECKSUMS:
   Adyen: f2978d24fcfdb992d43c50de87a045bc6b26afa9
@@ -104,6 +104,6 @@ SPEC CHECKSUMS:
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SwiftSpinner: f9b59477fe107427f2b5b835497d6636fa167ede
 
-PODFILE CHECKSUM: 2a7d3ac3e509ff384d62fdad01b6265b90c46b25
+PODFILE CHECKSUM: 5d4bf08f19d4c15a3b6de04028d37b245528d116
 
 COCOAPODS: 1.10.1
