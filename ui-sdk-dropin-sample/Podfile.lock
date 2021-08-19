@@ -64,7 +64,7 @@ PODS:
 
 DEPENDENCIES:
   - KarhooSDK (= 1.5.2)
-  - KarhooUISDK (from `https://github.com/karhoo/karhoo-ios-ui-sdk.git`, tag `1.6.2-rc1`)
+  - KarhooUISDK (from `https://github.com/karhoo/karhoo-ios-ui-sdk.git`, tag `1.6.2`)
 
 SPEC REPOS:
   trunk:
@@ -81,12 +81,12 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   KarhooUISDK:
     :git: https://github.com/karhoo/karhoo-ios-ui-sdk.git
-    :tag: 1.6.2-rc1
+    :tag: 1.6.2
 
 CHECKOUT OPTIONS:
   KarhooUISDK:
     :git: https://github.com/karhoo/karhoo-ios-ui-sdk.git
-    :tag: 1.6.2-rc1
+    :tag: 1.6.2
 
 SPEC CHECKSUMS:
   Adyen: f2978d24fcfdb992d43c50de87a045bc6b26afa9
@@ -100,6 +100,6 @@ SPEC CHECKSUMS:
   PhoneNumberKit: ff153d5e299f6da566cb73c6aa71e354933b2932
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
 
-PODFILE CHECKSUM: 8a07525a0901cb0d160c519b2e065a169134c3f2
+PODFILE CHECKSUM: e96e3bf324d90ae5a156a57915ea973bbcd6ab2c
 
 COCOAPODS: 1.10.1

@@ -7,6 +7,6 @@ target 'ui-sdk-dropin-sample' do
 
   # Pods for ui-sdk-dropin-sample
   pod 'KarhooSDK', '1.5.2'
-  pod 'KarhooUISDK', :git => 'https://github.com/karhoo/karhoo-ios-ui-sdk.git', :tag => '1.6.2-rc1'
+  pod 'KarhooUISDK', :git => 'https://github.com/karhoo/karhoo-ios-ui-sdk.git', :tag => '1.6.2'
 
 end
