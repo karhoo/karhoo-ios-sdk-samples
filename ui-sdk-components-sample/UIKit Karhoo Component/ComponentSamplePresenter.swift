@@ -29,13 +29,14 @@ final class ComponentSamplePresenter: ComponentSamplePresenterP {
     func didSelect(quote: Quote) {
         let bookingRequestScreen = KarhooUI()
             .screens()
-            .bookingRequest()
-            .buildBookingRequestScreen(quote: quote,
+            .checkout()
+            .buildCheckoutScreen(quote: quote,
                                        bookingDetails: bookingStatus.getBookingDetails()!,
                                        bookingMetadata: nil,
                                        callback: { [weak self] result in
                                         self?.handleBookingResult(result)
                                        })
+        bookingRequestScreen.modalPresentationStyle = .fullScreen
         view?.presentView(viewController: bookingRequestScreen)
     }
 
