@@ -23,6 +23,9 @@ final class ComponentSamplePresenter: ComponentSamplePresenterP {
     func didLoad(view: ComponentSampleViewControllerP) {
         self.view = view
         bookingStatus.add(observer: self)
+        
+        //Temporary bandaid until we decide how we're going to handle the analytics event triggered in the viewWillAppear of the quote list view controller
+        bookingStatus.set(pickup: LocationInfo())
     }
 
     // QuoteList component output
