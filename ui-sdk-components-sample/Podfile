@@ -2,8 +2,8 @@
 # platform :ios, '9.0'
 
 def karhooPods
-  pod 'KarhooUISDK', :git => 'https://github.com/karhoo/karhoo-ios-ui-sdk.git', :tag => '1.7.2'
-  pod 'KarhooSDK', '1.5.5'
+  pod 'KarhooUISDK', :git => 'https://github.com/karhoo/karhoo-ios-ui-sdk.git', :tag => '1.7.3'
+  pod 'KarhooSDK', '1.6.1'
 end
 
 def uikitComponentsPods
