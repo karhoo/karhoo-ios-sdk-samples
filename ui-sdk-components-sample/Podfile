@@ -1,9 +1,9 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+# platform :ios, '11.0'
 
 def karhooPods
-  pod 'KarhooUISDK', :git => 'https://github.com/karhoo/karhoo-ios-ui-sdk.git', :tag => '1.7.3'
-  pod 'KarhooSDK', '1.6.1'
+  pod 'KarhooUISDK', :git => 'https://github.com/karhoo/karhoo-ios-ui-sdk.git', :tag => '1.9.0'
+  pod 'KarhooSDK', '1.6.3'
 end
 
 def uikitComponentsPods
