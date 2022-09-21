@@ -11,8 +11,8 @@ import KarhooSDK
 import SwiftSpinner
 
 protocol ComponentSampleViewControllerP {
+    var navController: UINavigationController? { get }
     func setUpView()
-    func quoteListHidden(_ hidden: Bool)
     func dismissTopViewController()
     func presentView(viewController: UIViewController)
 }
@@ -28,21 +28,6 @@ class ComponentSampleViewController: UIViewController {
         return addressBar
     }()
 
-    // A scrollable list of quotes based on the set booking details
-    private lazy var quoteList: QuoteListView = {
-        let quoteList = KarhooUI.components.quoteList()
-        quoteList.set(quoteListActions: self)
-        return quoteList
-    }()
-
-    // QuoteList component is a view controller so it must be contained to be embedded
-    private lazy var quoteListContainer: UIView = {
-        let container = UIView()
-        container.translatesAutoresizingMaskIntoConstraints = false
-        container.isHidden = true
-        return container
-    }()
-
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Karhoo UIKit Components Demo"
@@ -52,26 +37,43 @@ class ComponentSampleViewController: UIViewController {
     }()
 
     private lazy var signOutButton: UIButton = {
-        return UIBuilder.button(title: "Sign Out", titleColor: .red)
+        let button = UIBuilder.button(title: "Sign Out", titleColor: .red)
+        button.backgroundColor = UIColor.white
+        button.layer.cornerRadius = 8
+        return button
     }()
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        setUpView()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
         presenter.didLoad(view: self)
-        setUpView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        presenter.didAppear(view: self)
     }
 
     // layout component constraints / Alternatively bind through storyboard
     func setUpView() {
         self.view.addSubview(addressBar)
         self.view.addSubview(titleLabel)
-        self.view.addSubview(quoteListContainer)
         self.view.addSubview(signOutButton)
 
         signOutButton.addTarget(self, action: #selector(signOutPressed), for: .touchUpInside)
 
-        [signOutButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+        [signOutButton.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 50),
+         signOutButton.widthAnchor.constraint(equalToConstant: 120),
          signOutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)].forEach { constraint in
             constraint.isActive = true
          }
@@ -88,32 +90,23 @@ class ComponentSampleViewController: UIViewController {
          addressBar.heightAnchor.constraint(greaterThanOrEqualToConstant: 100)].forEach { constraint in
             constraint.isActive = true
          }
-
-        [quoteListContainer.heightAnchor.constraint(equalToConstant: 400),
-         quoteListContainer.widthAnchor.constraint(equalTo: view.widthAnchor),
-         quoteListContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor)].forEach { constraint in
-            constraint.isActive = true
-         }
-
-        addChild(quoteList)
-        quoteListContainer.addSubview(quoteList.view)
-        quoteList.view.pinEdges(to: quoteListContainer)
-        quoteList.didMove(toParent: self)
     }
 
     @objc private func signOutPressed() {
-        KarhooBookingStatus.shared.reset()
+        KarhooJourneyDetailsManager.shared.reset()
         let userService = Karhoo.getUserService()
         userService.logout().execute { [weak self] _ in
-            self?.dismiss(animated: true, completion: nil)
+            self?.navigationController?.popToRootViewController(animated: true)
         }
     }
 }
 
 // ViewControllers external interface
 extension ComponentSampleViewController: ComponentSampleViewControllerP {
-    func quoteListHidden(_ hidden: Bool) {
-        quoteListContainer.isHidden = hidden
+    var navController: UINavigationController? {
+        get {
+            self.navigationController
+        }
     }
 
     func dismissTopViewController() {
@@ -122,16 +115,5 @@ extension ComponentSampleViewController: ComponentSampleViewControllerP {
 
     func presentView(viewController: UIViewController) {
         self.present(viewController, animated: true, completion: nil)
-    }
-}
-
-// Quote list component output
-extension ComponentSampleViewController: QuoteListActions {
-    func quotesAvailabilityDidUpdate(availability: Bool) {
-        print("quotesAvailabilityDidUpdate: ", availability)
-    }
-
-    func didSelectQuote(_ quote: Quote) {
-        presenter.didSelect(quote: quote)
     }
 }

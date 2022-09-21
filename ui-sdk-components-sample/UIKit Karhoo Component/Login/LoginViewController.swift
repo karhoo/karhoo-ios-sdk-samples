@@ -84,7 +84,7 @@ final class LoginViewController: UIViewController {
                 self?.goToComponentsSample()
             } else {
                 self?.present(UIBuilder.alert(title: "Login Failed",
-                                              message: "Error: \(loginResult.errorValue()?.message ?? "unknown")"),
+                                              message: "Error: \(loginResult.getErrorValue()?.message ?? "unknown")"),
                              animated: true,
                              completion: nil)
             }
@@ -101,7 +101,6 @@ final class LoginViewController: UIViewController {
 
     private func goToComponentsSample() {
         let componentSample = ComponentSampleViewController()
-        componentSample.modalPresentationStyle = .fullScreen
-        self.present(componentSample, animated: true, completion: nil)
+        self.navigationController?.pushViewController(componentSample, animated: true)
     }
 }

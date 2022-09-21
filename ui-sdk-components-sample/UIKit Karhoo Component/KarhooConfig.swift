@@ -9,7 +9,10 @@ import KarhooUISDK
 import KarhooSDK
 
 struct KarhooConfig: KarhooUISDKConfiguration {
-
+    var paymentManager: KarhooUISDK.PaymentManager {
+        BraintreePaymentManager()
+    }
+    
     func environment() -> KarhooEnvironment {
         return .sandbox
     }
