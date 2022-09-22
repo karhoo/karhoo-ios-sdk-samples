@@ -60,14 +60,14 @@ PODS:
   - KarhooSDK (1.6.3):
     - KeychainSwift (= 12.0.0)
     - ReachabilitySwift (= 5.0.0)
-  - KarhooUISDK/Adyen (1.9.2):
+  - KarhooUISDK/Adyen (1.9.3):
     - Adyen (= 4.7.1)
     - KarhooUISDK/Core
-  - KarhooUISDK/Braintree (1.9.2):
+  - KarhooUISDK/Braintree (1.9.3):
     - Braintree/PaymentFlow (~> 4.37)
     - BraintreeDropIn (~> 8.1)
     - KarhooUISDK/Core
-  - KarhooUISDK/Core (1.9.2):
+  - KarhooUISDK/Core (1.9.3):
     - KarhooSDK
     - PhoneNumberKit (= 3.3.1)
   - KeychainSwift (12.0.0)
@@ -81,8 +81,8 @@ PODS:
 
 DEPENDENCIES:
   - KarhooSDK (= 1.6.3)
-  - KarhooUISDK/Adyen (from `https://github.com/karhoo/karhoo-ios-ui-sdk.git`, tag `1.9.2`)
-  - KarhooUISDK/Braintree (from `https://github.com/karhoo/karhoo-ios-ui-sdk.git`, tag `1.9.2`)
+  - KarhooUISDK/Adyen (from `https://github.com/karhoo/karhoo-ios-ui-sdk.git`, tag `1.9.3`)
+  - KarhooUISDK/Braintree (from `https://github.com/karhoo/karhoo-ios-ui-sdk.git`, tag `1.9.3`)
 
 SPEC REPOS:
   trunk:
@@ -99,12 +99,12 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   KarhooUISDK:
     :git: https://github.com/karhoo/karhoo-ios-ui-sdk.git
-    :tag: 1.9.2
+    :tag: 1.9.3
 
 CHECKOUT OPTIONS:
   KarhooUISDK:
     :git: https://github.com/karhoo/karhoo-ios-ui-sdk.git
-    :tag: 1.9.2
+    :tag: 1.9.3
 
 SPEC CHECKSUMS:
   Adyen: b76fe66dfbff481ceff8bad322503c3e201341bd
@@ -113,11 +113,11 @@ SPEC CHECKSUMS:
   Braintree: 78a33deb6f6ec617c2c4891fbe352854358b3a8d
   BraintreeDropIn: b57b653d130981aad7ad9bc97a69d3d7ef86f7a1
   KarhooSDK: ecdd7cdcaa76f2a3d52e3b2331414fde6c7d770e
-  KarhooUISDK: fa14c46f1de9b59eb3caebf3f04e2c499e30f5e6
+  KarhooUISDK: ab9646ba7f7c2972c1184924bbcb103c6e7addd5
   KeychainSwift: d5e776578587ee5958ce36601df22f168f65138a
   PhoneNumberKit: ff153d5e299f6da566cb73c6aa71e354933b2932
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
 
-PODFILE CHECKSUM: 8080270d372998f21931f544f6bef640e2695289
+PODFILE CHECKSUM: 712e95c677b360587feb2d2fc6271be40a2948df
 
 COCOAPODS: 1.11.3

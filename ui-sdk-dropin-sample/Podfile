@@ -7,7 +7,7 @@ target 'ui-sdk-dropin-sample' do
 
   # Pods for ui-sdk-dropin-sample
   pod 'KarhooSDK', '1.6.3'
-  pod 'KarhooUISDK/Braintree', :git => 'https://github.com/karhoo/karhoo-ios-ui-sdk.git', :tag => '1.9.2'
-  pod 'KarhooUISDK/Adyen', :git => 'https://github.com/karhoo/karhoo-ios-ui-sdk.git', :tag => '1.9.2'
+  pod 'KarhooUISDK/Braintree', :git => 'https://github.com/karhoo/karhoo-ios-ui-sdk.git', :tag => '1.9.3'
+  pod 'KarhooUISDK/Adyen', :git => 'https://github.com/karhoo/karhoo-ios-ui-sdk.git', :tag => '1.9.3'
 
 end

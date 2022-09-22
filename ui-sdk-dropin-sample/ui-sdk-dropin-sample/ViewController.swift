@@ -115,18 +115,20 @@ class ViewController: UIViewController {
     }
     
     func showKarhoo() {
-        booking = KarhooUI().screens().booking().buildBookingScreen(journeyInfo: nil,
-                                                                    passengerDetails: nil,
-                                                                    callback: { [weak self] result in
-                                                                        switch result {
-                                                                        case .completed(let result):
-                                                                            switch result {
-                                                                            case .tripAllocated(let trip): (self?.booking as? BookingScreen)?.openTrip(trip)
-                                                                            default: break
-                                                                            }
-                                                                        default: break
-                                                                        }
-                                                                    }) as? BookingScreen
+        booking = KarhooUI().screens().booking().buildBookingScreen(
+            journeyInfo: nil,
+            passengerDetails: nil,
+            callback: { [weak self] result in
+                switch result {
+                case .completed(let result):
+                    switch result {
+                    case .tripAllocated(let trip):
+                        (self?.booking as? BookingScreen)?.openTrip(trip)
+                    default: break
+                    }
+                default: break
+                }
+            })
 
         self.present(booking!,
                      animated: true,
@@ -155,12 +157,13 @@ class ViewController: UIViewController {
                                           switch result {
                                           case .completed(let bookingScreenResult):
                                             switch bookingScreenResult {
-                                            case .tripAllocated(let trip): print("did book trip: ", trip)
+                                            case .tripAllocated(let trip):
+                                                print("did book trip: ", trip)
                                             default: break
                                             }
                                           default: break
                                           }
-                                         }) as? BookingScreen
+                                         })
         self.present(booking!, animated: true, completion: nil)
     }
     
