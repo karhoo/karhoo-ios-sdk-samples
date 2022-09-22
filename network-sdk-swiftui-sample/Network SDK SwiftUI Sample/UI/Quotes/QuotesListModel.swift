@@ -15,7 +15,7 @@ class QuotesListModel: ObservableObject {
     private var quoteSearchObservable: Observable<Quotes>?
     private lazy var quotesObserver: Observer<Quotes>? = Observer<Quotes> { result in
         switch result {
-        case .success(let quotes):
+        case .success(let quotes, _):
             self.quotes = quotes.all
             
         case .failure(let error):

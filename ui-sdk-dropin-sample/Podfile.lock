@@ -57,15 +57,17 @@ PODS:
     - Braintree/UnionPay (~> 4.32)
     - BraintreeDropIn/UIKit
   - BraintreeDropIn/UIKit (8.2.0)
-  - FloatingPanel (2.0.1)
-  - KarhooSDK (1.6.1):
+  - KarhooSDK (1.6.3):
     - KeychainSwift (= 12.0.0)
     - ReachabilitySwift (= 5.0.0)
-  - KarhooUISDK (1.7.3):
+  - KarhooUISDK/Adyen (1.9.3):
     - Adyen (= 4.7.1)
+    - KarhooUISDK/Core
+  - KarhooUISDK/Braintree (1.9.3):
     - Braintree/PaymentFlow (~> 4.37)
     - BraintreeDropIn (~> 8.1)
-    - FloatingPanel (= 2.0.1)
+    - KarhooUISDK/Core
+  - KarhooUISDK/Core (1.9.3):
     - KarhooSDK
     - PhoneNumberKit (= 3.3.1)
   - KeychainSwift (12.0.0)
@@ -78,8 +80,9 @@ PODS:
   - ReachabilitySwift (5.0.0)
 
 DEPENDENCIES:
-  - KarhooSDK (= 1.6.1)
-  - KarhooUISDK (from `https://github.com/karhoo/karhoo-ios-ui-sdk.git`, tag `1.7.3`)
+  - KarhooSDK (= 1.6.3)
+  - KarhooUISDK/Adyen (from `https://github.com/karhoo/karhoo-ios-ui-sdk.git`, tag `1.9.3`)
+  - KarhooUISDK/Braintree (from `https://github.com/karhoo/karhoo-ios-ui-sdk.git`, tag `1.9.3`)
 
 SPEC REPOS:
   trunk:
@@ -88,7 +91,6 @@ SPEC REPOS:
     - AdyenNetworking
     - Braintree
     - BraintreeDropIn
-    - FloatingPanel
     - KarhooSDK
     - KeychainSwift
     - PhoneNumberKit
@@ -97,12 +99,12 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   KarhooUISDK:
     :git: https://github.com/karhoo/karhoo-ios-ui-sdk.git
-    :tag: 1.7.3
+    :tag: 1.9.3
 
 CHECKOUT OPTIONS:
   KarhooUISDK:
     :git: https://github.com/karhoo/karhoo-ios-ui-sdk.git
-    :tag: 1.7.3
+    :tag: 1.9.3
 
 SPEC CHECKSUMS:
   Adyen: b76fe66dfbff481ceff8bad322503c3e201341bd
@@ -110,13 +112,12 @@ SPEC CHECKSUMS:
   AdyenNetworking: 14567bd00c00ba2e2580a904708c7ba5f010b1f9
   Braintree: 78a33deb6f6ec617c2c4891fbe352854358b3a8d
   BraintreeDropIn: b57b653d130981aad7ad9bc97a69d3d7ef86f7a1
-  FloatingPanel: 579a5ac0154f923a9d7302c4f13dbc0268511c92
-  KarhooSDK: c481f315c37583270cce4c912af883af70f276f3
-  KarhooUISDK: 592ec6b4c4133026d03704e770b718ea895fc1ea
+  KarhooSDK: ecdd7cdcaa76f2a3d52e3b2331414fde6c7d770e
+  KarhooUISDK: ab9646ba7f7c2972c1184924bbcb103c6e7addd5
   KeychainSwift: d5e776578587ee5958ce36601df22f168f65138a
   PhoneNumberKit: ff153d5e299f6da566cb73c6aa71e354933b2932
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
 
-PODFILE CHECKSUM: fa53d8b1bc2552e5eb67aa71911210d65eacfe8f
+PODFILE CHECKSUM: 712e95c677b360587feb2d2fc6271be40a2948df
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

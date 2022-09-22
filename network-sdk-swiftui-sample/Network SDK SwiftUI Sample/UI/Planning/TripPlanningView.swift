@@ -86,9 +86,9 @@ struct TripPlanningView: View {
     private func performSearch(string: String, addressType: AddressType) {
         let searchCallback = { (result: Result<Places>) in
             switch result {
-            case .success(let places):
+            case .success(let places, _):
                 self.performLocationInfo(place: places.places[0], addressType: addressType)
-            case .failure(let error):
+            case .failure(let error, _):
                 self.showError(message: "Error... \(String(describing: error?.localizedDescription))")
             }
         }
@@ -103,9 +103,9 @@ struct TripPlanningView: View {
     private func performLocationInfo(place: Place, addressType: AddressType) {
         let locationInfoCallback = { (result: Result<LocationInfo>) in
             switch result {
-            case .success(let locationInfo):
+            case .success(let locationInfo, _):
                 self.searchCompleted(locationInfo: locationInfo, addressType: addressType)
-            case .failure(let error):
+            case .failure(let error, _):
                 self.showError(message: "Error \(String(describing: error?.localizedDescription))")
             }
         }

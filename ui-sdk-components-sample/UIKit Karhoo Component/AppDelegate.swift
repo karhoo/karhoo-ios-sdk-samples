@@ -21,15 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         KarhooUI.set(configuration: KarhooConfig())
         KarhooUI.colors = CustomKarhooColors()
         KarhooUI.fontFamily = CustomFontProvider.getKarhooUIFont()
-        for family in UIFont.familyNames.sorted() {
-            let names = UIFont.fontNames(forFamilyName: family)
-            print("Family: \(family) Font names: \(names)")
-        }
+//        for family in UIFont.familyNames.sorted() {
+//            let names = UIFont.fontNames(forFamilyName: family)
+//            print("Family: \(family) Font names: \(names)")
+//        }
         BTAppSwitch.setReturnURLScheme(AppDelegate.braintree3DsURLScheme)
         window = UIWindow()
-
-        let viewController = LoginViewController()
-        window?.rootViewController = viewController
+        let rootViewController = LoginViewController()
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         return true
     }
