@@ -11,6 +11,8 @@ import KarhooSDK
 
 final class KarhooSandboxConfiguration: KarhooSDKConfiguration {
     
+    static var onUpdateAuthentication: (@escaping () -> Void) -> Void = { $0() }
+    
     static var authenticationMethod = AuthenticationMethod.karhooUser
     
     func environment() -> KarhooEnvironment {
@@ -19,5 +21,11 @@ final class KarhooSandboxConfiguration: KarhooSDKConfiguration {
     
     func authenticationMethod() -> AuthenticationMethod {
         return KarhooSandboxConfiguration.authenticationMethod
+    }
+    
+    func requireSDKAuthentication(callback: @escaping () -> Void) {
+        KarhooSandboxConfiguration.onUpdateAuthentication {
+            callback()
+        }
     }
 }

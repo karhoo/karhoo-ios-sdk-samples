@@ -9,6 +9,8 @@ import KarhooUISDK
 import KarhooSDK
 
 struct KarhooConfig: KarhooUISDKConfiguration {
+    static var onUpdateAuthentication: (@escaping () -> Void) -> Void = { $0() }
+    
     var paymentManager: KarhooUISDK.PaymentManager {
         BraintreePaymentManager()
     }
@@ -19,5 +21,13 @@ struct KarhooConfig: KarhooUISDKConfiguration {
 
     func authenticationMethod() -> AuthenticationMethod {
         return .karhooUser
+    }
+    
+    func requireSDKAuthentication(callback: @escaping () -> Void) {
+        print("Client: KarhooConfig.requireSDKAuthentication started")
+        KarhooConfig.onUpdateAuthentication {
+            print("Client: KarhooConfig.requireSDKAuthentication finished")
+            callback()
+        }
     }
 }

@@ -53,12 +53,38 @@ struct ConfigurationView: View {
     }
     
     private func attemptLoginWith() {
+        KarhooSandboxConfiguration.onUpdateAuthentication = { callback in
+            self.refreshUsernamePasswordLogin(
+                username: self.username,
+                password: self.password,
+                callback: callback
+            )
+        }
         
         let userLogin = UserLogin(username: self.username, password: self.password)
+
         loginService.login(userLogin: userLogin)
             .execute(callback: { result in
                 self.loginComplete(result: result)
             })
+    }
+
+    private func refreshUsernamePasswordLogin(
+        username: String,
+        password: String,
+        callback: @escaping () -> Void
+    ) {
+            let userService = Karhoo.getUserService()
+            
+            let userLogin = UserLogin(username: username,
+                                      password: password)
+            userService.login(userLogin: userLogin).execute(callback: { result in
+                print("login: \(result)")
+                if result.isSuccess() {
+                    callback()
+                }
+            }
+        )
     }
     
     private func loginComplete(result: Result<UserInfo>) {
@@ -66,7 +92,7 @@ struct ConfigurationView: View {
         case .success:
             loginSucceed()
         case .failure:
-            loginFailed(message: result.errorValue()?.localizedDescription ?? "Error unauthorized")
+            loginFailed(message: result.getErrorValue()?.localizedDescription ?? "Error unauthorized")
         }
     }
     

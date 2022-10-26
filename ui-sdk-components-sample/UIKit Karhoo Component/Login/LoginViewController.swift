@@ -49,7 +49,7 @@ final class LoginViewController: UIViewController {
         view.addSubview(passwordTextField)
         view.addSubview(signInButton)
 
-        _ = [emailTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+        _ = [emailTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
              emailTextField.widthAnchor.constraint(equalToConstant: 400),
              emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor)].map {
             $0.isActive = true
@@ -100,7 +100,31 @@ final class LoginViewController: UIViewController {
     }
 
     private func goToComponentsSample() {
+        KarhooConfig.onUpdateAuthentication = { callback in
+            self.refreshUsernamePasswordLogin(
+                username: self.emailTextField.text ?? "",
+                password: self.passwordTextField.text ?? "",
+                callback: callback
+            )
+        }
         let componentSample = ComponentSampleViewController()
         self.navigationController?.pushViewController(componentSample, animated: true)
+    }
+    
+    private func refreshUsernamePasswordLogin(
+        username: String,
+        password: String,
+        callback: @escaping () -> Void
+    ) {
+            let userService = Karhoo.getUserService()
+            
+            let userLogin = UserLogin(username: username, password: password)
+            userService.login(userLogin: userLogin).execute(callback: { result in
+                print("login: \(result)")
+                if result.isSuccess() {
+                    callback()
+                }
+            }
+        )
     }
 }

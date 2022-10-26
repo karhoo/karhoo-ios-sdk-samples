@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '11.0'
+platform :ios, '13.0'
  
 
 # Standard cocoapods specs source
@@ -8,7 +8,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 def sdkPods
   pod 'BraintreeDropIn'
   pod 'Braintree/PaymentFlow'
-  pod 'KarhooSDK', '1.6.3'
+  pod 'KarhooSDK', '1.7.0'
 
 end
 

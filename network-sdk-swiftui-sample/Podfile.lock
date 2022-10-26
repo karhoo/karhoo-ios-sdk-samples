@@ -30,7 +30,7 @@ PODS:
     - Braintree/UnionPay (~> 4.32)
     - BraintreeDropIn/UIKit
   - BraintreeDropIn/UIKit (8.1.4)
-  - KarhooSDK (1.6.3):
+  - KarhooSDK (1.7.0):
     - KeychainSwift (= 12.0.0)
     - ReachabilitySwift (= 5.0.0)
   - KeychainSwift (12.0.0)
@@ -39,7 +39,7 @@ PODS:
 DEPENDENCIES:
   - Braintree/PaymentFlow
   - BraintreeDropIn
-  - KarhooSDK (= 1.6.3)
+  - KarhooSDK (= 1.7.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -52,10 +52,10 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Braintree: 94a20907b70aeffb29c40380eec583d783a347b6
   BraintreeDropIn: 073ef11637285efc5572b412079a34942c849ef9
-  KarhooSDK: ecdd7cdcaa76f2a3d52e3b2331414fde6c7d770e
+  KarhooSDK: 1fc3b4a0481ad223c3fee97425270af735342425
   KeychainSwift: d5e776578587ee5958ce36601df22f168f65138a
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
 
-PODFILE CHECKSUM: 34e2dda0ebaa2bad3bb37c6a79af87e1a4621f31
+PODFILE CHECKSUM: 099d90c88cbe52df1b5095d754a8831be463214e
 
 COCOAPODS: 1.11.3
