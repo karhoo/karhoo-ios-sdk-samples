@@ -70,6 +70,9 @@ class ViewController: UIViewController {
         let tokenExchangeSettings = TokenExchangeSettings(clientId: Keys.tokenClientId, scope: Keys.tokenScope)
         KarhooConfig.auth = .tokenExchange(settings: tokenExchangeSettings)
         KarhooConfig.environment = Keys.braintreeTokenEnvironment
+        KarhooConfig.onUpdateAuthentication = { callback in
+            self.refreshTokenLogin(token: Keys.authToken, callback: callback)
+        }
         tokenLoginAndShowKarhoo(token: Keys.authToken)
     }
 
@@ -80,6 +83,10 @@ class ViewController: UIViewController {
                                           organisationId: Keys.guestOrganisationId)
         KarhooConfig.auth = .guest(settings: guestSettings)
         KarhooConfig.environment = Keys.guestEnvironment
+        KarhooConfig.onUpdateAuthentication = { callback in
+            KarhooConfig.auth = .guest(settings: guestSettings)
+            callback() // Guest profile is not able to provide new user auth
+        }
         showKarhoo()
     }
     
@@ -87,6 +94,9 @@ class ViewController: UIViewController {
         let tokenExchangeSettings = TokenExchangeSettings(clientId: Keys.tokenClientId, scope: Keys.tokenScope)
         KarhooConfig.auth = .tokenExchange(settings: tokenExchangeSettings)
         KarhooConfig.environment = Keys.braintreeTokenEnvironment
+        KarhooConfig.onUpdateAuthentication = { callback in
+            self.refreshTokenLogin(token: Keys.authToken, callback: callback)
+        }
         tokenLoginAndShowKarhoo(token: Keys.authToken, withData: true)
     }
     
@@ -96,6 +106,10 @@ class ViewController: UIViewController {
                                           organisationId: Keys.guestOrganisationId)
         KarhooConfig.auth = .guest(settings: guestSettings)
         KarhooConfig.environment = Keys.guestEnvironment
+        KarhooConfig.onUpdateAuthentication = { callback in
+            KarhooConfig.auth = .guest(settings: guestSettings)
+            callback() // Guest profile is not able to provide new user auth
+        }
         showKarhooWithData()
     }
     
@@ -112,6 +126,21 @@ class ViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    private func refreshTokenLogin(token: String, callback: @escaping () -> Void) {
+        let authService = Karhoo.getAuthService()
+        
+        // Mimic the delay a call to refresh your access token would make
+        // Then use that access token to re-login into the Karhoo platform
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            authService.login(token: token).execute { result in
+                print("token login: \(result)")
+                if result.isSuccess() {
+                    callback()
+                }
+            }
+         }
     }
     
     func showKarhoo() {
