@@ -1,4 +1,4 @@
-* @karhoo/demand-mobile
+* @karhoo/mobile
 Dockerfile @autoapproval
 go.mod @autoapproval
 go.sum @autoapproval
